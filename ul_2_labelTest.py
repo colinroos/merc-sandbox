@@ -34,38 +34,46 @@ for obj in root.findall('.//object'):
         width = int(box.find('width').text)
         height = int(box.find('height').text)
         rot = float(box.find('rot').text)
-        # boxes.append([_hole, _from, _to, cx, cy, width, height, rot])
+        boxes.append([_hole, _from, _to, cx, cy, width, height, rot])
 
     for box in obj.findall('.//bndbox'):
         xmin = int(box.find('xmin').text)
         ymin = int(box.find('ymin').text)
         xmax = int(box.find('xmax').text)
         ymax = int(box.find('ymax').text)
-        boxes.append([_hole, _from, _to, xmin, ymin, xmax, ymax])
+        # boxes.append([_hole, _from, _to, xmin, ymin, xmax, ymax])
 
 # Convert to DataFrame
-columns = ['HoleID', 'FromM', 'ToM', 'xmin', 'ymin', 'xmax', 'ymax']
-# columns = ['HoleID', 'FromM', 'ToM', 'cx', 'cy', 'width', 'height', 'rot']
+# columns = ['HoleID', 'FromM', 'ToM', 'xmin', 'ymin', 'xmax', 'ymax']
+columns = ['HoleID', 'FromM', 'ToM', 'cx', 'cy', 'width', 'height', 'rot']
 df = pd.DataFrame(boxes, columns=columns)
 
+df.to_csv('out/test_annotes_rot.csv')
 print(df.head())
 
 # load image
 img = cv2.imread(image_path)
 
-# pad with largest size of box
-box_x = max(df.xmax - df.xmin)
-box_y = max(df.ymax - df.ymin)
+# Determine largest bounding box
+mbox_x = max(df.xmax - df.xmin)
+mbox_y = max(df.ymax - df.ymin)
 
-box = np.zeros((box_y, box_x, 3), np.int8)
+print((mbox_x, mbox_y))
+
 # crop image to 1st box
-d = df.iloc[0]
+d = df.iloc[3]
 xmin = d.xmin
 ymin = d.ymin
 xmax = d.xmax
 ymax = d.ymax
 name = d.HoleID + ' ' + d.FromM + '-' + d.ToM
-img_c = img[df.iloc[0].ymin:df.iloc[0].ymax, df.iloc[0].xmin:df.iloc[0].xmax]
-img_c = np.add(box, img_c)
-cv2.imshow(name, img_c)
+img_c = img[ymin:ymax, xmin:xmax, :3]
+
+# Pad to largest
+img_p = np.pad(img_c, ((0, mbox_y - (ymax - ymin)), (0, mbox_x - (xmax - xmin)), (0, 0)), mode='constant', constant_values=((0, 0), (0, 0), (0, 0)))
+
+# Display image
+# cv2.imshow(name, img_c)
+cv2.waitKey(0)
+cv2.imshow(name, img_p)
 cv2.waitKey(0)
