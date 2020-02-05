@@ -1,4 +1,5 @@
 <annotation>
+    <annotator>CR</annotator>
     <folder>OneDrive_1_11-14-2019</folder>
     <filename>KAD17-001_Bx1-5_11.5-25.30m_DxO.jpg</filename>
     <size>
@@ -23,17 +24,17 @@
         <polygon>
             <x1>3937</x1>
             <y1>3537</y1>
-            <x2>5270</x2>
-            <y2>3512</y2>
-            <x3>5266</x3>
-            <y3>3294</y3>
+            <x2>5269</x2>
+            <y2>3511</y2>
+            <x3>5265</x3>
+            <y3>3293</y3>
             <x4>3933</x4>
             <y4>3319</y4>
         </polygon>
         <bndbox>
             <xmin>3933</xmin>
-            <ymin>3294</ymin>
-            <xmax>5270</xmax>
+            <ymin>3293</ymin>
+            <xmax>5269</xmax>
             <ymax>3537</ymax>
         </bndbox>
     </object>
@@ -56,13 +57,13 @@
             <x2>3928</x2>
             <y2>3533</y2>
             <x3>3924</x3>
-            <y3>3313</y3>
+            <y3>3312</y3>
             <x4>970</x4>
             <y4>3363</y4>
         </polygon>
         <bndbox>
             <xmin>970</xmin>
-            <ymin>3313</ymin>
+            <ymin>3312</ymin>
             <xmax>3928</xmax>
             <ymax>3584</ymax>
         </bndbox>
@@ -85,7 +86,7 @@
             <y1>3588</y1>
             <x2>737</x2>
             <y2>3572</y2>
-            <x3>731</x3>
+            <x3>730</x3>
             <y3>3364</y3>
             <x4>181</x4>
             <y4>3380</y4>
@@ -114,15 +115,15 @@
             <x1>1971</x1>
             <y1>3310</y1>
             <x2>5225</x2>
-            <y2>3250</y2>
+            <y2>3249</y2>
             <x3>5221</x3>
-            <y3>3031</y3>
+            <y3>3030</y3>
             <x4>1967</x4>
             <y4>3091</y4>
         </polygon>
         <bndbox>
             <xmin>1967</xmin>
-            <ymin>3031</ymin>
+            <ymin>3030</ymin>
             <xmax>5225</xmax>
             <ymax>3310</ymax>
         </bndbox>
@@ -141,19 +142,19 @@
             <rot>0.017671</rot>
         </rotated_box>
         <polygon>
-            <x1>194</x1>
+            <x1>193</x1>
             <y1>3322</y1>
-            <x2>1961</x2>
-            <y2>3291</y2>
+            <x2>1960</x2>
+            <y2>3290</y2>
             <x3>1957</x3>
             <y3>3090</y3>
-            <x4>191</x4>
-            <y4>3121</y4>
+            <x4>190</x4>
+            <y4>3122</y4>
         </polygon>
         <bndbox>
-            <xmin>191</xmin>
+            <xmin>190</xmin>
             <ymin>3090</ymin>
-            <xmax>1961</xmax>
+            <xmax>1960</xmax>
             <ymax>3322</ymax>
         </bndbox>
     </object>
@@ -172,19 +173,19 @@
         </rotated_box>
         <polygon>
             <x1>3622</x1>
-            <y1>2933</y1>
-            <x2>5256</x2>
+            <y1>2932</y1>
+            <x2>5255</x2>
             <y2>2910</y2>
-            <x3>5253</x3>
+            <x3>5252</x3>
             <y3>2688</y3>
-            <x4>3618</x4>
-            <y4>2711</y4>
+            <x4>3619</x4>
+            <y4>2710</y4>
         </polygon>
         <bndbox>
-            <xmin>3618</xmin>
+            <xmin>3619</xmin>
             <ymin>2688</ymin>
-            <xmax>5256</xmax>
-            <ymax>2933</ymax>
+            <xmax>5255</xmax>
+            <ymax>2932</ymax>
         </bndbox>
     </object>
     <object>
@@ -203,17 +204,17 @@
         <polygon>
             <x1>215</x1>
             <y1>2975</y1>
-            <x2>3611</x2>
+            <x2>3610</x2>
             <y2>2931</y2>
-            <x3>3608</x3>
+            <x3>3607</x3>
             <y3>2707</y3>
-            <x4>213</x4>
+            <x4>212</x4>
             <y4>2751</y4>
         </polygon>
         <bndbox>
-            <xmin>213</xmin>
+            <xmin>212</xmin>
             <ymin>2707</ymin>
-            <xmax>3611</xmax>
+            <xmax>3610</xmax>
             <ymax>2975</ymax>
         </bndbox>
     </object>
@@ -238,7 +239,7 @@
             <x3>4928</x3>
             <y3>2442</y3>
             <x4>1505</x4>
-            <y4>2487</y4>
+            <y4>2486</y4>
         </polygon>
         <bndbox>
             <xmin>1505</xmin>
@@ -262,19 +263,19 @@
         </rotated_box>
         <polygon>
             <x1>248</x1>
-            <y1>2717</y1>
-            <x2>1501</x2>
-            <y2>2706</y2>
-            <x3>1499</x3>
+            <y1>2716</y1>
+            <x2>1500</x2>
+            <y2>2705</y2>
+            <x3>1498</x3>
             <y3>2486</y3>
             <x4>246</x4>
-            <y4>2498</y4>
+            <y4>2497</y4>
         </polygon>
         <bndbox>
             <xmin>246</xmin>
             <ymin>2486</ymin>
-            <xmax>1501</xmax>
-            <ymax>2717</ymax>
+            <xmax>1500</xmax>
+            <ymax>2716</ymax>
         </bndbox>
     </object>
     <object>
@@ -292,19 +293,19 @@
         </rotated_box>
         <polygon>
             <x1>2813</x1>
-            <y1>2329</y1>
-            <x2>5068</x2>
-            <y2>2291</y2>
-            <x3>5064</x3>
+            <y1>2328</y1>
+            <x2>5067</x2>
+            <y2>2290</y2>
+            <x3>5063</x3>
             <y3>2066</y3>
             <x4>2809</x4>
-            <y4>2105</y4>
+            <y4>2104</y4>
         </polygon>
         <bndbox>
             <xmin>2809</xmin>
             <ymin>2066</ymin>
-            <xmax>5068</xmax>
-            <ymax>2329</ymax>
+            <xmax>5067</xmax>
+            <ymax>2328</ymax>
         </bndbox>
     </object>
     <object>
@@ -322,19 +323,19 @@
         </rotated_box>
         <polygon>
             <x1>196</x1>
-            <y1>2346</y1>
+            <y1>2345</y1>
             <x2>2808</x2>
-            <y2>2328</y2>
-            <x3>2807</x3>
+            <y2>2327</y2>
+            <x3>2806</x3>
             <y3>2113</y3>
-            <x4>195</x4>
-            <y4>2132</y4>
+            <x4>194</x4>
+            <y4>2131</y4>
         </polygon>
         <bndbox>
-            <xmin>195</xmin>
+            <xmin>194</xmin>
             <ymin>2113</ymin>
             <xmax>2808</xmax>
-            <ymax>2346</ymax>
+            <ymax>2345</ymax>
         </bndbox>
     </object>
     <object>
@@ -369,13 +370,13 @@
             <x2>4138</x2>
             <y2>2044</y2>
             <x3>4136</x3>
-            <y3>1849</y3>
+            <y3>1848</y3>
             <x4>678</x4>
             <y4>1886</y4>
         </polygon>
         <bndbox>
             <xmin>678</xmin>
-            <ymin>1849</ymin>
+            <ymin>1848</ymin>
             <xmax>4138</xmax>
             <ymax>2082</ymax>
         </bndbox>
@@ -407,19 +408,19 @@
             <rot>0.009130</rot>
         </rotated_box>
         <polygon>
-            <x1>2007</x1>
+            <x1>2006</x1>
             <y1>1710</y1>
-            <x2>5074</x2>
+            <x2>5073</x2>
             <y2>1682</y2>
             <x3>5072</x3>
             <y3>1484</y3>
-            <x4>2006</x4>
+            <x4>2005</x4>
             <y4>1512</y4>
         </polygon>
         <bndbox>
-            <xmin>2006</xmin>
+            <xmin>2005</xmin>
             <ymin>1484</ymin>
-            <xmax>5074</xmax>
+            <xmax>5073</xmax>
             <ymax>1710</ymax>
         </bndbox>
     </object>
@@ -454,13 +455,13 @@
             <y1>1442</y1>
             <x2>4962</x2>
             <y2>1438</y2>
-            <x3>4962</x3>
+            <x3>4961</x3>
             <y3>1242</y3>
-            <x4>3589</x4>
+            <x4>3588</x4>
             <y4>1246</y4>
         </polygon>
         <bndbox>
-            <xmin>3589</xmin>
+            <xmin>3588</xmin>
             <ymin>1242</ymin>
             <xmax>4962</xmax>
             <ymax>1442</ymax>
@@ -506,20 +507,20 @@
             <rot>0.007363</rot>
         </rotated_box>
         <polygon>
-            <x1>2646</x1>
-            <y1>1103</y1>
-            <x2>5033</x2>
+            <x1>2645</x1>
+            <y1>1102</y1>
+            <x2>5032</x2>
             <y2>1085</y2>
             <x3>5031</x3>
             <y3>876</y3>
             <x4>2644</x4>
-            <y4>894</y4>
+            <y4>893</y4>
         </polygon>
         <bndbox>
             <xmin>2644</xmin>
             <ymin>876</ymin>
-            <xmax>5033</xmax>
-            <ymax>1103</ymax>
+            <xmax>5032</xmax>
+            <ymax>1102</ymax>
         </bndbox>
     </object>
     <object>

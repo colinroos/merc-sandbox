@@ -3,7 +3,6 @@ import xml.etree.ElementTree as ET
 import matplotlib as plt
 import numpy as np
 import cv2
-
 from util import findFiles as util
 
 randomState = 42
@@ -52,5 +51,5 @@ for p in xmlpaths:
     columns = ['HoleID', 'FromM', 'ToM', 'cx', 'cy', 'width', 'height', 'rot']
     df = pd.DataFrame(boxes, columns=columns)
 
-    df.to_csv('out/' + name + '_labels.csv')
+    df.to_csv('out/' + image_name[:-4] + '.csv')
     print(df.head())
