@@ -12,28 +12,65 @@ image_target = 'data/2017/images'
 annotes_paths = util.findfiles(annotes_target, '.csv')
 image_paths = util.findfiles(image_target, '.jpg')
 
+# Constants
+target_shape = (2304, 3456, 3)
+image_dims = (150, 150)
+pixel_per_m = 1.5 / 3450.0
+
 for idx, a in enumerate(annotes_paths):
-    # read annotations
+    # Read annotations
     df = pd.read_csv(a, index_col=0)
     print(df.head())
-    # read image
-    img = cv2.imread(image_paths[idx])
-    mbox_x = max(df.width)
-    mbox_y = 234
-    # mbox_y = max(df.height)
+
+    # Read image
+    img = cv2.imread(image_paths[idx], cv2.IMREAD_COLOR)
+    cv2.imshow('', img)
+
+    # Resize image if not correct dimensions
+    if img.shape != target_shape:
+        df.loc[:, ['cx', 'cy', 'width', 'height']] *= target_shape[0] / img.shape[0]
+        df[['cx', 'cy', 'width', 'height']] = df[['cx', 'cy', 'width', 'height']].astype('int64')
+        cv2.resize(img, (target_shape[0], target_shape[1]))
+        # cv2.imshow('', img)
+        # cv2.waitKey(0)
 
     for index, d in df.iterrows():
-        print(d.cx)
-        # get rotation matrix and transform image accordingly
+        # Get rotation matrix and transform image accordingly
         matrix = cv2.getRotationMatrix2D(center=(d.cx, d.cy), angle=-(d.rot * 180/np.pi), scale=1)
         image = cv2.warpAffine(src=img, M=matrix, dsize=(img.shape[1], img.shape[0]))
+        # cv2.imshow('', image)
+        # cv2.waitKey(0)
         x = int(d.cx - d.width/2) # extract left edge
         y = int(d.cy - d.height/2) # extract bottom edge
         image = image[y:(y+d.height), x:(x + d.width)]
-        padding = ((0, mbox_y - d.height), (0, mbox_x - d.width), (0, 0))
-        constantValues = ((0, 0), (0, 0), (0, 0))
-        image = np.pad(image, padding, constant_values=constantValues)
+        # cv2.imshow('', image)
+        # cv2.waitKey(0)
 
-        # write image to file
-        filename = 'out/test_images/' + d.HoleID + '_' + str(d.FromM) + '_' + str(d.ToM) + '.jpg'
-        cv2.imwrite(filename, image)
+        # Compute depth offset
+        if 'x' in d.ToM:
+            depth_offset = float(d.FromM)
+        elif 'x' in d.FromM:
+            depth_offset = float(d.ToM) - (d.width * pixel_per_m)
+        else:
+            depth_offset = float(d.FromM)
+
+        # Tile images
+        x_cut = 0
+        while x_cut < d.width:
+            if x_cut + image_dims[1] <= d.width:
+                tile = image[0:image_dims[0], x_cut:(x_cut + image_dims[1])]
+                padding = ((0, image_dims[0] - d.height), (0, 0), (0, 0))
+                constantValues = ((0, 0), (0, 0), (0, 0))
+                tile = np.pad(tile, padding, constant_values=constantValues)
+
+                depth = depth_offset + (x_cut * pixel_per_m)
+
+                print('{:.3f}'.format(depth))
+                # write image to file
+                filename = 'out/test_images/' + d.HoleID + '_{:.3f}.jpg'.format(depth)
+                cv2.imwrite(filename, tile)
+                cv2.putText(tile, '{:.3f}'.format(depth), (0, 20), fontFace=0, fontScale=0.5, color=(0, 200, 0))
+                cv2.imshow('', tile)
+                cv2.waitKey(0)
+
+            x_cut += image_dims[1]
