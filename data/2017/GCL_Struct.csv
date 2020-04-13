@@ -1,0 +1,932 @@
+Project,Hole,Depth_m,Thickness_m,Struct1,Struct1_Confidence,Struct1_Int,Struct1_Angle_TCA,Struct1_Dip,Struct1_Dip_Direction,Alpha,Beta,Gamma,Comments,Relog,Logger,Timestamp
+ARM,RELOG_EC-11-03,57.82,23.74,FLT,MOD,4,30,,,,,,"Possible graphitic fault zone, intermitent sections are mashed.",0,Andrienko,2017-08-07
+ARM,RELOG_EC-11-03,153,1,,,,,,,,,,Perlite texture.,0,Andrienko,2017-08-07
+ARM,RELOG_EC-11-03,211.8,0.2,BRX,HIGH,4,10,,,,,,"Quartz-filled healed breccia in graphitic mudstone zone, 0.5 % pyrite.",0,Shiroki,2017-08-09
+ARM,RELOG_EC-11-03,266,1.36,DYK,MOD,4,60,,,,,,"Upper contact 60TCA, lower contact 20TCA.   Equigranular, phaneritic, carbonate (after plagioclase?), and chlorite-biotite probable diabase dyke.",0,Shiroki,2017-08-09
+ARM,RELOG_EC-11-03,273.24,0.24,DYK,MOD,4,30,,,,,,"Equigranular phaneritic, carbonate (after plagioclase?), wispy brown carb-sericite alteration and probable biotite.",0,Shiroki,2017-08-09
+ARM,RELOG_EC-11-03,280,7.14,BRX,HIGH,4,20,,,,,,Mafic breccia with mudstone matrix.,0,Shiroki,2017-08-09
+ARM,RELOG_EC-11-03,293.3,0.9,DYK,HIGH,3,10,,,,,,"Probable diabase dyke - equigranular, phaneritic, probable biotite.  Strong medium grained cubic pyrite disseminated.",0,Shiroki,2017-08-09
+ARM,RELOG_EC-11-03,310.6,0.02,VN,HIGH,4,75,,,,,,White quartz-carb vein.,0,Shiroki,2017-08-09
+ARM,RELOG_EC-11-03,315.5,4,FRA,MOD,4,5,,,,,,Zone of badly broken core due to drilling and brittle to ductile deformation.,0,Shiroki,2017-08-09
+ARM,RELOG_EC-11-03,361.4,0.04,BDX,HIGH,4,20,,,,,,Cross-bedding between graded sandstone and mudstone younging down-hole.  See photo.,0,Shiroki,2017-08-09
+ARM,RELOG_EC-11-03,439.46,0.015,DYK,HIGH,3,20,,,,,,Tan aphanitic albitic dykelet with sharp contacts.,0,Shiroki,2017-08-10
+ARM,RELOG_EC-11-03,440,0.005,DYK,HIGH,3,20,,,,,,Tan small aphanitic albitic dykelets.,0,Shiroki,2017-08-10
+ARM,RELOG_EC-11-03,440.95,0.02,BUD,MOD,4,20,,,,,,Boudins of probable grey ultramafic.,0,Shiroki,2017-08-10
+ARM,RELOG_EC-11-03,441.67,0.25,VN,HIGH,4,20,,,,,,Piece of grey-green quartz-carb ultramafic with trace fuchsite and patchy chlorite.,0,Shiroki,2017-08-10
+ARM,RELOG_EC-11-03,448.05,33,DYK,MOD,4,30,,,,,,Grey granular probable diabas dyke.,0,Shiroki,2017-08-10
+ARM,RELOG_EC-11-03,455.44,0.7,DYK,MOD,4,30,,,,,,Probable diabase dyke or possible sandstone layer,0,Shiroki,2017-08-10
+ARM,RELOG_EC-11-05,57.75,0.5,FLT,MOD,4,40,,,,,,fractured core,0,Henderson,2017-08-15
+ARM,RELOG_GG-11-12,162.4584,2.1336,BRX,HIGH,4,30,,,,,,"Zone of interpreted healed fault breccia, clasts appear stretched at orientation of ~30 degrees tca.",0,Blackwell,2017-10-21
+GCL,KAD17-001,61.45,0.01,FLT,MOD,3,20,,,,,,Oxidized fracture coating. Undulating or anastomosing fracture surface.,0,Blackwell,2017-03-18
+GCL,KAD17-001,66,0.8,FLT,HIGH,4,20,,,,,,Oxidized fracture surface with chlorite infill. Wavy undulating surface.,0,Blackwell,2017-03-18
+GCL,KAD17-001,111.5,0.3,FLT,MOD,4,,,,,,,Caused drilling problems (hole conditioning for a couple of hours) and 30 cm of core loss. No sign of fautling in the core.,0,Blackwell,2017-03-20
+GCL,KAD17-001,123.45,0.01,FRA,HIGH,3,15,,,,,,"Oxidized fracture, near parallel to core axis.",0,Blackwell,2017-03-20
+GCL,KAD17-001,146.4,0.62,DYK,HIGH,3,50,,,,,,Sharp margins to an albitite dyke,0,Blackwell,2017-03-22
+GCL,KAD17-001,159.35,0.3,DYK,MOD,4,30,,,,,,Strongly silicified mafic dyke.,0,Blackwell,2017-03-22
+GCL,KAD17-001,167.67,0.33,FLT,MOD,3,15,,,,,,Shear texture and planar fracture surface at 168 has well developed slickenlines oblique to the fracture plane.,0,Blackwell,2017-03-21
+GCL,KAD17-001,178.51,1,DYK,HIGH,NA,50,,,,,,Possible mafic dyke with brecciated margins.,0,Blackwell,2017-03-21
+GCL,KAD17-001,183.66,1.4,DYK,MOD,3,35,,,,,,,0,Blackwell,2017-03-21
+GCL,KAD17-001,216.61,0.08,DYK,HIGH,3,40,,,,,,"Narrow, strongly siliceous, possible dyke, with elongate silica-filled  amygdales?",0,Blackwell,2017-03-21
+GCL,KAD17-001,220.2,0.45,DYK,MOD,3,30,,,,,,"Wavy contact of strongly chlorite altered and ""bleached"" unit. Possible mafic dyke?",0,Blackwell,2017-03-21
+GCL,KAD17-001,226.88,0.26,DYK,HIGH,4,40,,,,,,Highly silicified dyke with strong chlorite alteration on the margins.,0,Blackwell,2017-03-21
+GCL,KAD17-001,239.75,0.25,FLT,HIGH,4,60,,,,,,Sandy clay gouge-filled rubble zone.,0,Blackwell,2017-03-21
+GCL,KAD17-001,242.48,0.25,FLT,HIGH,4,50,,,,,,Sandy clay gouge-filled rubble zone,0,Blackwell,2017-03-22
+GCL,KAD17-002,13.7,0.05,FLT,HIGH,5,30,,,,,,fault goouge along plane in rubble zone,0,Stubley,2017-08-07
+GCL,KAD17-002,60.8,0.2,SHZ,HIGH,3,35,,,,,,,0,Stubley,2017-08-07
+GCL,KAD17-002,61.37,0.85,VN,HIGH,,20,,,,,,,0,Stubley,2017-08-07
+GCL,KAD17-002,87.15,3.95,VN,HIGH,,25,,,,,,,0,Stubley,2017-08-07
+GCL,KAD17-002,122.75,0.01,CNT,HIGH,,15,,,,,,upper contact of qtz vein,0,Unknown,2017-08-07
+GCL,KAD17-002,128.2,0.01,CNT,HIGH,,5,,,,,,"lower contact quartz vein, sheared",0,Unknown,2017-08-07
+GCL,KAD17-002,160.06,0.01,CNT,HIGH,,30,,,,,,sharp upper contact of dyke,0,Unknown,2017-08-07
+GCL,KAD17-002,256.78,0.01,CNT,HIGH,,45,,,,,,"Sharp, possibly chilled margin of dyke (upper contact)",0,Stubley,2017-08-07
+GCL,KAD17-003,15.5,0.1,DYK,HIGH,,45,,,,,,felsic dyke,0,Sherlock,2017-03-27
+GCL,KAD17-003,57,0.8,SHZ,MOD,4,40,,,,,,dom of higher starin with stronger fabric development,0,Sherlock,2017-03-28
+GCL,KAD17-003,78,0.25,FLT,HIGH,3,,,,,,,rubble zone,0,Sherlock,2017-03-28
+GCL,KAD17-003,90.8,0.5,FLT,LOW,2,,,,,,,rubbly zone with FeOx on fractures,0,Sherlock,2017-03-28
+GCL,KAD17-003,98.5,0.2,FLT,LOW,2,,,,,,,rubbly zone with FeOx on fractures,0,Sherlock,2017-08-07
+GCL,KAD17-004,30.2,4.8,FLT,MOD,3,,,,,,,Zone of broken core representing fault zone?  34.7-35.0 - Kaolin rich pug/clay zone representing discrete late stage structure?,0,Robinson,2017-03-30
+GCL,KAD17-004,41.2,1.65,FLT,MOD,3,,,,,,,Intensely broken zone.  <20% recovery through zone.  Fault or void from historic working?,0,Robinson,2017-03-30
+GCL,KAD17-004,50.33,1.55,SHZ,MOD,5,45,,,,,,"Weathered, intensely foliated, friable zone within UM.  Contains angular boudins of qtz-cb veining adn wallrock within friable foliated matrix. Base of interval (52.6-52.8) comprises white kaolin rich clay pug zone.",0,Robinson,2017-03-30
+GCL,KAD17-004,157.25,5.75,SHZ,MOD,3,,,,,,,Moderately deformed rock fabric associated with pervasive silicification.  Represent early stage fluid conduit?,0,Robinson,2017-04-03
+GCL,KAD17-004,261.15,0.3,FLT,HIGH,4,20,,,,,,Zone of intense brecciation.  Clay gouge.  Corresponds with contact between SED and UM.  Within zone of intense qtz-cb veining and high deformation zone.,0,Robinson,2017-04-04
+GCL,KAD17-004,286.5,3.5,FRA,MOD,2,0,,,,,,Fracture with chlorite/clay zone running along core axis.  Associated with  rubble zone (287.6-288),0,Robinson,2017-04-05
+GCL,KAD17-004,307,1.5,FRA,MOD,2,5,,,,,,Clay filled fracture zone running subparallel to core axis.,0,Robinson,2017-04-05
+GCL,KAD17-005A,90,0.2,FLT,LOW,,,,,,,,rubble,0,Sherlock,2017-04-08
+GCL,KAD17-005A,96,4,FLT,LOW,,,,,,,,rubbly zone centred over 96m,0,Sherlock,2017-04-08
+GCL,KAD17-005A,108,5,FLT,LOW,,,,,,,,rubbly zone,0,Sherlock,2017-04-08
+GCL,KAD17-005A,112.5,1,FLT,LOW,,,,,,,,rubbly zone,0,Sherlock,2017-04-08
+GCL,KAD17-005A,122,2,FLT,LOW,,,,,,,,rubbly zone,0,Sherlock,2017-04-08
+GCL,KAD17-005A,132,4,FLT,HIGH,4,,,,,,,"129-133.6, strong rubbly zone to clay",0,Sherlock,2017-04-09
+GCL,KAD17-006,46,0.55,FLT,HIGH,4,45,,,,,,"0.5 m widezone of soft, friable core.  Clay gouge zone 46.30-46.55m",0,Robinson,2017-04-10
+GCL,KAD17-006,67.6,0.2,FRA,LOW,3,,,,,,,"Fractured, broken core.  Occurs within a 1m wide zone of shearing from 67-68.  Qtz veins appear boudinaged, transposed, possibly folded ?",0,Robinson,2017-04-10
+GCL,KAD17-006,71,5,FLT,HIGH,4,,,,,,,"Zone of highly deformed rock, brecciated, boudinaged qtz veining, common broken core.  Gouge zones.",0,Robinson,2017-04-11
+GCL,KAD17-006,144.3,0.1,FLT,HIGH,4,30,,,,,,clay fault gouge within broken core,0,Robinson,2017-04-12
+GCL,KAD17-006,203.2,0.1,FLT,MOD,3,,,,,,,"Clay fault gouge, highly fragmented core.  Structural contact betweenn Talc-chlorite UM and fu-cb altered UM",0,Robinson,2017-04-12
+GCL,KAD17-007,22.15,0.3,FLT,HIGH,4,30,,,,,,"Sandy, rubble zone at start of fault breccia interval",0,Blackwell,2017-04-15
+GCL,KAD17-007,59.15,0.05,FLT,HIGH,4,50,,,,,,Sandy clay gouge zone,0,Blackwell,2017-04-15
+GCL,KAD17-007,61.26,0.03,FLT,HIGH,3,50,,,,,,Sandy clay gouge zone,0,Blackwell,2017-04-15
+GCL,KAD17-007,63.7,0.4,FLT,HIGH,4,40,,,,,,Sandy clay gouge filled fault,0,Blackwell,2017-08-07
+GCL,KAD17-007,166.12,0.02,VN,HIGH,4,30,,,,,,"Quartz ""healed"" fault or vein breccia with fragments of fuchsite altered UM and quartz veins (<2mm) in a brown matrix.",0,Blackwell,2017-04-16
+GCL,KAD17-007,193.07,0.39,DYK,HIGH,4,40,,,,,,Chlorite altered dyke with sharp margins and a weak or poorly developed foliation.,0,Blackwell,2017-04-16
+GCL,KAD17-007,203.9,0.1,FLT,LOW,3,40,,,,,,Zone of disintegrating and strong talc - possble weak structure?,0,Blackwell,2017-04-16
+GCL,KAD17-007,224.53,0.57,DYK,HIGH,4,40,,,,,,Foliated folded sharp margins.,0,Blackwell,2017-04-16
+GCL,KAD17-007,225.3,1.3,DYK,HIGH,4,30,,,,,,foliated and folded-brecciated margins. Slight sericite alteration of dyke.,0,Blackwell,2017-04-16
+GCL,KAD17-007,226.37,0.25,DYK,MOD,4,20,,,,,,,0,Blackwell,2017-04-17
+GCL,KAD17-007,228.85,0.4,DYK,HIGH,4,20,,,,,,,0,Blackwell,2017-04-17
+GCL,KAD17-007,257,0.2,FLT,HIGH,4,50,,,,,,Sandy clay gouge zone - may be the zone of ~ 20-30 cm of core loss?,0,Blackwell,2017-04-17
+GCL,KAD17-007,266.2,0.1,VN,HIGH,3,20,,,,,,Quartz vein breccia,0,Blackwell,2017-04-17
+GCL,KAD17-007,272.36,0.08,VN,MOD,3,40,,,,,,Quartz vein breccia with diffuse margins.,0,Blackwell,2017-04-17
+GCL,KAD17-008,30.25,4,FLT,MOD,4,60,,,,,,Zone of  angular rubble with strong oxidation on fracture surfaces. Angle defined by tectonic fabric in larger pieces.,0,Stubley,2017-04-18
+GCL,KAD17-008,60,1.06,DYK,MOD,NA,60,,,,,,"Possible dyke, apparent sharp top and bottom contacts, but deformation/shearing/veins make distinction difficult. May be a textural change within massive UM unit",0,Stubley,2017-04-19
+GCL,KAD17-008,83.9,0.1,FLT,MOD,NA,45,,,,,,Healed fault brx at top of rubble zone,0,Stubley,2017-08-07
+GCL,KAD17-008,178.95,0.2,DYK,HIGH,,30,,,,,,Mineralized albite dyke,0,Unknown,2017-04-20
+GCL,KAD17-008,180.44,0.17,DYK,HIGH,,30,,,,,,Mineralized albite dyke,0,Unknown,2017-08-07
+GCL,KAD17-008,238.96,0.16,DYK,HIGH,NA,40,,,,,,mafic dyke,0,Stubley,2017-04-21
+GCL,KAD17-009,12.34,0.25,FLT,MOD,4,65,,,,,,Zone of intense oxidation - possible fault,0,Blackwell,2017-04-22
+GCL,KAD17-009,80.72,0.1,FLT,LOW,3,60,,,,,,highly broken zone of graphitic clay infill and calcite veins - possible fault.,0,Blackwell,2017-04-23
+GCL,KAD17-009,126.5,2,FLT,MOD,4,30,,,,,,,0,Blackwell,2017-04-23
+GCL,KAD17-009,138.5,0.1,FLT,LOW,2,5,,,,,,"Fracture surface with a graphitic slickenslided surfaces, wavy fracture surface near parallel to core axis.",0,Blackwell,2017-04-23
+GCL,KAD17-009,140,0.1,FLT,MOD,3,20,,,,,,Irregular wavy fracture surface with a slickensided graphitic fracture surface and a zone of broken core to approximately 141.0,0,Blackwell,2017-04-23
+GCL,KAD17-009,185.24,0.36,VN,MOD,4,70,,,,,,A single large smokey quartz-carb vein from 185.24 to 185.58m,0,Blackwell,2017-04-25
+GCL,KAD17-009,214.17,0.3,FLT,MOD,3,50,,,,,,,0,Blackwell,2017-04-25
+GCL,KAD17-009,216.9,1,FLT,MOD,3,50,,,,,,Possible fault - 10 cm wide distintegrated zone of sandy talcose infill. Followed by a zone of angular rubble,0,Blackwell,2017-04-25
+GCL,KAD17-009,234,0.5,FLT,MOD,3,40,,,,,,,0,Blackwell,2017-04-26
+GCL,KAD17-009,247.75,0.3,FLT,LOW,3,40,,,,,,,0,Blackwell,2017-04-26
+GCL,KAD17-009,273,0.4,FLT,LOW,2,60,,,,,,,0,Blackwell,2017-04-26
+GCL,KAD17-009,274.5,0.2,FLT,LOW,3,60,,,,,,Zone of angular rubble and distingetrating core,0,Blackwell,2017-04-26
+GCL,KAD17-009,281.6,0.4,FLT,LOW,3,60,,,,,,Zone of strong foliation / shear fabric and intense chlorite-calcite-talc alteraiton.,0,Blackwell,2017-04-26
+GCL,KAD17-009,283,0.2,FLT,LOW,3,40,,,,,,Zone of shear fabric and strong calcite-talc alteration,0,Blackwell,2017-04-26
+GCL,KAD17-009,284,0.6,FLT,LOW,3,50,,,,,,Zone of distintegrated core and flt bx texture,0,Blackwell,2017-04-26
+GCL,KAD17-009,288,0.2,FLT,LOW,3,50,,,,,,,0,Blackwell,2017-04-26
+GCL,KAD17-010,13.4,10,FLT,MOD,0,45,,,,,,Qtz healed fault,0,Stubley,2017-04-23
+GCL,KAD17-010,77.4,0.5,FLT,HIGH,,40,,,,,,Healed fault breccia,0,Stubley,2017-04-24
+GCL,KAD17-010,165.4,4,FLT,HIGH,4,40,,,,,,,0,Stubley,2017-04-25
+GCL,KAD17-010,246,0.82,DYK,HIGH,,40,,,,,,,0,Unknown,2017-04-26
+GCL,KAD17-010,251.92,6,DYK,HIGH,,25,,,,,,,0,Unknown,2017-04-26
+GCL,KAD17-010,341.65,0.35,FLT,HIGH,4,45,,,,,,,0,Unknown,2017-04-27
+GCL,KAD17-010,374,1,SHZ,HIGH,4,60,,,,,,,0,Stubley,2017-04-28
+GCL,KAD17-010,375,1.2,FLT,HIGH,5,50,,,,,,,0,Stubley,2017-04-28
+GCL,KAD17-010,380.53,0.61,SHZ,HIGH,4,40,,,,,,Breccia composed of quartz vein clasts,0,Stubley,2017-04-28
+GCL,KAD17-010,393,0.3,BED,MOD,,25,,,,,,,0,Unknown,2017-04-29
+GCL,KAD17-010,395.8,1.06,DYK,HIGH,5,15,,,,,,,0,Unknown,2017-04-29
+GCL,KAD17-010,411.37,0.1,BED,HIGH,,45,,,,,,,0,Unknown,2017-04-29
+GCL,KAD17-011,119.5,0.55,DYK,MOD,3,30,,,,,,Sharp chilled margins on a light grey-tan dyke with <1mm flecks of chlorite.,0,Blackwell,2017-04-28
+GCL,KAD17-011,166.93,0.1,FLT,HIGH,4,50,,,,,,Breccia with diffuse fragments (<1cm) of quartz-carb vein,0,Blackwell,2017-04-29
+GCL,KAD17-011,172.47,0.25,FLT,HIGH,4,50,,,,,,"Breccia of angular quartz-carb vein fragments and a sooty black matrix, interpretation = fault breccia",0,Blackwell,2017-04-29
+GCL,KAD17-011,198,3,FLT,LOW,3,25,,,,,,Shear fabric at 200.9m and several meters of core loss; drillers had a lot of drilling issues through this domain with mislatchs of the core tube.,0,Blackwell,2017-08-07
+GCL,KAD17-011,255,1.28,FLT,HIGH,5,30,,,,,,,0,Blackwell,2017-05-01
+GCL,KAD17-011,268.7,0.56,,,,,,,,,,,0,Blackwell,2017-05-02
+GCL,KAD17-011,306.65,0.15,FLT,HIGH,4,50,,,,,,Dark grey black fault breccia.,0,Blackwell,2017-05-02
+GCL,KAD17-011,366.6,0.2,FLT,HIGH,3,10,,,,,,,0,Blackwell,2017-08-07
+GCL,KAD17-011,385.87,0.12,DYK,HIGH,NA,50,,,,,,,0,Blackwell,2017-05-04
+GCL,KAD17-012,84.9,0.2,FLT,HIGH,5,60,,,,,,,0,Stubley,2017-04-30
+GCL,KAD17-012,86.3,0.2,FLM,HIGH,4,,,,,,,,0,Stubley,2017-04-30
+GCL,KAD17-012,87,0.15,FLT,HIGH,3,65,,,,,,,0,Stubley,2017-04-30
+GCL,KAD17-012,97.8,0.01,FAX,MOD,,90,,,,,,,0,Stubley,2017-04-30
+GCL,KAD17-012,97.88,0.01,FAX,HIGH,,75,,,,,,,0,Stubley,2017-04-30
+GCL,KAD17-012,160.47,1,FLT,HIGH,4,70,,,,,,,0,Stubley,2017-05-03
+GCL,KAD17-012,164.3,0.7,FLT,HIGH,4,50,,,,,,,0,Stubley,2017-05-03
+GCL,KAD17-012,246,0.74,DYK,HIGH,,30,,,,,,,0,Stubley,2017-05-04
+GCL,KAD17-012,258,0.42,DYK,HIGH,,50,,,,,,,0,Stubley,2017-08-07
+GCL,KAD17-012,267.8,1.2,FRA,HIGH,4,,,,,,,,0,Stubley,2017-05-04
+GCL,KAD17-012,285,2,DYK,LOW,,40,,,,,,"strained, brecciated albite dyke",0,Stubley,2017-05-05
+GCL,KAD17-012,289.2,0.4,DYK,HIGH,,35,,,,,,,0,Stubley,2017-05-05
+GCL,KAD17-012,300.15,0.6,DYK,HIGH,,40,,,,,,,0,Stubley,2017-05-05
+GCL,KAD17-012,311.35,1,DYK,HIGH,,40,,,,,,boudinaged albite dyke,0,Stubley,2017-05-05
+GCL,KAD17-012,315.8,0.4,DYK,HIGH,,40,,,,,,albite dyke,0,Stubley,2017-05-05
+GCL,KAD17-012,318,0.6,DYK,HIGH,,40,,,,,,albite dyke,0,Stubley,2017-05-05
+GCL,KAD17-012,337,1,DYK,HIGH,,30,,,,,,,0,Stubley,2017-05-06
+GCL,KAD17-012,345.5,2.37,DYK,HIGH,,45,,,,,,,0,Stubley,2017-05-06
+GCL,KAD17-012,367.35,0.01,FAX,MOD,,80,,,,,,,0,Stubley,2017-05-06
+GCL,KAD17-012,381.8,0.4,BED,HIGH,,45,,,,,,,0,Stubley,2017-08-07
+GCL,KAD17-013,12.95,0.39,DYK,HIGH,NA,50,,,,,,Fine-grained basaltic dyke with strong disseminated pyrite and possible arsenopyrite.,0,Blackwell,2017-05-05
+GCL,KAD17-013,13.79,1.66,DYK,HIGH,NA,50,,,,,,Basaltic dyke with strong disseminated pyrite and possible arsenopyrite.,0,Blackwell,2017-05-05
+GCL,KAD17-013,36.95,2.83,VN,HIGH,NA,40,,,,,,Zone of 50-20 cm wide chunky white quartz-carbonate-calcite veins from 36.95 to 39.78m,0,Blackwell,2017-05-06
+GCL,KAD17-013,53.77,0.1,FLT,MOD,4,80,,,,,,Sandy clay gravel zone,0,Blackwell,2017-05-06
+GCL,KAD17-013,54.17,0.2,FLT,MOD,3,75,,,,,,Sandy clay gravel zone,0,Blackwell,2017-05-06
+GCL,KAD17-013,55.6,0.1,FLT,MOD,3,70,,,,,,Sandy clay gravel infill,0,Blackwell,2017-05-06
+GCL,KAD17-013,56.26,0.3,FLT,MOD,3,55,,,,,,Sandy clay infill along fracture planes,0,Blackwell,2017-05-06
+GCL,KAD17-013,60.6,0.2,VN,HIGH,5,50,,,,,,Smokey broken quartz vein,0,Blackwell,2017-05-06
+GCL,KAD17-013,74.04,0.3,FLT,MOD,5,40,,,,,,Zone of intense graphite and broken smokey quartz veins,0,Blackwell,2017-05-06
+GCL,KAD17-013,184.3,0.6,VN,HIGH,5,40,,,,,,,0,Blackwell,2017-05-08
+GCL,KAD17-013,194.5,1,VN,HIGH,4,30,,,,,,Zone of 1-5cm wide quartz veins in a stockwork,0,Blackwell,2017-05-08
+GCL,KAD17-013,270.5,0.1,FLT,HIGH,3,50,,,,,,"Fault at 270.5, 10cm wide: disintegrated gougey core; zone from 260-270.5m, is overprinted by a weak or shear breccia texture.",0,Blackwell,2017-05-09
+GCL,KAD17-014,12.12,0.03,FLT,HIGH,5,30,,,,,,,0,Stubley,2017-05-07
+GCL,KAD17-014,23.5,5.35,FRA,MOD,4,,,,,,,Zone of fractured/broken/blocky core,0,Robinson,2017-05-08
+GCL,KAD17-014,38.59,0.01,CNT,HIGH,4,15,,,,,,,0,Robinson,2017-05-08
+GCL,KAD17-014,78,0.13,FLT,LOW,3,,,,,,,Broken/blocky core zone - possibly reflects fault zone??,0,Robinson,2017-08-07
+GCL,KAD17-014,135,2,FLT,HIGH,4,,,,,,,broken core and fine grained clayey fault gouge.,0,Robinson,2017-05-09
+GCL,KAD17-014,137.4,0.2,FLT,MOD,4,,,,,,,"Broken core, minor gouge",0,Robinson,2017-05-09
+GCL,KAD17-014,138,1.2,FLT,HIGH,4,,,,,,,Zone of broken core and fault gouge,0,Robinson,2017-05-09
+GCL,KAD17-014,139.8,0.5,FLT,MOD,4,,,,,,,Broken core +/- fault gouge,0,Robinson,2017-05-09
+GCL,KAD17-014,140,1.5,FLT,LOW,4,,,,,,,a number of zones of broken core,0,Robinson,2017-05-09
+GCL,KAD17-014,143.64,0.36,FLT,MOD,4,,,,,,,"Broken core, fault gouge.",0,Robinson,2017-05-09
+GCL,KAD17-014,149.9,1,VN,HIGH,5,30,,,,,,"~ 1m wide, white, milky qz vein with common wispy slithers of fuchsitic wallrock and dissem py",0,Robinson,2017-08-07
+GCL,KAD17-014,152.4,0.2,FRA,HIGH,4,,,,,,,healed fracture zone with vuggy qtz+py stringer vein.,0,Robinson,2017-05-09
+GCL,KAD17-014,154.39,3,FAX,LOW,3,,,,,,,"Highly variable S1 foliation. Some evidence of a fine, weak S2 fabric which distorts/transposes S1.",0,Robinson,2017-05-09
+GCL,KAD17-014A,60.8,0.35,FLT,HIGH,4,,,,,,,"Broken, friable, chlorite rich late stage fault",0,Robinson,2017-05-12
+GCL,KAD17-014A,64.22,0.01,CNT,HIGH,4,15,,,,,,contact between mafic rock and annealed fault breccia.,0,Robinson,2017-05-12
+GCL,KAD17-014A,68.12,0.42,FLT,MOD,3,45,,,,,,"Graphitic zone, broken, fragmented core",0,Robinson,2017-05-12
+GCL,KAD17-014A,76.3,0.2,FLT,LOW,4,,,,,,,"Possible fault zone.  Friable, fractured core",0,Robinson,2017-05-12
+GCL,KAD17-014A,115.6,0.2,FLT,MOD,4,,,,,,,Broken core,0,Robinson,2017-05-12
+GCL,KAD17-014A,147.5,0.5,FLT,LOW,3,,,,,,,Zone of broken core.  Possible late fault/movement zone.,0,Robinson,2017-08-07
+GCL,KAD17-014A,152,2,FLT,LOW,3,,,,,,,"Fractured, blocky core. Late stage fault?",0,Robinson,2017-05-14
+GCL,KAD17-014A,159.4,0.05,FLT,LOW,3,,,,,,,Clayey gouge zone.,0,Robinson,2017-05-14
+GCL,KAD17-014A,159.98,0.05,FLT,MOD,3,,,,,,,"5 cm wide, clayey fault gouge",0,Robinson,2017-05-14
+GCL,KAD17-014A,163,0.1,FLT,MOD,4,,,,,,,"Broken core, sandy clay.  Late stage fault?",0,Robinson,2017-05-14
+GCL,KAD17-014A,184.9,0.4,FRA,MOD,3,45,,,,,,Fractures with moderate oxidation.  Fault zone or clast induced fractures?,0,Robinson,2017-05-15
+GCL,KAD17-015,21.4,0.01,CNT,HIGH,0,50,,,,,,,0,Blackwell,2017-05-11
+GCL,KAD17-015,100.88,0.65,VN,HIGH,5,50,,,,,,,0,Blackwell,2017-05-12
+GCL,KAD17-015,119.4,0.3,VN,HIGH,5,30,,,,,,,0,Blackwell,2017-05-12
+GCL,KAD17-015,131.18,0.2,FLT,MOD,3,40,,,,,,"20 cm wide zone of ""healed"" and slicified (very subtle) breccia.",0,Blackwell,2017-05-12
+GCL,KAD17-015,190.6,0.2,FLT,HIGH,4,40,,,,,,Sharp planar upper contact with sandy clay gouge,0,Blackwell,2017-05-13
+GCL,KAD17-016,34.45,0.7,VN,HIGH,5,30,,,,,,Qtz-carb-calcite veins with large infill crystal growth of a pink carbonate (rhodochrosite?).,0,Blackwell,2017-05-15
+GCL,KAD17-016,35,1.3,FLT,MOD,3,,,,,,,Zone of strongly graphitic broken rubble and core loss,0,Blackwell,2017-05-15
+GCL,KAD17-016,214,1,CNT,HIGH,3,50,,,,,,planar fabric developed at contact between FU alteration and the talc-chl-cc,0,Sherlock,2017-08-07
+GCL,KAD17-017,67.33,1.87,FLT,HIGH,4,,,,,,,Zone if highly fragmented core.  Brittle fault zone overprinting earlier fault breccia.,0,Robinson,2017-05-17
+GCL,KAD17-017,152.5,0.4,FLT,HIGH,5,,,,,,,40cm graphitic fault gouge zone.  Cannot determine orientation.  Core broken.,0,Robinson,2017-05-17
+GCL,KAD17-017,155,2,FLT,LOW,3,,,,,,,"Fragmented, fissile core. May represent late stage fault zone.   Graphite is fissile.",0,Robinson,2017-05-17
+GCL,KAD17-017,203.6,0.4,FRA,LOW,2,,,,,,,Broken core.  May represent brittle fault.,0,Robinson,2017-05-18
+GCL,KAD17-017,213,2.2,FRA,LOW,1,,,,,,,Broken  core. May represent brittle fault.,0,Robinson,2017-05-18
+GCL,KAD17-017,482.78,0.52,FLT,LOW,4,10,,,,,,Rubble fault zone (approx 10 degrees to core axis).,0,Robinson,2017-05-24
+GCL,KAD17-019,17.3,0.1,FLT,HIGH,5,,,,,,,Graphitic fault gouge.  Clayey.  Moderate oxidation.  Within larger ductile shear zone,0,Robinson,2017-05-27
+GCL,KAD17-019,82.45,0.55,FLT,MOD,5,,,,,,,"Broken, fragmented core.  Late brittle fault.",0,Robinson,2017-05-28
+GCL,KAD17-019,108,0.5,FLT,MOD,4,,,,,,,"Zone of broken, rubble core.  Late brittle fault zone",0,Robinson,2017-05-28
+GCL,KAD17-019,309.5,0.32,FLT,MOD,5,,,,,,,Cataclastic texture,0,Robinson,2017-05-30
+GCL,KAD17-020,51,0.5,FLT,LOW,4,,,,,,,rubble zone,0,Sherlock,2017-05-28
+GCL,KAD17-020,52.5,1,FLT,LOW,4,,,,,,,rubble zone,0,Sherlock,2017-05-28
+GCL,KAD17-020,148,6.25,FLT,HIGH,3,30,,,,,,,0,Stubley,2017-05-31
+GCL,KAD17-020,155.95,0.01,FAX,HIGH,4,15,,,,,,,0,Stubley,2017-05-31
+GCL,KAD17-021,12.43,0.17,FRA,MOD,5,,,,,,,Broken core? Blast fracture or brittle fault?,0,Robinson,2017-05-31
+GCL,KAD17-021,75.4,0.2,FLT,HIGH,4,,,,,,,Rubble zone at lower contact of UM,0,Robinson,2017-05-31
+GCL,KAD17-021,93.52,3.9,FLT,LOW,5,,,,,,,,0,Robinson,2017-05-31
+GCL,KAD17-021,227.65,0.1,FLT,MOD,4,50,,,,,,"Blocky, broken core, clayey gouge",0,Robinson,2017-06-02
+GCL,KAD17-021,242,1.74,FLT,MOD,4,,,,,,,Clayey gouge zone.  1m core loss.,0,Robinson,2017-06-02
+GCL,KAD17-022,243.2,0.01,BED,HIGH,,35,,,,,,,0,Unknown,2017-06-04
+GCL,KAD17-022,243.3,0.01,FAX,HIGH,3,40,,,,,,,0,Unknown,2017-06-04
+GCL,KAD17-022,243.5,0.01,BED,HIGH,,0,,,,,,,0,Unknown,2017-06-04
+GCL,KAD17-022,247.6,0.3,FLT,HIGH,5,35,,,,,,,0,Unknown,2017-08-07
+GCL,KAD17-022,250.2,0.1,FLT,HIGH,5,40,,,,,,,0,Unknown,2017-08-07
+GCL,KAD17-022,288,2,FLT,HIGH,4,40,,,,,,,0,Unknown,2017-08-07
+GCL,KAD17-022,301,0.5,FLT,HIGH,4,40,,,,,,,0,Unknown,2017-08-07
+GCL,KAD17-024,39.99,2.2,FLT,HIGH,3,10,,,,,,"Fault from 39.88 to 42.08 with an oxidized fracture parallel to core axis, minor sandy clay infill and faint slickenlines",0,Blackwell,2017-06-04
+GCL,KAD17-024,51.8,1.43,DYK,HIGH,4,60,,,,,,brecciated albite dyke domain,0,Blackwell,2017-06-04
+GCL,KAD17-024,77.95,0.35,DYK,HIGH,4,80,,,,,,Very siliceous albite-quartz dyke/vein with abundant disseminated pyrite.,0,Blackwell,2017-06-04
+GCL,KAD17-024,180.97,0.26,VN,HIGH,4,30,,,,,,QC-cemented  breccia appears to cross-cut diffuse QC stockwork veins,0,Blackwell,2017-06-06
+GCL,KAD17-025,73.58,7.42,FLT,HIGH,5,60,,,,,,,0,Unknown,2017-06-06
+GCL,KAD17-025,230.5,0.01,BED,HIGH,,60,,,,,,,0,Stubley,2017-06-07
+GCL,KAD17-025,386.9,0.01,BED,HIGH,,70,,,,,,,0,Stubley,2017-06-09
+GCL,KAD17-026,16.59,4.06,FLT,HIGH,4,40,,,,,,,0,Blackwell,2017-06-07
+GCL,KAD17-026,33,1.65,VN,HIGH,4,55,,,,,,Quartz-carbonate (brownish) flooded/vein zone from 33 to 34.65m.,0,Blackwell,2017-06-07
+GCL,KAD17-026,116.73,0.77,VN,HIGH,4,40,,,,,,Irregular quartz +- tourmaline cemented breccia with possible quartz-vein fragments; cross-cuts QC vein stockwork; weak disseminated pyrite,0,Blackwell,2017-06-08
+GCL,KAD17-026,221.1,0.4,FLT,HIGH,4,50,,,,,,Upper contact is a breccia; quartz-infill and angular veined fragments; interpretation = fault breccia.,0,Blackwell,2017-06-10
+GCL,KAD17-027,17.4,0.25,DYK,HIGH,,50,,,,,,,0,Stubley,2017-06-10
+GCL,KAD17-027,35.26,0.15,DYK,HIGH,,50,,,,,,,0,Stubley,2017-08-07
+GCL,KAD17-027,35.7,0.3,DYK,HIGH,,70,,,,,,,0,Stubley,2017-06-10
+GCL,KAD17-027,43.52,0.2,DYK,HIGH,,45,,,,,,,0,Stubley,2017-06-10
+GCL,KAD17-027,54.16,0.23,DYK,MOD,,80,,,,,,,0,Stubley,2017-06-10
+GCL,KAD17-027,67.4,0.15,DYK,HIGH,,60,,,,,,,0,Stubley,2017-06-11
+GCL,KAD17-028,20,3.7,FLT,MOD,4,40,,,,,,"Contorted and folded beds from ~20-22m. 	22-22.40m: massive quartz-carbonate vein. 	22.52-23.70m: very broken and fragmented rock; possible fault zone.",0,Blackwell,2017-06-11
+GCL,KAD17-028,60.5,0.3,DYK,HIGH,4,50,,,,,,,0,Blackwell,2017-06-11
+GCL,KAD17-028,60.68,0.32,DYK,HIGH,4,50,,,,,,,0,Blackwell,2017-06-11
+GCL,KAD17-028,177.71,0.81,FLT,HIGH,4,50,,,,,,Silicified fault breccia from 178.39 to 179.2m.,0,Blackwell,2017-06-13
+GCL,KAD17-028,190.6,0.4,FLT,HIGH,4,40,,,,,,,0,Blackwell,2017-06-13
+GCL,KAD17-028,233.67,0.4,FLT,HIGH,4,50,,,,,,,0,Blackwell,2017-06-14
+GCL,KAD17-029,25.98,0.89,FLT,MOD,4,60,,,,,,25.98-26.87m: broken core with a 15cm wide chunky quartz-carboante vein; possible fault zone.,0,Blackwell,2017-06-15
+GCL,KAD17-029,66.24,0.88,DYK,HIGH,4,80,,,,,,Dark grey-black aphanitic dyke with disseminated pyrite,0,Blackwell,2017-06-15
+GCL,KAD17-029,73.34,0.13,VN,HIGH,4,60,,,,,,Pinkish white quartz vein or QFP dyke?,0,Blackwell,2017-06-15
+GCL,KAD17-029,74.3,0.25,VN,HIGH,4,70,,,,,,Pinkish white quartz vein or QFP dyke?,0,Blackwell,2017-06-15
+GCL,KAD17-029,81.35,0.48,DYK,HIGH,4,70,,,,,,,0,Blackwell,2017-06-15
+GCL,KAD17-029,82.53,0.23,DYK,HIGH,4,70,,,,,,,0,Blackwell,2017-06-15
+GCL,KAD17-029,306.27,0.1,FLT,HIGH,4,80,,,,,,Graphitic gouge,0,Blackwell,2017-06-19
+GCL,KAD17-029,309.9,0.25,FLT,MOD,3,,,,,,,Zone of angular gravel with sandy coating on fracture surfaces; possible fault.,0,Blackwell,2017-06-19
+GCL,KAD17-029,312.57,0.4,FLT,MOD,3,,,,,,,,0,Blackwell,2017-06-19
+GCL,KAD17-030,114.75,0.22,DYK,HIGH,,50,,,,,,,0,Stubley,2017-06-17
+GCL,KAD17-030,118.67,0.21,DYK,HIGH,,35,,,,,,,0,Stubley,2017-06-17
+GCL,KAD17-030,148.5,0.01,BED,HIGH,,45,,,,,,,0,Stubley,2017-06-17
+GCL,KAD17-030,182.3,0.2,FLT,HIGH,3,50,,,,,,,0,Stubley,2017-06-18
+GCL,KAD17-030,184.6,0.1,FLT,HIGH,5,50,,,,,,,0,Stubley,2017-06-18
+GCL,KAD17-030,191.05,0.15,FLT,HIGH,5,40,,,,,,,0,Stubley,2017-06-18
+GCL,KAD17-030,226.4,2,FLT,HIGH,4,30,,,,,,,0,Stubley,2017-06-18
+GCL,KAD17-030,306.67,0.1,BED,HIGH,,80,,,,,,,0,Stubley,2017-06-19
+GCL,KAD17-030,314.5,1,BED,MOD,,50,,,,,,,0,Stubley,2017-06-19
+GCL,KAD17-030,366.2,0.05,BED,HIGH,,60,,,,,,,0,Stubley,2017-06-20
+GCL,KAD17-031,26.45,0.5,VN,HIGH,4,60,,,,,,Large white-pinkish colloform/cockade textured quartz-carbonate vein from 26.45 to 27.00m.,0,Blackwell,2017-06-21
+GCL,KAD17-031,57.42,0.65,DYK,HIGH,4,60,,,,,,,0,Blackwell,2017-06-22
+GCL,KAD17-031,104.78,0.7,DYK,HIGH,4,40,,,,,,,0,Blackwell,2017-06-22
+GCL,KAD17-031,110.15,0.85,DYK,HIGH,4,50,,,,,,,0,Blackwell,2017-06-22
+GCL,KAD17-031,126.46,4.75,FLT,HIGH,4,60,,,,,,,0,Blackwell,2017-06-23
+GCL,KAD17-031,188.32,0.17,FLT,HIGH,4,50,,,,,,Fault breccia zone,0,Blackwell,2017-06-23
+GCL,KAD17-031,192.6,0.7,FLT,MOD,3,60,,,,,,Sandy clay gouge and disintegrating rock,0,Blackwell,2017-06-23
+GCL,KAD17-031,200.05,0.17,FLT,HIGH,5,70,,,,,,Graphitic fault gouge,0,Blackwell,2017-06-24
+GCL,KAD17-031,239.45,0.02,FLT,HIGH,4,40,,,,,,,0,Blackwell,2017-06-24
+GCL,KAD17-032,38,0.6,FLT,HIGH,5,45,,,,,,,0,Stubley,2017-06-22
+GCL,KAD17-032,88.15,0.1,DYK,HIGH,,35,,,,,,,0,Stubley,2017-06-22
+GCL,KAD17-032,91.1,0.25,DYK,HIGH,,35,,,,,,,0,Stubley,2017-06-22
+GCL,KAD17-032,112.87,1,DYK,HIGH,,45,,,,,,,0,Stubley,2017-06-22
+GCL,KAD17-032,196.45,2.95,FLT,HIGH,5,,,,,,,Proximity to estimated Kerr Fault location,0,Tupper,2017-06-24
+GCL,KAD17-032,212.8,0.1,FLT,MOD,3,,,,,,,,0,Tupper,2017-06-24
+GCL,KAD17-032,214,0.1,FLT,MOD,3,,,,,,,,0,Tupper,2017-06-24
+GCL,KAD17-032,220.05,2.65,BDW,MOD,3,40,,,,,,TCA approximation,0,Tupper,2017-08-07
+GCL,KAD17-032,227.95,6.05,BED,MOD,3,35,,,,,,,0,Tupper,2017-08-07
+GCL,KAD17-032,233.9,0.1,FLT,HIGH,4,,,,,,,,0,Tupper,2017-08-07
+GCL,KAD17-032,282.3,1.4,FLT,MOD,3,,,,,,,,0,Tupper,2017-08-07
+GCL,KAD17-032,285.75,0.5,FLT,MOD,2,,,,,,,,0,Tupper,2017-08-07
+GCL,KAD17-032,291.41,0.4,FLT,MOD,2,,,,,,,,0,Tupper,2017-08-07
+GCL,KAD17-032,300.3,1.96,DYK,HIGH,NA,,,,,,,,0,Tupper,2017-08-07
+GCL,KAD17-032,310.05,0.67,DYK,MOD,NA,,,,,,,,0,Tupper,2017-08-07
+GCL,KAD17-032,374.92,0.79,VN,HIGH,NA,45,,,,,,massive quartz vein,0,Tupper,2017-08-07
+GCL,KAD17-032,400.27,1.83,FLT,HIGH,4,,,,,,,graphitic schist.,0,Tupper,2017-08-07
+GCL,KAD17-033,102.25,0.14,BED,MOD,4,60,,,,,,14cm graded bed.  Fining up hole.,0,Robinson,2017-06-26
+GCL,KAD17-033,376.62,0.05,BED,MOD,3,50,,,,,,Bedding - fining up hole,0,Robinson,2017-06-29
+GCL,KAD17-033,488.2,0.1,FLT,MOD,4,,,,,,,rubble/clay zone,0,Robinson,2017-06-30
+GCL,KAD17-033,489.73,1.47,FLT,HIGH,5,,,,,,,Clay pug zone.,0,Robinson,2017-06-30
+GCL,KAD17-034,36.45,0.79,DYK,MOD,4,65,,,,,,Albite dyke,0,Tupper,2017-06-28
+GCL,KAD17-034,39.31,0.96,DYK,MOD,4,65,,,,,,Albite dyke,0,Tupper,2017-06-28
+GCL,KAD17-034,46.12,2.11,DYK,HIGH,4,55,,,,,,albite dyke with sericite alteration halo,0,Unknown,2017-06-29
+GCL,KAD17-034,146.8,0.1,FLT,HIGH,4,,,,,,,,0,Tupper,2017-06-30
+GCL,KAD17-034,206.7,4,FLT,HIGH,4,,,,,,,,0,Tupper,2017-06-30
+GCL,KAD17-034,289.8,0.05,FLT,HIGH,3,,,,,,,Talc Chlorite altered UM. Fault gauge,0,Tupper,2017-07-01
+GCL,KAD17-035,168.1,0.42,FLT,HIGH,3,,,,,,,,0,Sherlock,2017-07-03
+GCL,KAD17-035,223.51,0.49,FLT,LOW,3,,,,,,,"223.51-224 very rubbly, brown iron carbonate weathering, blocky core possible fault",0,Sherlock,2017-08-07
+GCL,KAD17-035,232.14,3.86,FLT,LOW,4,,,,,,,"Crumbly,rubbly, weathered rocks
+Possibly fault or stope?
+Mixed litho’s",0,Sherlock,2017-08-07
+GCL,KAD17-035,244.37,1.63,DYK,HIGH,4,,,,,,,,0,Sherlock,2017-08-07
+GCL,KAD17-036,73.85,1.62,VN,MOD,3,,,,,,,Brecciated.,0,Tupper,2017-08-07
+GCL,KAD17-036,216.95,0.5,BED,MOD,4,45,,,,,,bedded unit to 273.61m,0,Tupper,2017-08-07
+GCL,KAD17-036,238.9,0.2,FLT,MOD,3,,,,,,,brecciated,0,Tupper,2017-07-08
+GCL,KAD17-037,14,0.24,FLT,HIGH,3,,,,,,,Faulted zone varying degrees of rubble core.,0,Tupper,2017-08-07
+GCL,KAD17-039,14.6,0.4,FLT,MOD,3,,,,,,,,0,Tupper,2017-07-08
+GCL,KAD17-039,78.9,0.1,FLT,HIGH,4,,,,,,,faulted contact between Maf and UM,0,Tupper,2017-07-09
+GCL,KAD17-039,200.9,3,FLT,MOD,3,,,,,,,,0,Tupper,2017-07-09
+GCL,KAD17-040,173.75,10,DYK,MOD,4,,,,,,,lamprophere dyke?,0,Henderson,2017-07-11
+GCL,KAD17-041,158.2,0.2,FLT,HIGH,3,,,,,,,faulted contact,0,Tupper,2017-07-14
+GCL,KAD17-041,305.06,0.6,,,,,,,,,,VOID,0,Tupper,2017-07-16
+GCL,KAD17-042,329.5,3.5,FLT,MOD,3,,,,,,,"within section, 10 areas of broken rock and grey unlithified compacted clays",0,Henderson,2017-07-20
+GCL,KAD17-042,346.43,2.45,FLT,HIGH,4,50,,,,,,,0,Henderson,2017-07-17
+GCL,KAD17-042,377,2,FLT,MOD,3,,,,,,,,0,Henderson,2017-07-17
+GCL,KAD17-042,387.63,0.15,DYK,HIGH,4,30,,,,,,albitite-sharp contacts,0,Henderson,2017-07-17
+GCL,KAD17-042,398,0.74,VN,HIGH,4,,,,,,,,0,Henderson,2017-07-18
+GCL,KAD17-042,410,0.2,VN,HIGH,4,,,,,,,,0,Henderson,2017-08-07
+GCL,KAD17-043,10.09,0.02,VN,HIGH,4,50,,,,,,,0,Shiroki,2017-07-19
+GCL,KAD17-043,12.88,1.28,VN,HIGH,4,10,,,,,,,0,Shiroki,2017-07-19
+GCL,KAD17-043,13.5,0.03,VN,HIGH,4,10,,,,,,Deformed thick massive quartz-carbonate vein,0,Shiroki,2017-07-19
+GCL,KAD17-043,14.44,0.04,VN,HIGH,4,60,,,,,,,0,Shiroki,2017-07-19
+GCL,KAD17-043,18.62,0.14,VN,MOD,4,50,,,,,,,0,Shiroki,2017-07-19
+GCL,KAD17-043,21.85,0.05,VN,MOD,4,50,,,,,,,0,Shiroki,2017-07-19
+GCL,KAD17-043,22.25,0.04,VN,HIGH,4,50,,,,,,,0,Shiroki,2017-07-19
+GCL,KAD17-043,33.53,0.05,VN,MOD,4,60,,,,,,,0,Shiroki,2017-07-19
+GCL,KAD17-043,44.24,0.13,VN,HIGH,4,40,,,,,,,0,Shiroki,2017-07-21
+GCL,KAD17-043,44.75,0.05,VN,HIGH,4,40,,,,,,,0,Shiroki,2017-07-19
+GCL,KAD17-043,115.8,0.4,VN,MOD,4,30,,,,,,,0,Shiroki,2017-07-21
+GCL,KAD17-043,118.28,0.41,VN,MOD,4,40,,,,,,,0,Shiroki,2017-07-21
+GCL,KAD17-043,144.15,0.14,VN,MOD,4,40,,,,,,,0,Shiroki,2017-07-21
+GCL,KAD17-043,145.04,0.16,VN,HIGH,4,30,,,,,,,0,Shiroki,2017-07-21
+GCL,KAD17-043,212.85,0.11,VN,HIGH,4,50,,,,,,,0,Shiroki,2017-07-21
+GCL,KAD17-043,213.43,0.53,VN,,,,,,,,,,0,Shiroki,2017-07-21
+GCL,KAD17-043,214.29,0.19,VN,LOW,4,50,,,,,,,0,Shiroki,2017-07-21
+GCL,KAD17-043,215.7,0.04,VN,HIGH,4,30,,,,,,,0,Shiroki,2017-07-21
+GCL,KAD17-043,220.27,0.04,VN,HIGH,4,40,,,,,,,0,Shiroki,2017-07-21
+GCL,KAD17-043,224.1,0.001,VN,HIGH,1,5,,,,,,,0,Shiroki,2017-07-21
+GCL,KAD17-043,225.33,0.02,VN,HIGH,4,50,,,,,,,0,Shiroki,2017-07-21
+GCL,KAD17-043,231.4,0.02,VN,HIGH,4,15,,,,,,,0,Shiroki,2017-07-21
+GCL,KAD17-043,232.94,0.002,VN,HIGH,2,30,,,,,,,0,Shiroki,2017-07-21
+GCL,KAD17-043,232.95,0.005,VN,HIGH,2,20,,,,,,,0,Shiroki,2017-07-21
+GCL,KAD17-043,232.96,0.005,VN,HIGH,2,50,,,,,,,0,Shiroki,2017-07-21
+GCL,KAD17-043,255.74,4,VN,MOD,4,40,,,,,,,0,Shiroki,2017-07-21
+GCL,KAD17-043,257,0.02,VN,HIGH,4,30,,,,,,,0,Shiroki,2017-07-21
+GCL,KAD17-043,282.49,0.06,VN,HIGH,4,60,,,,,,,0,Shiroki,2017-07-23
+GCL,KAD17-043,288.7,0.2,FLT,HIGH,4,50,,,,,,,0,Shiroki,2017-07-22
+GCL,KAD17-043,296.95,0.05,VN,HIGH,4,50,,,,,,,0,Shiroki,2017-07-22
+GCL,KAD17-043,299.92,0.17,VN,HIGH,4,50,,,,,,,0,Shiroki,2017-07-22
+GCL,KAD17-043,300.98,0.01,CNT,HIGH,4,40,,,,,,,0,Shiroki,2017-07-22
+GCL,KAD17-043,308.33,0.12,FLT,HIGH,4,25,,,,,,,0,Shiroki,2017-07-22
+GCL,KAD17-043,317.03,0.04,VN,HIGH,4,50,,,,,,,0,Shiroki,2017-07-22
+GCL,KAD17-043,327.17,4.44,FLT,HIGH,4,30,,,,,,,0,Shiroki,2017-07-22
+GCL,KAD17-043,333.46,0.13,FLT,HIGH,4,30,,,,,,,0,Shiroki,2017-07-23
+GCL,KAD17-043,348.48,0.003,FLT,HIGH,3,35,,,,,,,0,Shiroki,2017-07-23
+GCL,KAD17-043,356.87,0.6,CNT,MOD,4,15,,,,,,,0,Shiroki,2017-07-23
+GCL,KAD17-043,359.24,0.17,VN,HIGH,4,50,,,,,,,0,Shiroki,2017-07-23
+GCL,KAD17-043,383.05,0.04,VN,HIGH,4,50,,,,,,,0,Shiroki,2017-07-23
+GCL,KAD17-043,384.25,0.14,VN,HIGH,4,40,,,,,,,0,Shiroki,2017-07-23
+GCL,KAD17-043,385.43,0.08,VN,HIGH,4,70,,,,,,,0,Shiroki,2017-07-23
+GCL,KAD17-043,385.58,0.1,VN,HIGH,4,40,,,,,,,0,Shiroki,2017-07-23
+GCL,KAD17-043,488,0.28,DYK,HIGH,4,40,,,,,,Tan albitic dyke at 488.04-488.28 m,0,Shiroki,2017-07-27
+GCL,KAD17-043,520.89,0.005,FLT,HIGH,4,40,,,,,,,0,Shiroki,2017-07-27
+GCL,KAD17-043,524.47,0.005,FLT,HIGH,4,40,,,,,,,0,Shiroki,2017-07-27
+GCL,KAD17-043,524.64,0.005,FLT,HIGH,4,40,,,,,,,0,Shiroki,2017-07-27
+GCL,KAD17-043,524.79,0.005,FLT,HIGH,4,40,,,,,,,0,Shiroki,2017-07-27
+GCL,KAD17-043,524.95,0.14,FLT,HIGH,3,40,,,,,,,0,Shiroki,2017-07-27
+GCL,KAD17-043,530.93,0.01,FLT,HIGH,4,40,,,,,,,0,Shiroki,2017-07-27
+GCL,KAD17-043,531.3,0.005,FLT,HIGH,4,40,,,,,,,0,Shiroki,2017-07-27
+GCL,KAD17-043,531.56,0.005,FLT,HIGH,4,40,,,,,,,0,Shiroki,2017-07-27
+GCL,KAD17-043,532.4,0.01,FLT,HIGH,4,50,,,,,,,0,Shiroki,2017-07-27
+GCL,KAD17-044,337.17,0.53,FLT,MOD,4,60,,,,,,,0,Henderson,2017-07-24
+GCL,KAD17-044,339.25,0.15,FLT,MOD,3,,,,,,,many sections of broken core-fault?,0,Henderson,2017-08-07
+GCL,KAD17-044,501,0.05,VN,HIGH,5,20,,,,,,,0,Andrienko,2017-07-27
+GCL,KAD17-044,512.83,0.52,VN,HIGH,4,,,,,,,Greater sulphide mineralization begins below the structure at 512.83m depth.,0,Andrienko,2017-07-26
+GCL,KAD17-044,513.13,0.13,CNT,HIGH,5,,,,,,,Sparse graphite is present below a deformed quartz vein with mudstone and sulphide blebs.,0,Andrienko,2017-07-27
+GCL,KAD17-045,22.4,0.35,VN,HIGH,4,45,,,,,,"Smoky quartz invidual vein containing patch of carbonates and weak disseminated pyrite, chalcopyrite, and arsenopyrite mineralization.",0,Andrienko,2017-07-27
+GCL,KAD17-045,66.65,0.33,,,,,,,,,,"Perlite texture, with strong albite alteration.",0,Andrienko,2017-07-28
+GCL,KAD17-045,77.46,1.8,DYK,HIGH,4,30,,,,,,"Possible albite dyke, massive.",0,Andrienko,2017-07-28
+GCL,KAD17-045,113.73,3.85,DYK,LOW,4,40,,,,,,"Possible albite dyke grey/green to yellowish colour, smooth texture. Scratches hard.",0,Andrienko,2017-07-28
+GCL,KAD17-045,144.52,1.09,FLT,HIGH,4,20,,,,,,"Angle measured at a very low confidence, as it had been reworked and folded. The healed fault contains lenses of sulphide mineralization in association with the mudstone matrix.",0,Andrienko,2017-07-28
+GCL,KAD17-045,234,1.1,FLT,MOD,4,,,,,,,Mashed up section with abundance of graphite.,0,Andrienko,2017-07-29
+GCL,KAD17-045,262.5,1.1,,,,,,,,,,"Breccia containing 1-2 angular Qz, and QC fragements. Strong pyrite mineralization; section is mashed, possible graphitic fault zone.",0,Andrienko,2017-07-31
+GCL,KAD17-045,300,2.75,BRX,HIGH,3,,,,,,,"Breccia in part of the section, QC angular clasts surrounded by UM.",0,Andrienko,2017-07-31
+GCL,KAD17-045,309,0.45,BRX,MOD,4,,,,,,,"Breccia, with vuggy QC.",0,Andrienko,2017-07-31
+GCL,KAD17-045,315.7,0.4,BRX,MOD,3,,,,,,,Mottled breccia.,0,Andrienko,2017-07-31
+GCL,KAD17-045,330.16,0.84,VN,HIGH,4,,,,,,,"Smoky quartz vein, angle could not be reliably measured.",0,Andrienko,2017-07-31
+GCL,KAD17-045,365.2,0.42,BRX,,,,,,,,,QC clasts.,0,Andrienko,2017-08-01
+GCL,KAD17-045,396.5,0.37,BRX,HIGH,4,,,,,,,,0,Andrienko,2017-08-01
+GCL,KAD17-045,426,0.87,BRX,HIGH,3,,,,,,,Ultramafic monomictic breccia.,0,Andrienko,2017-08-02
+GCL,KAD17-045,433.8,0.55,BRX,MOD,3,,,,,,,Ultramafic monomictic breccia.,0,Andrienko,2017-08-02
+GCL,KAD17-045,444.41,0.59,VN,HIGH,3,30,,,,,,Intensely mineralized albite vein with disseminated pyrite and aresenian pyrite; grains up to 1 cm in size.,0,Andrienko,2017-08-02
+GCL,KAD17-046,30.18,0.05,VN,HIGH,4,30,,,,,,Massive quartz-carbonate vein (non-mineralized but with rusty oxidation along a fracture).,0,Unknown,2017-07-28
+GCL,KAD17-046,39.09,0.005,CNT,HIGH,3,40,,,,,,,0,Shiroki,2017-07-29
+GCL,KAD17-046,48.56,0.14,VN,HIGH,4,50,,,,,,Smoky quartz vein with pyrite along margin,0,Shiroki,2017-07-29
+GCL,KAD17-046,49.8,0.1,CNT,MOD,3,40,,,,,,Gradational contact,0,Shiroki,2017-07-29
+GCL,KAD17-046,51.7,0.3,VN,HIGH,4,50,,,,,,Zone of strong multiple generations and styles of veining including 1 cm pyrite veins.,0,Shiroki,2017-07-29
+GCL,KAD17-046,59.13,0.1,CNT,MOD,3,50,,,,,,Gradational contact,0,Shiroki,2017-07-29
+GCL,KAD17-046,65.98,0.7,FLT,MOD,4,40,,,,,,Possible fault with possible trace talc alteration.,0,Shiroki,2017-07-29
+GCL,KAD17-046,101.6,0.38,VN,HIGH,4,30,,,,,,Grey smoky quartz vein,0,Shiroki,2017-07-29
+GCL,KAD17-046,108.9,3.2,FLT,MOD,3,50,,,,,,,0,Shiroki,2017-07-29
+GCL,KAD17-046,164.71,0.045,VN,HIGH,4,50,,,,,,Quartz vein containing 0.5 % visible gold.,0,Shiroki,2017-07-30
+GCL,KAD17-046,173.91,0.06,VN,HIGH,4,40,,,,,,Grey-white quartz vein.,0,Shiroki,2017-07-30
+GCL,KAD17-046,204.3,0.3,VN,HIGH,4,30,,,,,,White Quartz-Carb vein adjacent to smoky quartz vein contains angular-subangular brecciaed pieces of ultramafic and possible quartz-feldspar porphyry pieces at 204.3-204.6 m,0,Shiroki,2017-07-30
+GCL,KAD17-046,209.9,0.4,DYK,HIGH,4,40,,,,,,Quartz-Feldspar Porphyry dyke at 209.9-210.3 m has VG,0,Shiroki,2017-07-30
+GCL,KAD17-046,214.12,0.31,VN,HIGH,4,70,,,,,,White quartz vein with VG,0,Shiroki,2017-07-31
+GCL,KAD17-046,214.84,0.005,CNT,HIGH,4,30,,,,,,,0,Shiroki,2017-07-31
+GCL,KAD17-046,227.45,0.08,VN,MOD,3,30,,,,,,"Likely grey quartz vein containing approximately 50 % lithic clasts (ultramafic, albitic-brown carb-sericite altered) that are round and have diffuse margins against the quartz - likely to have been ""digested"".  In a zone of re-drilling where core was drilled, dropped back in the hole, and drilled over again (225.6-227.85 m)",0,Shiroki,2017-07-31
+GCL,KAD17-046,232.63,0.16,VN,HIGH,4,30,,,,,,Banded-laminated quartz-carb vein oriented 30TCA cross-cut by main quartz vein at 60TCA.,0,Shiroki,2017-07-31
+GCL,KAD17-047,17.75,0.33,VN,HIGH,4,40,,,,,,White quartz-carb vein massive.,0,Shiroki,2017-07-31
+GCL,KAD17-047,73.15,0.2,VN,HIGH,3,30,,,,,,Quartz-carb white plus opaque pale pink stockwork vein zone 20 cm wide with individual veins up to 2 cm thick.,0,Shiroki,2017-08-01
+GCL,KAD17-047,85.84,0.04,VN,HIGH,4,20,,,,,,Grey quartz vein with .5 % pyrite.,0,Shiroki,2017-08-01
+GCL,KAD17-047,86.2,0.15,PLN,MOD,4,35,,,,,,Stripy banded area with pyrite concentrated along foliation parallel planes in 2 mm thick bands.  Strong to moderate albitic alteration with thin mm scale black-green mafic bands.  This zone also includes grey-white 3 cm quartz-carb vein with 5 % pyrite in the vein 50TCA.,0,Shiroki,2017-08-01
+GCL,KAD17-047,88.55,0.3,VN,HIGH,3,50,,,,,,Grey folded quartz vein 5 cm thick 0.5 % pyrite.,0,Shiroki,2017-08-01
+GCL,KAD17-047,90.61,0.07,VN,HIGH,4,50,,,,,,Grey-white-pink carbonate vein brecciates the mafic at its margins and has a wavy cuspate appearance along a portion of the vein margin.,0,Shiroki,2017-08-01
+GCL,KAD17-047,173.06,0.005,FLT,HIGH,4,30,,,,,,Clay-gauge-filled probable fault seam 5 mm wide.,0,Shiroki,2017-08-02
+GCL,KAD17-047,176,0.03,VN,HIGH,4,20,,,,,,3 cm wide white quartz-carb vein,0,Shiroki,2017-08-02
+GCL,KAD17-047,178.72,0.07,VN,HIGH,4,10,,,,,,White and grey zoned quartz-carb vein 7 cm wide.,0,Shiroki,2017-08-02
+GCL,KAD17-047,185.42,0.02,FLT,HIGH,4,40,,,,,,Likely related to the Kerr Fault above.,0,Shiroki,2017-08-02
+GCL,KAD17-047,207.26,0.25,VN,HIGH,4,40,,,,,,"25 cm wide white-grey quartz vein brecciating the mafic unit at contact between the mafic below and the ultramafic above.  The quartz ""floods"" the breccia in places of this zone.",0,Shiroki,2017-08-03
+GCL,KAD17-047,207.89,0.15,FRA,HIGH,3,50,,,,,,Fractures approximately 10 %.,0,Shiroki,2017-08-03
+GCL,KAD17-047,219.18,0.05,PLN,HIGH,3,40,,,,,,,0,Shiroki,2017-08-03
+GCL,KAD17-047,269.91,0.43,VN,HIGH,4,50,,,,,,White massive quartz vein with 0.5 % fine pyrte.,0,Shiroki,2017-08-04
+GCL,KAD17-047,280.38,0.24,BED,HIGH,4,30,,,,,,Quartz-Feldspar Porphyry Dyke strong fine disseminated pyrite,0,Shiroki,2017-08-05
+GCL,KAD17-047,281.1,0.36,DYK,HIGH,4,20,,,,,,Quartz-Feldspar Porphyry Dyke strong fine disseminated pyrite,0,Shiroki,2017-08-05
+GCL,KAD17-048,37.8,0.8,FLT,MOD,3,85,,,,,,"Possible fault, section is mashed.",0,Andrienko,2017-08-03
+GCL,KAD17-048,107,1.28,DYK,HIGH,4,70,,,,,,"Diabase dyke; equigranular in localized sections, total cumulative width is 1.28m.",0,Andrienko,2017-08-04
+GCL,KAD17-048,270.7,0.2,BRX,MOD,3,,,,,,,Calcite vein breccia.,0,Andrienko,2017-08-05
+GCL,KAD17-049,84.1,0.8,FLT,MOD,3,,,,,,,rubbled core,0,Tupper,2017-08-07
+GCL,KAD17-049,157.64,0.23,VN,HIGH,5,,,,,,,Tourmaline bearing massive Qz-Carb vein.,0,Tupper,2017-08-07
+GCL,KAD17-049,281.95,0.1,FLT,MOD,3,,,,,,,,0,Tupper,2017-08-09
+GCL,KAD17-049,286.05,0.05,FLT,MOD,3,,,,,,,,0,Tupper,2017-08-09
+GCL,KAD17-049,288.35,3.34,FLT,HIGH,4,,,,,,,,0,Tupper,2017-08-09
+GCL,KAD17-049,341.39,0.4,FLT,MOD,3,,,,,,,,0,Tupper,2017-08-09
+GCL,KAD17-049,488.75,0.25,FLT,LOW,2,,,,,,,,0,Tupper,2017-08-16
+GCL,KAD17-051,72.76,2.89,FLT,HIGH,4,20,,,,,,"Fault angle is shallow at 20 degrees TCA, 40 degrees TCA internal foliation. Trace pyrite mineralization. QC alteration (including brown carbonates), and chlorite.",0,Andrienko,2017-08-08
+GCL,KAD17-051,90,1.67,FLT,HIGH,3,30,,,,,,"Deformed and healed fault zone, with QC vein brecciation (1cm sized clasts). QC, chlorite alteration with brown carbonates. Trace pyrite mineralization within QC veins. 30 degree TCA contact.",0,Andrienko,2017-08-08
+GCL,KAD17-051,111.4,2.48,FLT,MOD,3,35,,,,,,Mashed core at this section.,0,Andrienko,2017-08-09
+GCL,KAD17-051,132,0.38,VN,HIGH,3,50,,,,,,Smoky qz vein.,0,Andrienko,2017-08-09
+GCL,KAD17-051,149.92,4.88,FLT,HIGH,4,25,,,,,,,0,Andrienko,2017-08-09
+GCL,KAD17-051,164.12,1.55,FLT,HIGH,4,25,,,,,,25-30 degree TCA fault angle.,0,Andrienko,2017-08-09
+GCL,KAD17-051,183.67,1.5,FLT,HIGH,4,35,,,,,,Brecciated with QC veining and brecciated qz vein clasts of 1cm size.,0,Andrienko,2017-08-09
+GCL,KAD17-051,231.29,0.48,DYK,HIGH,3,20,,,,,,Deformed 0.48m coarse-crystalline and zoned qz dyke.,0,Andrienko,2017-08-10
+GCL,KAD17-051,268.55,0.15,BRX,HIGH,3,,,,,,,Xenolithic fragment within the intermediate dyke.,0,Andrienko,2017-08-10
+GCL,KAD17-051,370.42,1.13,CNT,HIGH,3,50,,,,,,"Top of the Timiskaming unit, forms a sharp contact with the UM-MIXED units. Contains a granular texture with 2-3mm size QC grains.",0,Andrienko,2017-08-12
+GCL,KAD17-051,382.18,0.01,FLM,MOD,3,50,,,,,,Possible loading structure; indicated younging directions uphole.,0,Andrienko,2017-08-12
+GCL,KAD17-052,25.67,0.3,FLT,HIGH,3,25,,,,,,Possible fault.,0,Andrienko,2017-08-13
+GCL,KAD17-052,85.27,0.5,VN,HIGH,3,70,,,,,,QC-calcite zoned vein.,0,Andrienko,2017-08-13
+GCL,KAD17-052,178.53,0.13,VN,HIGH,4,35,,,,,,QC vein.,0,Andrienko,2017-08-14
+GCL,KAD17-052,178.76,0.15,BRX,,,,,,,,,,0,Andrienko,2017-08-14
+GCL,KAD17-052,200.57,0.43,FLT,MOD,3,0.43,,,,,,Possible fault.,0,Andrienko,2017-08-14
+GCL,KAD17-052,202.17,0.56,VN,HIGH,4,20,,,,,,Stockwork QC-calcite zoned and deformed vein.,0,Andrienko,2017-08-14
+GCL,KAD17-052,216.88,1.32,FLT,HIGH,4,20,,,,,,Possible fault.,0,Andrienko,2017-08-14
+GCL,KAD17-052,243.62,0.49,FLT,HIGH,3,20,,,,,,Possible fault with intense pyrite mineralization.,0,Andrienko,2017-08-15
+GCL,KAD17-053,196.65,0.2,VN,HIGH,5,75,,,,,,qz vein,0,Tupper,2017-08-17
+GCL,KAD17-053,244.6,0.4,VN,HIGH,5,,,,,,,,0,Tupper,2017-08-18
+GCL,KAD17-053,338.6,0.4,FLT,HIGH,4,,,,,,,rubble core (pebble size),0,Tupper,2017-08-19
+GCL,KAD17-053,355.14,0.1,FLT,MOD,2,,,,,,,,0,Tupper,2017-08-22
+GCL,KAD17-054,126.92,0.35,VN,HIGH,3,30,,,,,,Deformed individual qz vein.,0,Andrienko,2017-08-18
+GCL,KAD17-054,131.8,0.42,FLT,HIGH,3,15,,,,,,Possible fault.,0,Andrienko,2017-08-18
+GCL,KAD17-054,164.7,1.57,FLT,HIGH,3,30,,,,,,"Mashed section, possible fault.",0,Andrienko,2017-08-19
+GCL,KAD17-054,239.45,6.73,FLT,HIGH,4,20,,,,,,6 mashed 0.5m sections; interpreted as Kerr fault.,0,Andrienko,2017-08-19
+GCL,KAD17-054,256.19,2.23,FLT,HIGH,3,30,,,,,,Possible fault; mashed section.,0,Andrienko,2017-08-19
+GCL,KAD17-054,272.74,0.6,FLT,MOD,4,,,,,,,"strong intensity, well mashed section, gouge mineral present",0,Brown,2017-08-20
+GCL,KAD17-056,306.45,0.74,FLT,MOD,3,,,,,,,,0,Brown,2017-08-30
+GCL,KAD17-056,365.23,0.77,FLT,MOD,NA,,,,,,,,0,Brown,2017-08-30
+GCL,KAD17-056,442,0.2,BRX,MOD,3,30,,,,,,,0,Brown,2017-08-30
+GCL,KAD17-057,30.5,3,FLT,MOD,3,,,,,,,broken up rusty rock.  Could align with surface cracks?,0,Henderson,2017-08-26
+GCL,KAD17-059,32.8,3.72,SHZ,MOD,3,30,,,,,,,0,Henderson,2017-08-27
+GCL,KAD17-059,94.28,0.7,VN,HIGH,4,45,,,,,,,0,Henderson,2017-08-27
+GCL,KAD17-059,200.88,0.3,DYK,HIGH,4,40,,,,,,,0,Henderson,2017-08-28
+GCL,KAD17-059,209.87,0.5,DYK,HIGH,4,45,,,,,,"50 cm grey aphanitic dyke. Sharp contacts. Trace pyrite, few opaque black cubic minerals.",0,Henderson,2017-08-29
+GCL,KAD17-059,243.55,0.27,DYK,HIGH,4,60,,,,,,albite,0,Henderson,2017-08-28
+GCL,KAD17-060,17,0.5,FRA,HIGH,3,,,,,,,Zone of core loss and oxidation of fracture surface - drillers reported sand seam.,0,Blackwell,2017-08-27
+GCL,KAD17-060,26,0.6,FRA,HIGH,3,,,,,,,Zone of core loss and oxidation of fracture surface - drillers reported sand seam. Caused the termination of the drill hole.,0,Blackwell,2017-08-27
+GCL,KAD17-062,16,0.18,FLT,MOD,4,,,,,,,fault gauge-filled with grey clay+pebbles,0,Henderson,2017-09-03
+GCL,KAD17-062,74.88,7.34,BRX,HIGH,4,,,,,,,,0,Henderson,2017-09-01
+GCL,KAD17-062,114.4,1.1,VN,HIGH,4,60,,,,,,Mineralized dolomite vein.,0,Henderson,2017-09-02
+GCL,KAD17-063,16.07,0.12,FLT,MOD,4,40,,,,,,,0,Shiroki,2017-08-30
+GCL,KAD17-063,19,0.05,FLT,MOD,4,40,,,,,,,0,Shiroki,2017-08-30
+GCL,KAD17-063,23.3,0.05,FLT,MOD,4,0.05,40,,,,,,0,Shiroki,2017-08-30
+GCL,KAD17-063,24.55,0.1,FLT,MOD,4,40,,,,,,,0,Shiroki,2017-08-30
+GCL,KAD17-063,108,0.1,FLT,HIGH,4,50,,,,,,,0,Shiroki,2017-08-31
+GCL,KAD17-063,108.2,0.05,FLT,HIGH,4,50,,,,,,,0,Shiroki,2017-08-31
+GCL,KAD17-063,108.87,0.33,FLT,HIGH,4,50,,,,,,,0,Shiroki,2017-08-31
+GCL,KAD17-063,114.1,0.05,FLT,HIGH,4,50,,,,,,,0,Shiroki,2017-08-31
+GCL,KAD17-063,115.62,0.15,FLT,HIGH,4,40,,,,,,,0,Shiroki,2017-08-31
+GCL,KAD17-063,116,0.1,FLT,HIGH,4,40,,,,,,,0,Shiroki,2017-08-31
+GCL,KAD17-063,157.56,0.24,DYK,HIGH,4,50,,,,,,Tan aphanitic weakly foliated with strong 2 % very fine py in stringers and dissemination,0,Shiroki,2017-08-31
+GCL,KAD17-063,178.84,0.03,FLT,HIGH,4,20,,,,,,,0,Shiroki,2017-08-31
+GCL,KAD17-063,196.18,0.29,DYK,HIGH,4,30,,,,,,,0,Shiroki,2017-08-31
+GCL,KAD17-063,205.86,0.81,DYK,HIGH,4,30,,,,,,Albitic Dyke variable angle 0-30TCA contact to UM.  Adjacent to Sericite/Brown Carb alteration.,0,Shiroki,2017-09-01
+GCL,KAD17-063,208.4,0.36,DYK,HIGH,4,30,,,,,,Albitic Dyke adjacent to Sericite/Brown Carb alteration,0,Shiroki,2017-09-01
+GCL,KAD17-064,76.77,0.57,FLT,HIGH,4,50,,,,,,,0,Shiroki,2017-09-02
+GCL,KAD17-064,84.36,0.01,FLT,HIGH,4,40,,,,,,,0,Shiroki,2017-09-02
+GCL,KAD17-064,87.6,0.23,FLT,HIGH,4,40,,,,,,,0,Shiroki,2017-09-02
+GCL,KAD17-064,147.05,0.15,DYK,MOD,4,30,,,,,,Tan foliation-parallel Albitic Dyke - hard,0,Shiroki,2017-09-03
+GCL,KAD17-064,280.41,0.17,DYK,HIGH,4,40,,,,,,Albitic Dyke strong py dissemination,0,Shiroki,2017-09-04
+GCL,KAD17-064,301.4,0.2,FLT,MOD,3,30,,,,,,Possible fault,0,Shiroki,2017-09-04
+GCL,KAD17-065,340.15,4,FLT,MOD,3,,,,,,,"Rubbled core, grey mud (possibly drill cutting muds), and lost rock core recovery within interval.",0,Brown,2017-09-05
+GCL,KAD17-066,37.85,2.21,BRX,,,,,,,,,,0,Henderson,2017-09-02
+GCL,KAD17-066,66.1,0.7,FRA,MOD,4,,,,,,,,0,Henderson,2017-09-03
+GCL,KAD17-068,25.24,0.24,VN,HIGH,4,50,,,,,,Py 1 % and Asp 0.5 %,0,Shiroki,2017-09-05
+GCL,KAD17-068,25.86,0.32,VN,HIGH,4,50,,,,,,Py 1 % and Asp 0.5 %,0,Shiroki,2017-09-05
+GCL,KAD17-068,33.13,0.13,VN,HIGH,4,50,,,,,,Grey Qz-dominant,0,Shiroki,2017-09-05
+GCL,KAD17-068,71.1,0.3,BRX,HIGH,3,30,,,,,,Angular fresh fragments of Mafic in Calcite matrix,0,Shiroki,2017-09-05
+GCL,KAD17-068,108.66,1.64,FLT,MOD,3,30,,,,,,Possible Fault with 10 % clay gauge and intense foliation,0,Shiroki,2017-09-06
+GCL,KAD17-068,145.5,0.77,BRX,HIGH,3,50,,,,,,"Pale green-grey very siliceous clast of possible trace Fuch strong-intense Qz-Carb UM 77cm wide at 145.5 m with 147.38 m with Zr below detection limit, Ti 750 ppm, Cr 184 ppm",0,Shiroki,2017-09-06
+GCL,KAD17-068,146.16,1.6,FLT,HIGH,3,40,,,,,,,0,Shiroki,2017-09-06
+GCL,KAD17-068,165.39,2.6,BRX,MOD,3,30,,,,,,,0,Shiroki,2017-09-06
+GCL,KAD17-068,167.99,0.01,FLT,HIGH,4,35,,,,,,,0,Shiroki,2017-09-06
+GCL,KAD17-068,173.48,0.14,BRX,HIGH,4,,,,,,,,0,Shiroki,2017-09-06
+GCL,KAD17-068,175.16,0.04,BRX,HIGH,4,,,,,,,,0,Shiroki,2017-09-06
+GCL,KAD17-068,175.37,0.04,BRX,HIGH,4,,,,,,,,0,Shiroki,2017-09-06
+GCL,KAD17-068,176.07,0.07,BRX,HIGH,4,,,,,,,,0,Shiroki,2017-09-06
+GCL,KAD17-068,177.3,0.15,BRX,HIGH,4,,,,,,,,0,Shiroki,2017-09-06
+GCL,KAD17-068,181.19,0.09,BRX,HIGH,4,,,,,,,,0,Shiroki,2017-09-06
+GCL,KAD17-068,181.4,0.1,BRX,HIGH,4,,,,,,,,0,Shiroki,2017-09-06
+GCL,KAD17-068,182.65,0.31,BRX,HIGH,4,,,,,,,,0,Shiroki,2017-09-06
+GCL,KAD17-068,246.39,0.61,FLT,MOD,3,,,,,,,,0,Brown,2017-09-07
+GCL,KAD17-068,295.36,0.66,DYK,HIGH,4,10,,,,,,Albitic Dyke,0,Shiroki,2017-09-08
+GCL,KAD17-068,296.05,1.6,DYK,HIGH,4,30,,,,,,Albitic Dyke,0,Shiroki,2017-09-08
+GCL,KAD17-068,297.9,0.6,DYK,HIGH,4,10,,,,,,Albitic Dyke,0,Shiroki,2017-09-08
+GCL,KAD17-068,299.9,0.54,DYK,HIGH,4,30,,,,,,Albitic Dyke,0,Shiroki,2017-09-08
+GCL,KAD17-068,300.56,0.56,DYK,HIGH,4,50,,,,,,Albitic Dyke,0,Shiroki,2017-09-09
+GCL,KAD17-068,301.24,0.34,BRX,HIGH,4,40,,,,,,Healed breccia,0,Shiroki,2017-09-09
+GCL,KAD17-068,302.22,0.03,DYK,MOD,3,,,,,,,Tan opaque,0,Shiroki,2017-09-09
+GCL,KAD17-068,304.08,0.02,DYK,HIGH,4,50,,,,,,Albitic Dyke,0,Shiroki,2017-09-09
+GCL,KAD17-068,304.12,0.06,DYK,HIGH,4,40,,,,,,Albitic Dyke,0,Shiroki,2017-09-09
+GCL,KAD17-068,304.18,5.74,FLT,HIGH,4,30,,,,,,Some intact core with intense ductile-semiductile shear-deformation,0,Shiroki,2017-09-09
+GCL,KAD17-068,310.4,0.16,FLT,HIGH,5,30,,,,,,,0,Shiroki,2017-09-09
+GCL,KAD17-068,311.49,1.51,FLT,HIGH,5,30,,,,,,,0,Shiroki,2017-09-09
+GCL,KAD17-068,317.7,0.05,DYK,HIGH,3,40,,,,,,Albitic Dyke,0,Shiroki,2017-09-09
+GCL,KAD17-068,318.66,0.05,DYK,HIGH,3,,,,,,,Albitic Dyke,0,Shiroki,2017-09-09
+GCL,KAD17-068,318.74,0.14,DYK,HIGH,3,,,,,,,Albitic Dyke,0,Shiroki,2017-09-09
+GCL,KAD17-068,319.1,0.08,DYK,HIGH,3,,,,,,,Albitic Dyke,0,Shiroki,2017-09-09
+GCL,KAD17-068,319.23,0.03,DYK,HIGH,3,,,,,,,Albitic Dyke,0,Shiroki,2017-09-09
+GCL,KAD17-068,319.35,0.14,DYK,HIGH,4,,,,,,,Albitic Dyke,0,Shiroki,2017-09-09
+GCL,KAD17-068,322.47,0.22,DYK,HIGH,4,50,,,,,,Albitic Dyke,0,Shiroki,2017-09-09
+GCL,KAD17-068,322.65,0.03,DYK,HIGH,3,,,,,,,Albitic Dyke,0,Shiroki,2017-09-09
+GCL,KAD17-068,323,0.03,DYK,HIGH,3,,,,,,,Albitic Dyke,0,Shiroki,2017-09-09
+GCL,KAD17-068,323.22,0.02,DYK,HIGH,3,,,,,,,Albitic Dyke,0,Shiroki,2017-09-09
+GCL,KAD17-068,324,0.1,DYK,HIGH,3,,,,,,,Albitic Dyke,0,Shiroki,2017-09-09
+GCL,KAD17-068,324.19,0.02,DYK,HIGH,2,,,,,,,Albitic Dyke,0,Shiroki,2017-09-09
+GCL,KAD17-068,380.4,0.65,DYK,HIGH,4,50,,,,,,Albitic Dyke,0,Shiroki,2017-09-10
+GCL,KAD17-068,381.94,0.6,DYK,MOD,3,,,,,,,Albitic Dyke,0,Shiroki,2017-09-10
+GCL,KAD17-068,386,0.4,BRX,HIGH,4,20,,,,,,,0,Shiroki,2017-09-10
+GCL,KAD17-068,389.42,1.38,DYK,HIGH,4,50,,,,,,"Albitic Dyke, potential age-date sample and library sample at 390.34 m",0,Shiroki,2017-09-10
+GCL,KAD17-068,394.9,0.3,DYK,MOD,3,50,,,,,,Albitic Dyke,0,Shiroki,2017-09-10
+GCL,KAD17-068,395.7,0.05,DYK,MOD,3,50,,,,,,Albitic Dyke or Sericite/Brown Carb alteration,0,Shiroki,2017-09-10
+GCL,KAD17-068,396.94,0.62,DYK,HIGH,4,50,,,,,,Albitic Dyke,0,Shiroki,2017-09-10
+GCL,KAD17-068,399.33,0.01,DYK,HIGH,4,30,,,,,,Albitic Dykelette strong Pyrite,0,Shiroki,2017-09-10
+GCL,KAD17-068,403.29,0.05,FLT,HIGH,4,40,,,,,,,0,Shiroki,2017-09-10
+GCL,KAD17-068,406.01,0.05,FLT,HIGH,4,40,,,,,,Contact between UM and MIX-SED-UM,0,Shiroki,2017-09-10
+GCL,KAD17-068,435.56,0.2,FLT,HIGH,4,30,,,,,,,0,Shiroki,2017-09-10
+GCL,KAD17-068,436.08,1.25,BED,HIGH,4,40,,,,,,Thickly bedded Sandstone,0,Shiroki,2017-09-10
+GCL,KAD17-069A,44.08,0.28,VN,MOD,4,,,,,,,smokey qtz vein,0,Henderson,2017-09-24
+GCL,KAD17-069A,44.8,0.2,DYK,MOD,3,50,,,,,,,0,Henderson,2017-09-24
+GCL,KAD17-070,12.36,2.2,BRX,HIGH,3,50,,,,,,"Local patches of strongly altered fuchsite, fuchsite/chlorite foliation plains. Brecciated stockwork QC veins, irregular qz veins. Strong euhedral pyrite of up to 2mm size.",0,Andrienko,2017-09-07
+GCL,KAD17-070,44.68,2.68,BRX,HIGH,3,40,,,,,,"Healed brecciated structure; containing angular qz vein clasts of up to 0.5cm size (grey and smoky types of veins). Moderate pervasive carb alteration, moderate fuchsite patches, strong qz. Trace very fine-grained pyrite.",0,Andrienko,2017-09-07
+GCL,KAD17-070,55.38,3.12,FLT,MOD,3,20,,,,,,"Mashed section, possible fault.",0,Andrienko,2017-09-08
+GCL,KAD17-070,69.19,0.73,FLT,MOD,3,35,,,,,,"Section is mashed, possible fault.",0,Andrienko,2017-09-08
+GCL,KAD17-070,73,0.21,DYK,HIGH,4,50,,,,,,Albitite dyke with strong to intense euheral 1mm of pyrite.,0,Andrienko,2017-09-08
+GCL,KAD17-070,76.75,0.29,DYK,HIGH,4,50,,,,,,Albitite dyke with intense pyrite euhedral 1mm grains.,0,Andrienko,2017-09-08
+GCL,KAD17-070,104.05,0.24,FLT,HIGH,3,30,,,,,,Mashed up section; possible fault. Preceded by a 20cm deformed section.,0,Andrienko,2017-09-09
+GCL,KAD17-070,106.23,0.68,FLT,HIGH,3,30,,,,,,"Mashed section, possible fault.",0,Andrienko,2017-09-09
+GCL,KAD17-070,107.8,11.61,DYK,MOD,4,,,,,,,"Possible dyke, contact angle not determined.",0,Andrienko,2017-09-09
+GCL,KAD17-070,133.22,0.01,VN,HIGH,3,25,,,,,,Brecciated grey coloured single QC vein with internal UM clasts of up to 3mm size.,0,Andrienko,2017-09-11
+GCL,KAD17-071,126,0.46,FLT,LOW,2,,,,,,,,0,Brown,2017-09-11
+GCL,KAD17-071,219.4,0.5,FLT,HIGH,4,10,,,,,,,0,Brown,2017-09-14
+GCL,KAD17-071,243.36,0.3,FLT,MOD,3,,,,,,,,0,Brown,2017-09-14
+GCL,KAD17-071,317.6,1.83,FLT,HIGH,4,10,,,,,,Quartz-cemented fault breccia,0,Blackwell,2017-09-16
+GCL,KAD17-071,318.9,1.4,FLT,MOD,5,20,,,,,,Clay gouge and angular monomictic gravel,0,Blackwell,2017-09-16
+GCL,KAD17-072,27.66,0.1,VN,HIGH,4,40,,,,,,Opaque white Qz-Carb,0,Shiroki,2017-09-11
+GCL,KAD17-072,41.68,0.04,FLT,HIGH,4,,,,,,,,0,Shiroki,2017-09-12
+GCL,KAD17-072,61.19,0.1,BRX,MOD,5,40,,,,,,"""Margarita Green"" intense brecciated zone with pale green siliceous fill - healed breccia",0,Shiroki,2017-09-12
+GCL,KAD17-072,70.77,0.07,VN,HIGH,4,30,,,,,,Smoky Qz vein with strong pyrite along margin,0,Shiroki,2017-09-12
+GCL,KAD17-072,76.3,0.05,VN,HIGH,3,30,,,,,,Smoky Qz vein with fine weak pyrite,0,Shiroki,2017-09-12
+GCL,KAD17-072,95.55,0.26,BRX,HIGH,4,40,,,,,,Contact with Mafic Breccia with Mudstone Matrix below,0,Shiroki,2017-09-12
+GCL,KAD17-072,101.04,0.2,FLT,MOD,3,40,,,,,,Fine brecciation and broken core,0,Shiroki,2017-09-12
+GCL,KAD17-072,116.8,0.5,BRX,HIGH,5,20,,,,,,Possible healed Fault,0,Shiroki,2017-09-13
+GCL,KAD17-072,135.88,0.38,DYK,HIGH,4,60,,,,,,Sericite/Brown-Carb UM Dyke,0,Shiroki,2017-09-13
+GCL,KAD17-072,136.8,0.44,DYK,HIGH,4,60,,,,,,Sericite/Brown-Carb Ultramafic Dyke,0,Shiroki,2017-09-13
+GCL,KAD17-072,137.84,1.44,DYK,HIGH,4,40,,,,,,Sericite/Brown-Carb Ultramafic Dyke,0,Shiroki,2017-09-13
+GCL,KAD17-072,207.23,0.31,VN,HIGH,4,10,,,,,,Massive Qz-Carb,0,Shiroki,2017-09-13
+GCL,KAD17-072,207.7,0.11,VN,HIGH,4,40,,,,,,Massive Qz-Carb,0,Shiroki,2017-09-13
+GCL,KAD17-073,39.2,2.45,VN,HIGH,4,50,,,,,,"Vein is at 40-60 degrees TCA. Contains internal sheeted qz veins, and vuggy deformed individual QC veins.",0,Andrienko,2017-09-12
+GCL,KAD17-073,41.65,2.69,DYK,HIGH,4,15,,,,,,"Brown coloured albitite dyke, intensely albite and strongly quartz altered, weak carb and chlorite; structurally deformed; localized brown carb at margins; trace-weak pyrite/arsenian pyrite",0,Andrienko,2017-09-12
+GCL,KAD17-073,51.66,0.97,FLT,HIGH,3,10,,,,,,"Possible fault structure, section is mashed.",0,Andrienko,2017-09-12
+GCL,KAD17-073,52.86,1.88,DYK,HIGH,4,45,,,,,,"Brown coloured albitite with trace pyrite/arsenian pyrite (locally moderate) concentrated along chlorite-rich foliation plains; brown carbonate at margins; intensely ab, strongly qz altered. Deformed structure, weak confidence in structure TCA angle.",0,Andrienko,2017-09-12
+GCL,KAD17-073,69.25,6.65,FLT,MOD,4,15,,,,,,"Possible fault structure, section is mashed.",0,Andrienko,2017-09-14
+GCL,KAD17-073,79.88,6.04,FLT,MOD,4,15,,,,,,"Possible fault, section is mashed.",0,Andrienko,2017-09-14
+GCL,KAD17-073,118.61,0.21,DYK,HIGH,4,70,,,,,,"Albitite dyke, intensely albite/qz altered, weakly pyrite/arsenian-pyrite mineralized. Deformed structure, brown coloured.",0,Andrienko,2017-09-14
+GCL,KAD17-073,119.95,0.73,DYK,HIGH,4,55,,,,,,"Albitite dyke, intensely albite/qz altered, weakly pyrite/arsenian-pyrite mineralized. Deformed structure, grey to light brown coloured.",0,Andrienko,2017-09-14
+GCL,KAD17-073,127.77,0.23,DYK,HIGH,4,60,,,,,,"Albitite dyke, intensely albite/qz altered, weakly pyrite/arsenian-pyrite mineralized. 60-80 degrees TCA. Deformed structure, light-brown coloured.",0,Andrienko,2017-09-14
+GCL,KAD17-073,133.7,0.66,DYK,MOD,4,70,,,,,,"Possible UM dyke (TCA is difficult to measure, structure is deformed), contains coarse 1-3mm magnentite grains.",0,Andrienko,2017-09-14
+GCL,KAD17-073,147.25,0.11,VN,HIGH,3,70,,,,,,"Grey zoned qz vein, strongly mineralized with pyrite, up to 3mm euhedral grains.",0,Andrienko,2017-09-15
+GCL,KAD17-074,33.69,3.04,BRX,HIGH,4,,,,,,,Healed fault breccia.,0,Andrienko,2017-09-15
+GCL,KAD17-074,41.39,0.14,FLT,HIGH,3,35,,,,,,Healed fault breccia; brecciated quartz vein.,0,Andrienko,2017-09-15
+GCL,KAD17-074,153.4,0.05,FLT,MOD,4,55,,,,,,Possible fault structure at graphite and QC-vein intense section.,0,Andrienko,2017-09-16
+GCL,KAD17-074,154.25,0.1,FLT,HIGH,4,65,,,,,,Possible fault structure at vein and graphite-rich section.,0,Andrienko,2017-09-16
+GCL,KAD17-074,222.35,0.22,CNT,HIGH,4,75,,,,,,Graphitic section with qz veining.,0,Andrienko,2017-09-17
+GCL,KAD17-074,224.49,0.26,CNT,HIGH,4,60,,,,,,Graphitic section with quartz veining.,0,Andrienko,2017-09-17
+GCL,KAD17-076,54.56,0.02,VN,HIGH,4,15,,,,,,Ladder vein - grey QC with discrete white Qz zones perpendicular to vein orientation,0,Shiroki,2017-09-17
+GCL,KAD17-076,68.6,0.27,CNT,MOD,4,30,,,,,,Graphitic contact between Mafic above and UM below,0,Shiroki,2017-09-17
+GCL,KAD17-076,78.08,0.1,VN,HIGH,4,20,,,,,,White massive Qz-dominant QC vein,0,Shiroki,2017-09-17
+GCL,KAD17-076,82.82,0.04,FLT,MOD,4,30,,,,,,,0,Shiroki,2017-09-17
+GCL,KAD17-076,91.5,0.06,FLT,HIGH,5,20,,,,,,,0,Shiroki,2017-09-17
+GCL,KAD17-076,101.45,0.01,FLT,MOD,3,60,,,,,,,0,Shiroki,2017-09-17
+GCL,KAD17-076,107.5,1.5,FLT,HIGH,3,30,,,,,,Wide zone with 20 % mm-cm scale strong-intense FLT,0,Shiroki,2017-09-17
+GCL,KAD17-076,122.5,50,PLN,LOW,NA,,,,,,,Approx 50 cm possible core loss or block place mistake.,0,Shiroki,2017-09-17
+GCL,KAD17-076,159.77,0.01,FLT,HIGH,4,50,,,,,,,0,Shiroki,2017-09-18
+GCL,KAD17-076,168.48,0.03,FLT,HIGH,4,50,,,,,,,0,Shiroki,2017-09-18
+GCL,KAD17-076,281.55,0.25,BRX,HIGH,4,30,,,,,,Angular pieces 3 mm to 2 cm cemented by white Qz,0,Shiroki,2017-09-19
+GCL,KAD17-076,287.07,0.01,FLT,HIGH,5,10,,,,,,Fault slick in low-angle graphitic layer,0,Shiroki,2017-09-20
+GCL,KAD17-076,287.37,1.69,BRX,HIGH,4,10,,,,,,,0,Shiroki,2017-09-20
+GCL,KAD17-076,293.26,0.12,FAX,LOW,4,90,,,,,,Looks like a folded foliation - see photo,0,Shiroki,2017-09-20
+GCL,KAD17-076,341.23,0.02,FLT,HIGH,4,20,,,,,,,0,Shiroki,2017-09-22
+GCL,KAD17-076,449.05,0.17,FLT,HIGH,3,50,,,,,,,0,Hoang,2017-09-24
+GCL,KAD17-077,32.82,0.25,BRX,HIGH,4,60,,,,,,Possible tectonic/hydrothermal breccia.,0,Andrienko,2017-09-17
+GCL,KAD17-077,33.38,0.15,BRX,HIGH,4,30,,,,,,Possible tectonic/hydrothermal breccia.,0,Andrienko,2017-09-17
+GCL,KAD17-077,34.22,0.16,BRX,HIGH,4,50,,,,,,Possible tectonic/hydrothermal breccia.,0,Andrienko,2017-09-17
+GCL,KAD17-077,42.85,1.46,VN,HIGH,4,40,,,,,,"White quartz vein, deformed.",0,Andrienko,2017-09-18
+GCL,KAD17-077,115.98,0.61,BRX,HIGH,5,40,,,,,,Possible hydrothermal/tectonic breccia with intense sulphide bleb concentration.,0,Andrienko,2017-09-18
+GCL,KAD17-077,130.22,0.52,VN,HIGH,4,50,,,,,,"White coloured quartz vein, associated with intense disseminated pyrite.",0,Andrienko,2017-09-18
+GCL,KAD17-077,133.03,0.31,BRX,HIGH,4,70,,,,,,"Possible tectonic/hydrothermal breccia, with rounded, very concentrated pyrite blebs.",0,Andrienko,2017-09-18
+GCL,KAD17-077,203.16,0.62,VN,HIGH,4,50,,,,,,"30-70 degree TCA contact. White-coloured zoned QC-calcite vein, cross-cutting graphitic mudstone.",0,Andrienko,2017-09-19
+GCL,KAD17-077,242.1,0.46,VN,HIGH,4,,,,,,,"QC-calcite vein; deformed, massive to zoned.",0,Andrienko,2017-09-20
+GCL,KAD17-078,19.19,0.3,VN,HIGH,3,15,,,,,,QC-calcite vein.,0,Andrienko,2017-09-22
+GCL,KAD17-078,29.43,0.42,BRX,HIGH,4,60,,,,,,Small section of MAFIC-BXMS; with a reworked sedimentary texture.,0,Andrienko,2017-09-22
+GCL,KAD17-078,31.87,0.95,BRX,HIGH,4,20,,,,,,Small section of MAFIC-BXMS; with a reworked sedimentary texture.,0,Andrienko,2017-09-22
+GCL,KAD17-078,48.35,0.2,VN,HIGH,4,30,,,,,,QC-calcite vein at the contact of graphitic sedimentary units and ultramafic units.,0,Andrienko,2017-09-22
+GCL,KAD17-078,116.24,0.7,VN,HIGH,4,35,,,,,,"Brecciated qz vein, smoky-grey to white colour.",0,Andrienko,2017-09-22
+GCL,KAD17-078,198.51,0.49,VN,HIGH,4,30,,,,,,Zoned to vuggy white-grey QC veinining.,0,Andrienko,2017-09-23
+GCL,KAD17-078,200.31,0.15,DYK,HIGH,2,,,,,,,"Albitite dykelet; light brown colour, deformed structure.",0,Andrienko,2017-09-23
+GCL,KAD17-078,202.31,0.78,FLT,HIGH,3,20,,,,,,"Possible fault guage, silt/clay infill, brecciation.",0,Andrienko,2017-09-23
+GCL,KAD17-078,213.6,0.47,VN,HIGH,4,25,,,,,,White-coloured QC vein.,0,Andrienko,2017-09-23
+GCL,KAD17-078,252.08,0.51,VN,HIGH,4,70,,,,,,QC white-coloured vuggy multi-stage zoned vein.,0,Andrienko,2017-09-24
+GCL,KAD17-078,314.55,326.5,FLT,MOD,4,20,,,,,,Possible Kerr fault. Intermittent fracured 0.5m meter sections. 10-30 degrees TCA angle.,0,Andrienko,2017-09-25
+GCL,KAD17-078,390.13,0.45,VN,HIGH,4,55,,,,,,,0,Unknown,2017-09-26
+GCL,KAD17-079,33.26,2.43,FLT,HIGH,3,20,,,,,,Angular to sub angular clasts of (Qtz grains and ultramafic) in fault gouge matrix. 1mm-4mm sized. Matrix made up of chlorite Claylike. (Kerr Fault),0,Hoang,2017-09-25
+GCL,KAD17-079,49.28,5.18,FLT,HIGH,4,40,,,,,,"Chlorite with Ultramafic clasts >.1mm angular to sub angular.
+
+(Kerr Fault)?",0,Hoang,2017-09-25
+GCL,KAD17-079,199.43,0.93,SHZ,HIGH,4,30,50,,,,,Contains Ultramafic fragment stretched.,0,Hoang,2017-09-27
+GCL,KAD17-079,200.86,6.14,FRA,HIGH,4,10,,,,,,Fractured from drilling. Contains clays and Ultramafic and chlorite fragments within clay.,0,Hoang,2017-09-27
+GCL,KAD17-079,219.97,222.87,FLT,HIGH,3,45,,,,,,,0,Hoang,2017-09-27
+GCL,KAD17-079,267.85,1.06,SHZ,HIGH,4,20,,,,,,,0,Hoang,2017-09-28
+GCL,KAD17-079,269.7,0.5,VN,HIGH,4,30,,,,,,,0,Hoang,2017-09-28
+GCL,KAD17-079,288.24,0.22,VN,HIGH,4,80,,,,,,,0,Hoang,2017-09-28
+GCL,KAD17-080,48,0.61,DYK,MOD,3,,,,,,,,0,Henderson,2017-09-25
+GCL,KAD17-080,73.45,0.38,DYK,MOD,3,,,,,,,,0,Henderson,2017-09-26
+GCL,KAD17-080,75.1,0.2,DYK,MOD,3,60,,,,,,,0,Henderson,2017-09-26
+GCL,KAD17-080,76.4,0.34,DYK,MOD,3,,,,,,,,0,Henderson,2017-09-26
+GCL,KAD17-080,125.54,1.62,VN,HIGH,3,0,,,,,,,0,Henderson,2017-09-27
+GCL,KAD17-080,142,1.3,VN,HIGH,3,,,,,,,,0,Henderson,2017-09-27
+GCL,KAD17-081,13.79,0.37,FLT,HIGH,2,40,,,,,,"Possible fault, section is fractured.",0,Andrienko,2017-09-27
+GCL,KAD17-081,29.45,0.44,FLT,HIGH,3,25,,,,,,"Possible fault, section is fractured.",0,Andrienko,2017-09-27
+GCL,KAD17-081,107.9,0.68,VN,HIGH,3,15,,,,,,QC vuggy vein.,0,Andrienko,2017-09-28
+GCL,KAD17-081,112.32,0.98,VN,HIGH,3,15,,,,,,Vuggy QC vein with minor calcite with intense pyrite mineralization outside of the vein margin; vein is coarse-crystalline with ~1cm euhedral grains.,0,Andrienko,2017-09-28
+GCL,KAD17-081,282.5,0.51,VN,HIGH,3,25,,,,,,QC massive to white-grey zoned vein.,0,Andrienko,2017-09-29
+GCL,KAD17-081,285.43,0.19,VN,HIGH,3,25,,,,,,QC massive to white-grey zoned vein.,0,Andrienko,2017-09-29
+GCL,KAD17-081,306.79,6.71,FLT,HIGH,4,15,,,,,,"Fractured section, annealed fault.",0,Andrienko,2017-09-30
+GCL,KAD17-081,337.23,1.9,FLT,HIGH,3,20,,,,,,,0,Andrienko,2017-09-30
+GCL,KAD17-081,397.97,0.83,BRX,HIGH,3,,,,,,,Brecciated texture containing QC clasts.,0,Andrienko,2017-10-01
+GCL,KAD17-081,415.2,1.24,VN,HIGH,4,,,,,,,Prominent white-coloured qz vein.,0,Andrienko,2017-10-01
+GCL,KAD17-082,9.53,0.17,DYK,HIGH,3,90,,,,,,,0,Henderson,2017-09-29
+GCL,KAD17-082,16.9,0.1,DYK,MOD,3,50,,,,,,,0,Henderson,2017-09-29
+GCL,KAD17-082,42.12,0.29,DYK,MOD,4,30,,,,,,,0,Henderson,2017-09-29
+GCL,KAD17-085,14.72,4.74,FRA,MOD,3,,,,,,,broken along foliation,0,Henderson,2017-09-30
+GCL,KAD17-086,66.58,0.88,FRA,HIGH,3,,,,,,,,0,Hoang,2017-10-01
+GCL,KAD17-086,73.7,0.22,FRA,HIGH,3,50,,,,,,,0,Hoang,2017-10-01
+GCL,KAD17-086,76.45,0.45,FRA,HIGH,3,30,,,,,,,0,Hoang,2017-10-01
+GCL,KAD17-086,92,0.22,FRA,HIGH,3,20,,,,,,,0,Hoang,2017-10-01
+GCL,KAD17-086,112.45,0.59,FRA,HIGH,3,50,,,,,,,0,Hoang,2017-10-01
+GCL,KAD17-086,114.56,2.44,FRA,HIGH,5,,,,,,,,0,Hoang,2017-10-01
+GCL,KAD17-087,82.07,0.23,DYK,HIGH,4,85,,,,,,,0,Henderson,2017-10-02
+GCL,KAD17-088,23.95,0.05,FLT,LOW,2,,,,,,,Graphitic fault gouge,0,Brown,2017-10-05
+GCL,KAD17-088,49.86,0.32,FLT,MOD,3,,,,,,,Brecciated interval with fault gouge present.,0,Brown,2017-10-05
+GCL,KAD17-088,89.15,0.1,FLT,LOW,2,,,,,,,Minor rubble rock core interval with breccia package.,0,Brown,2017-10-05
+GCL,KAD17-088,184.65,0.75,FLT,MOD,3,,,,,,,,0,Brown,2017-10-04
+GCL,KAD17-089,17.31,0.1,DYK,HIGH,3,30,,,,,,,0,Henderson,2017-10-02
+GCL,KAD17-089,69.43,0.15,DYK,HIGH,4,45,,,,,,,0,Henderson,2017-10-04
+GCL,KAD17-090,89.16,0.5,FLT,HIGH,4,65,,,,,,,0,Hoang,2017-10-04
+GCL,KAD17-090,172.33,0.1,VN,HIGH,3,70,,,,,,,0,Hoang,2017-10-05
+GCL,KAD17-090,221.33,0.19,FRA,HIGH,3,40,,,,,,,0,Hoang,2017-10-06
+GCL,KAD17-090,221.72,0.18,FRA,HIGH,4,50,,,,,,,0,Hoang,2017-10-06
+GCL,KAD17-090,232.78,0.3,FRA,HIGH,3,50,,,,,,,0,Hoang,2017-10-06
+GCL,KAD17-091,91.6,2.08,DYK,HIGH,4,,,,,,,,0,Hoang,2017-10-07
+GCL,KAD17-091,105.7,0.3,FLT,HIGH,4,50,,,,,,,0,Hoang,2017-10-07
+GCL,KAD17-091,107.23,6.39,FLT,HIGH,5,50,,,,,,,0,Hoang,2017-10-07
+GCL,KAD17-092,118.8,0.3,FLT,MOD,3,,,,,,,,0,Henderson,2017-10-08
+GCL,KAD17-092,238.37,0.2,BED,LOW,4,40,,,,,,uphole  facing,0,Henderson,2017-10-09
+GCL,KAD17-093,147.57,0.05,FLT,MOD,3,30,,,,,,,0,Brown,2017-10-09
+GCL,KAD17-093,393.09,0.3,FLT,MOD,3,15,,,,,,,0,Brown,2017-10-11
+GCL,KAD17-093,434.56,0.2,FLT,LOW,3,30,,,,,,,0,Brown,2017-10-12
+GCL,KAD17-093,448.61,0.3,FLT,MOD,3,,,,,,,,0,Brown,2017-10-12
+GCL,KAD17-093,451.3,0.5,FLT,LOW,3,,,,,,,,0,Brown,2017-10-12
+GCL,KAD17-094,8.2,0.05,BRX,HIGH,4,70,,,,,,A small sill cemented Quartz breccia sill break (8.20m),0,Hoang,2017-10-08
+GCL,KAD17-094,87.53,0.05,PLN,MOD,4,50,,,,,,Broken core round-subround clay to pebble size particles - possible fault?,0,Shiroki,2017-10-10
+GCL,KAD17-094,149.37,0.14,BRX,HIGH,5,30,,,,,,Beige-tan siliceous healed breccia-fault with weak 0.5 % fine pyrite disseminated,0,Shiroki,2017-10-11
+GCL,KAD17-094,199.25,0.2,FLT,MOD,4,,,,,,,,0,Shiroki,2017-10-12
+GCL,KAD17-094,211.04,0.17,BED,HIGH,2,60,,,,,,Black Graphitic Mud layer contains 15 % med Pyrite cubes,0,Shiroki,2017-10-12
+GCL,KAD17-094,236.66,0.08,VN,HIGH,4,70,,,,,,Zoned Qz-Carb vein,0,Shiroki,2017-10-13
+GCL,KAD17-094,237.88,0.1,VN,HIGH,4,70,,,,,,Massive grey Qz vein with trace Pyrite,0,Shiroki,2017-10-13
+GCL,KAD17-095,35.08,0.69,FLT,MOD,3,,,,,,,,0,Henderson,2017-10-11
+GCL,KAD17-095,96.6,0.6,FLT,LOW,2,,,,,,,broken core,0,Henderson,2017-10-12
+GCL,KAD17-095,168,0.5,FRA,LOW,2,,,,,,,broken core,0,Henderson,2017-10-12
+GCL,KAD17-095,184.7,0.3,FLT,MOD,2,,,,,,,graphite,0,Henderson,2017-10-13
+GCL,KAD17-095,263.9,0.5,FLT,MOD,2,,,,,,,,0,Henderson,2017-10-13
+GCL,KAD17-095,357.92,0.23,BRX,HIGH,3,,,,,,,,0,Henderson,2017-10-16
+GCL,KAD17-096,11.4,0.3,BED,MOD,2,45,,,,,,Appears to be up hole,0,Brown,2017-10-13
+GCL,KAD17-096,20.66,2.7,DYK,MOD,3,,,,,,,Hornsfeld alteration,0,Brown,2017-10-13
+GCL,KAD17-096,23.39,0.3,DYK,MOD,4,,,,,,,,0,Brown,2017-10-13
+GCL,KAD17-096,24.22,0.28,DYK,MOD,4,,,,,,,,0,Brown,2017-10-13
+GCL,KAD17-096,99,6,BRX,MOD,3,,,,,,,,0,Brown,2017-10-14
+GCL,KAD17-097,12,2,DYK,MOD,4,70,,,,,,"Coarse-grained granular massive possible dyke at 12-14m upper contact 70TCA, mod 1 % med disseminated pyrite, Zr 896ppm, Ti 3659ppm, Cr 419 ppm.",0,Shiroki,2017-10-13
+GCL,KAD17-097,16.71,0.28,VN,HIGH,4,50,,,,,,Sheeted Qz veins contains ankerite and mod disseminated pyrite 1 % and trace 0.1 % chalcopyrite,0,Shiroki,2017-10-13
+GCL,KAD17-097,24.7,0.15,VN,HIGH,4,60,,,,,,Zoned QC vein with trace fine Py,0,Shiroki,2017-10-14
+GCL,KAD17-097,25.02,0.25,VN,HIGH,4,50,,,,,,Zoned QC vein with trace Cpy and Tennantite,0,Shiroki,2017-10-14
+GCL,KAD17-097,37.31,0.22,DYK,HIGH,4,50,,,,,,"Sharp contacts, granular, med-grained, grey, Chl blebs, mod-strong pyrite cubes disseminated",0,Shiroki,2017-10-14
+GCL,KAD17-098,31.37,0.14,DYK,HIGH,4,60,,,,,,"Zr 73ppm, Ti 2049ppm, Cr 361ppm",0,Shiroki,2017-10-17
+GCL,KAD17-098,34.99,0.51,DYK,HIGH,4,60,,,,,,"Zr 26ppm, Ti 1516ppm, Cr 317ppm",0,Shiroki,2017-10-17
+GCL,KAD17-098,36.86,0.17,DYK,HIGH,4,60,,,,,,"Zr 136ppm, Ti 3018ppm, Cr 427ppm",0,Shiroki,2017-10-17
+GCL,KAD17-098,81.75,0.01,FLT,MOD,4,70,,,,,,,0,Shiroki,2017-10-16
+GCL,KAD17-098,83.13,0.01,FLT,HIGH,4,70,,,,,,,0,Shiroki,2017-10-16
+GCL,KAD17-098,86,0.01,FLT,HIGH,4,70,,,,,,,0,Shiroki,2017-10-16
+GCL,KAD17-098,129,0.7,PLN,HIGH,4,50,,,,,,"Graphitic zone with strong 2 % pyrite disseminated, in QC stringers, and as stringers and breccia-stockwork QC veins",0,Shiroki,2017-10-16
+GCL,KAD17-098,132,0.53,PLN,HIGH,4,50,,,,,,"Graphitic zone with strong 2 % pyrite disseminated, in QC stringers, and as stringers and breccia-stockwork QC veins",0,Shiroki,2017-10-16
+GCL,KAD17-098,174.17,0.1,VN,HIGH,4,50,,,,,,QC vein massive,0,Shiroki,2017-10-16
+GCL,KAD17-099,16.11,0.46,DYK,MOD,4,,,,,,,"16.11-16.57m a dark grey-purple albite altered dyke identified. Weakly magnetic, moderate to strong disseminated Py with trace Aspy.",0,Brown,2017-10-16
+GCL,KAD17-099,19.72,0.37,DYK,MOD,4,,,,,,,From 19.72-20.09m a pink-orange Albitic dyke identified,0,Brown,2017-10-16
+GCL,KAD17-099,25.31,0.98,DYK,HIGH,4,,,,,,,25.31-26.29m a greyish orange to purple Albitic dyke present. Moderate to strong disseminated Py and Aspy (2%),0,Brown,2017-10-16
+GCL,KAD17-099,29.12,0.54,DYK,HIGH,4,,,,,,,29.12-29.68m a greyish orange Albitic dyke present. Moderate to strong disseminated Py and Aspy (2%) with granular texture,0,Brown,2017-10-16
+GCL,KAD17-099,33.5,0.14,DYK,HIGH,4,,,,,,,From 33.50-33.64m a purple Albitic dyke recognized. Moderate disseminated Py with trace Aspy (1%),0,Brown,2017-10-16
+GCL,KAD17-099,34.68,0.14,DYK,HIGH,4,,,,,,,From 34.68-34.82m a purple Albitic dyke recognized. Moderate disseminated Py with trace Aspy (1%),0,Brown,2017-10-16
+GCL,KAD17-099,44.7,0.62,DYK,HIGH,4,,,,,,,44.70-45.32m is a strongly albite altered of UM-QC rock. Moderate disseminated Py to trace Aspy,0,Brown,2017-10-16
+GCL,KAD17-099,52.73,0.71,DYK,MOD,3,,,,,,,52.73-55.42m a greenish-tan with peppered grain texture appears patchy with the UM-QC rock,0,Brown,2017-10-16
+GCL,KAD17-099,123.66,0.63,DYK,LOW,3,,,,,,,From 123.66-124.29m brownish-yellow strong to intense fracture controlled Py (3-4%). Rock is very siliceous and has spinifex texture. Possible dyke?,0,Brown,2017-10-17
+GCL,KAD17-099,133.2,0.15,FLT,MOD,2,,,,,,,Fault gouge with brecciated qz vein present at 133.20m (15 cm in length),0,Brown,2017-10-21
+GCL,KAD17-099,233,0.82,DYK,LOW,3,,,,,,,"Less qz-carb veined dark green interval between 233-233.82m, possible dyke?",0,Brown,2017-10-20
+GCL,KAD17-100,107,107.27,DYK,HIGH,3,35,,,,,,Biotite dyke.,0,Henderson,2017-10-18
+GCL,KAD17-100,121.26,121.6,DYK,HIGH,3,30,,,,,,"Intermediate dyke,",0,Henderson,2017-10-18
+GCL,KAD17-100,243.96,246,FLT,MOD,4,10,,,,,,Possible fault.,0,Andrienko,2017-10-20
+GCL,KAD17-101,14.47,0.45,VN,HIGH,4,40,,,,,,"Smoky grey Qz vein massive, py 0.1 % fine",0,Shiroki,2017-10-17
+GCL,KAD17-101,16.2,0.3,VN,HIGH,4,70,,,,,,Zoned vuggy white-grey QC vein with weak pink carb and 0.1 % py,0,Shiroki,2017-10-17
+GCL,KAD17-101,18.88,1.42,VN,HIGH,3,30,,,,,,Zone containing approx 50 % brecciated black Qz vein with mod-strong py,0,Shiroki,2017-10-17
+GCL,KAD17-101,29.7,0.23,VN,HIGH,4,30,,,,,,Black brecciated Qz vein strong Pyrite stringers,0,Shiroki,2017-10-17
+GCL,KAD17-101,41.63,0.15,BRX,HIGH,3,50,,,,,,"Siliceous cement and subangular clasts up to 1 cm, Py 1 % fine",0,Shiroki,2017-10-18
+GCL,KAD17-101,44.17,0.05,BRX,HIGH,4,60,,,,,,Breccia with angular clasts and white-grey Qz cement and weak fine Pyrite at 44.17 m 5 cm wide,0,Shiroki,2017-10-18
+GCL,KAD17-101,48.88,0.37,BED,,4,40,,,,,,Mudstone layer at 48.88 m 37 cm wide intense Graphite and Pyrite blebs,0,Shiroki,2017-10-18
+GCL,KAD17-101,49.39,0.28,VN,HIGH,4,30,,,,,,"Black Qz Vein at 49.39 m 25 cm wide black brecciated, Pyrite stringer-bearing",0,Shiroki,2017-10-18
+GCL,KAD17-101,55.56,0.05,BRX,HIGH,4,30,,,,,,,0,Shiroki,2017-10-18
+GCL,KAD17-101,62.81,0.46,BED,MOD,4,30,,,,,,Sandstone,0,Shiroki,2017-10-21
+GCL,KAD17-101,63,0.13,PLN,HIGH,4,30,,,,,,Mafic fragments at 63 m 13 cm wide with round 2-5 mm possible cooling features 30 TCA,0,Shiroki,2017-10-18
+GCL,KAD17-101,65.7,0.42,BED,MOD,4,40,,,,,,Mudstone,0,Shiroki,2017-10-21
+GCL,KAD17-101,68.2,0.4,BED,MOD,4,30,,,,,,Sandstone bedding likely grading fining up-hole,0,Shiroki,2017-10-21
+GCL,KAD17-101,68.88,0.53,BED,MOD,4,30,,,,,,Sandstone,0,Shiroki,2017-10-21
+GCL,KAD17-101,73.1,0.01,FLT,HIGH,5,10,,,,,,,0,Shiroki,2017-10-18
+GCL,KAD17-101,73.4,0.02,FLT,HIGH,5,10,,,,,,,0,Shiroki,2017-10-18
+GCL,KAD17-101,75,0.01,FLT,HIGH,5,10,,,,,,,0,Shiroki,2017-10-18
+GCL,KAD17-101,76.45,0.02,FLT,HIGH,5,10,,,,,,,0,Shiroki,2017-10-18
+GCL,KAD17-101,77,0.02,FLT,HIGH,5,10,,,,,,,0,Shiroki,2017-10-18
+GCL,KAD17-101,77.47,0.02,FLT,HIGH,5,10,,,,,,,0,Shiroki,2017-10-18
+GCL,KAD17-101,82.86,0.43,VN,HIGH,4,50,,,,,,White brecciated Qz vein,0,Shiroki,2017-10-21
+GCL,KAD17-101,118.02,0.3,PLN,MOD,4,50,,,,,,Probable Green-White Ultramafic clast at 118.02 m at top contact 30 cm wide with probable weak Fu along foliation,0,Shiroki,2017-10-18
+GCL,KAD17-101,137,0.13,BRX,HIGH,3,60,,,,,,Breccia with angular clasts cemented and cross cut by veins and later breccia,0,Shiroki,2017-10-19
+GCL,KAD17-101,137.47,0.2,BRX,HIGH,3,60,,,,,,Breccia with angular clasts cemented and cross cut by veins and later breccia,0,Shiroki,2017-10-19
+GCL,KAD17-101,157.9,0.45,BRX,HIGH,3,60,,,,,,Breccia with angular clasts cemented and cross cut by veins and later breccia,0,Shiroki,2017-10-19
+GCL,KAD17-101,158.44,0.37,BRX,HIGH,3,60,,,,,,Breccia with angular clasts cemented and cross cut by veins and later breccia,0,Shiroki,2017-10-19
+GCL,KAD17-101,193.54,0.2,BED,HIGH,4,50,,,,,,Black Mudstone with intense Pyrite,0,Shiroki,2017-10-19
+GCL,KAD17-101,203.4,0.05,BED,HIGH,3,60,,,,,,Black Mudstone with intense Pyrite,0,Shiroki,2017-10-19
+GCL,KAD17-101,203.68,0.15,BED,HIGH,4,60,,,,,,Black Mudstone with intense Pyrite,0,Shiroki,2017-10-19
+GCL,KAD17-101,225.13,0.4,VN,HIGH,5,60,,,,,,Grey-white Qz vein at 225.13 m 40 cm wide foliated 60TCA,0,Shiroki,2017-10-19
+GCL,KAD17-101,232.3,0.27,BED,HIGH,5,30,,,,,,Graphitic Mudstone at top contact 232.3 m 27 cm wide 30TCA Pyrite 15 % disseminated along bedding.,0,Shiroki,2017-10-20
+GCL,KAD17-101,271.1,0.25,FLT,HIGH,3,30,,,,,,"Strong-intense foliation, minor gauge, some broken core",0,Shiroki,2017-10-21
+GCL,KAD17-101,274.68,0.08,VN,HIGH,4,15,,,,,,Chl trace in white brecciated QC vein at 274.68 m 8 cm wide 15 TCA,0,Shiroki,2017-10-20
+GCL,KAD17-101,275.13,0.01,FLT,HIGH,5,15,,,,,,fault gauge 1 cm wide 15TCA at 275.13 m,0,Shiroki,2017-10-20
+GCL,KAD17-101,283.73,0.54,VN,HIGH,5,20,,,,,,"SHT possibly individual zoned, white QC vein possibly sheeted at 283.73 m contain Chl, Sphalerite, Chalcopyrite, Pyrite",0,Shiroki,2017-10-20
+GCL,KAD17-101,286.6,0.26,PLN,MOD,4,10,,,,,,Grey-Yellow Sericite/Brown Carb UM?,0,Shiroki,2017-10-20
+GCL,KAD17-101,287.92,0.5,BED,HIGH,5,20,,,,,,Graphitic Mudstone at top contact,0,Shiroki,2017-10-20
+GCL,KAD17-101,315.46,0.02,FLT,HIGH,4,30,,,,,,Fault gauge,0,Shiroki,2017-10-21
+GCL,KAD17-101,344.22,0.02,FLT,HIGH,5,20,,,,,,,0,Shiroki,2017-10-21
+GCL,KAD17-101,367,0.05,FLT,HIGH,5,30,,,,,,gauge,0,Shiroki,2017-10-21
+GCL,KAD17-101,375.42,0.05,FLT,HIGH,3,30,,,,,,"Strong-intense foliation, minor gauge, some broken core",0,Shiroki,2017-10-21
+GCL,KAD17-101,380.75,0.16,FLT,HIGH,5,20,,,,,,Fault gauges strong-intense,0,Shiroki,2017-10-21
+GCL,KAD17-101,381.39,0.23,FLT,HIGH,5,20,,,,,,intense-strong,0,Shiroki,2017-10-21
+GCL,KAD17-101,383.63,0.005,FLT,MOD,4,40,,,,,,Small mm-scale gauge at 383.63 m,0,Shiroki,2017-10-21
+GCL,KAD17-101,438.54,0.68,BRX,HIGH,4,50,,,,,,"Broken core, poor recovery, and breccia texture with Brown Carb-Chl-Qz matrix",0,Shiroki,2017-10-22
+GCL,KAD17-101,441.16,0.02,BRX,HIGH,4,60,,,,,,Breccia with 2-5 mm clasts,0,Shiroki,2017-10-22
+GCL,KAD17-101,443.28,0.1,BRX,HIGH,4,30,,,,,,"Breccia with high Qz content, tan-grey",0,Shiroki,2017-10-22
+GCL,KAD17-101,454.5,0.4,VN,HIGH,5,50,,,,,,Grey-white massive foliated QC vein trace pyrite at 454.5 m 40 cm wide 50TCA contains crosscutting QC stringers,0,Shiroki,2017-10-22
+GCL,KAD17-101,460.36,0.005,FLT,HIGH,5,30,,,,,,Fault Gauge,0,Shiroki,2017-10-23
+GCL,KAD17-102,24.89,0.18,DYK,MOD,4,65,,,,,,Albitic dyke with strong Py mineralization (2-3%),0,Brown,2017-10-21
+GCL,KAD17-102,33.34,0.3,DYK,HIGH,4,70,,,,,,Albitic dyke at 33.34m(30 cm in length).,0,Brown,2017-10-21
+GCL,KAD17-102,34.91,0.7,DYK,HIGH,5,50,,,,,,Granitic feldspar dyke at 34.91 (70 cm in length),0,Brown,2017-10-21
+GCL,KAD17-102,99,0.15,FLT,MOD,3,,,,,,,Rubble rock core and minor fault gouge present,0,Brown,2017-10-21
+GCL,KAD17-103,63.57,0.1,DYK,HIGH,3,35,,,,,,"Intermediate dyke with granular texture of elongated ~0.5cm QC grains, surrounded by chlorite.",0,Andrienko,2017-10-21
+GCL,KAD17-103,100.19,1.1,BRX,HIGH,4,55,,,,,,Qz-cement breccia with intense pyrite.,0,Andrienko,2017-10-22
+GCL,KAD17-103,128.08,0.53,DYK,HIGH,3,50,,,,,,Possible dyke or sandstone unit.,0,Andrienko,2017-10-22
+GCL,KAD17-103,131.05,0.53,FLT,MOD,3,40,,,,,,Graphitic fault.,0,Andrienko,2017-10-22
+GCL,KAD17-103,145.7,0.3,FLT,HIGH,3,55,,,,,,Graphitic fault gauge.,0,Andrienko,2017-10-22
+GCL,KAD17-103,168.18,0.4,PLN,HIGH,3,,,,,,,Perlitic texture.,0,Andrienko,2017-10-23
+GCL,KAD17-103,213.7,0.15,FLT,HIGH,3,40,,,,,,Possible graphitic fault.,0,Andrienko,2017-10-23
+GCL,KAD17-103,259.64,1.87,FLT,MOD,3,15,,,,,,"Possible fault, multiple ~30cm sections are mashed.",0,Andrienko,2017-10-23
+GCL,KAD17-103,269.5,5.63,FLT,HIGH,4,10,,,,,,Possible mafic-UM unit fault contact fault zone. Contains dark-grey to smoky qz veins.,0,Andrienko,2017-10-24
+GCL,KAD17-104,38.23,0.25,DYK,MOD,4,50,,,,,,At 38.23m a small reminant of biotite dyke (25 cm in length),0,Brown,2017-10-22
+GCL,KAD17-104,61.1,0.16,DYK,MOD,3,,,,,,,,0,Brown,2017-10-22
+GCL,KAD17-104,139.58,0.9,VN,HIGH,5,,,,,,,Large smoky qz vein (90 cm in length),0,Brown,2017-10-23
+GCL,KAD17-104,184,1.64,FLT,LOW,2,,,,,,,184-185.64m: Broken to rubble rock core with some slight brecciation of rock plus a variable foliation. Possible fault zone?,0,Brown,2017-10-25
+GCL,KAD17-104,192,2,FLT,MOD,2,,,,,,,Broken rock core with some slight brecciation of rock plus a strong variable foliation. Possible fault zone?,0,Brown,2017-10-25
+GCL,KAD17-105,22.35,0.65,FLT,HIGH,3,35,,,,,,Graphitic brecciated fault gauge.,0,Unknown,2017-10-25
+GCL,KAD17-105,34,0.78,DYK,MOD,3,,,,,,,Intermediate dyke.,0,Andrienko,2017-10-26
+GCL,KAD17-105,59.82,0.34,DYK,HIGH,3,45,,,,,,Intermediate dyke.,0,Andrienko,2017-10-26
+GCL,KAD17-105,61.13,0.46,DYK,HIGH,3,40,,,,,,,0,Andrienko,2017-10-26
+GCL,KAD17-105,75.11,0.1,BED,,,,,,,,,Younging uphole indicator.,0,Andrienko,2017-10-26
+GCL,KAD17-105,100,1.3,VN,HIGH,4,70,,,,,,"Qz smoky vein at 60-80 degrees TCA, surrounded by intense pyrite and arsenopyrite (disseminated).",0,Andrienko,2017-10-27
+GCL,KAD17-105,127.63,2.31,PLN,HIGH,3,,,,,,,Leucoxene grains.,0,Andrienko,2017-10-27
+GCL,KAD17-105,231.73,0.54,PLN,HIGH,3,65,,,,,,Strong prominent foliation within the ultramafic unit.,0,Andrienko,2017-10-28
+GCL,KAD17-105,249.7,0.04,FLT,MOD,1,90,,,,,,"Possible fault gauge, clay infill.",0,Andrienko,2017-10-28
+GCL,KAD17-105,267.8,6.39,FLT,MOD,3,25,,,,,,Possible fault zone; deformed; healed breccia. Parts of this interval are mashed.,0,Andrienko,2017-10-28
+GCL,KAD17-105,286.1,1.23,FLT,HIGH,4,25,,,,,,"Possible fault zone, healed breccia texture. Structure angle is parallel to 30 degrees TCA.",0,Andrienko,2017-10-29
+GCL,KAD17-105,298.86,0.26,VN,HIGH,3,80,,,,,,QC-calcite vein.,0,Andrienko,2017-10-29
+GCL,KAD17-106,66,0.01,FLT,HIGH,3,70,,,,,,Broken flaked core and minor gauge-clay at top contact,0,Shiroki,2017-10-26
+GCL,KAD17-107,62,0.1,BRX,MOD,3,60,,,,,,,0,Brown,2017-10-26
+GCL,KAD17-107,206.26,0.4,SHZ,HIGH,4,60,,,,,,,0,Hoang,2017-10-28
+GCL,KAD17-107,209.75,46,FLT,HIGH,5,60,,,,,,,0,Hoang,2017-10-28
+GCL,KAD17-108,4.56,1,FLT,HIGH,4,5,,,,,,,0,Shiroki,2017-10-27
+GCL,KAD17-108,42.75,2.3,FLT,MOD,3,10,,,,,,"Gauge likely 1 cm wide, low-angle over 2.3 m",0,Shiroki,2017-10-27
+GCL,KAD17-108,90.8,0.5,CNT,MOD,4,10,,,,,,Low-angle contact between Dyke and UM below,0,Shiroki,2017-10-28
+GCL,KAD17-108,139.8,1.6,CNT,HIGH,4,0,,,,,,Dyke half-core running along core axis,0,Shiroki,2017-10-28
+GCL,KAD17-108,199.86,0.5,PLN,MOD,4,30,,,,,,Brecciated Sericite-Chl UM,0,Shiroki,2017-10-29
+GCL,KAD17-108,342.46,0.22,DYK,MOD,4,40,,,,,,Possible intermediate dyke at 342.46 m 22 cm 40TCA,0,Shiroki,2017-10-30
+GCL,KAD17-108,348.2,0.05,BED,HIGH,4,50,,,,,,Graphitic Mudstone at 348.2 m 5 cm wide 50TCA,0,Shiroki,2017-10-30
+GCL,KAD17-108,353.06,0.92,DYK,HIGH,4,30,,,,,,"Intermediate Dyke at 353.06 m 92 cm 30TCA, Zr 124 ppm, Ti 3232 ppm, Cr 362 ppm",0,Shiroki,2017-10-30
+GCL,KAD17-108,359.2,0.21,DYK,HIGH,4,30,,,,,,"Intermediate Dyke at 359.2 m 21 cm wide 30TCA Pyrite strong disseminated med cubes 3 %, Zr 167 ppm, Ti 3975 ppm, Cr 116 ppm.",0,Shiroki,2017-10-30
+GCL,KAD17-108,362.1,0.6,DYK,HIGH,4,40,,,,,,Intermediate dyke,0,Shiroki,2017-10-30
+GCL,KAD17-108,381.75,0.62,DYK,HIGH,4,20,,,,,,Intermediate dyke,0,Shiroki,2017-10-30
+GCL,KAD17-108,382.5,0.56,DYK,HIGH,4,30,,,,,,Intermediate dyke,0,Shiroki,2017-10-30
+GCL,KAD17-108,406.45,0.24,BED,HIGH,4,10,,,,,,Graphitic bed,0,Shiroki,2017-10-31
+GCL,KAD17-108,424.8,0.1,BED,MOD,4,30,,,,,,Bedded appearance at 424.8 m 10 cm 30TCA with weak Chl,0,Shiroki,2017-10-31
+GCL,KAD17-108,425.1,0.35,CNT,HIGH,4,5,,,,,,Low angle contact,0,Shiroki,2017-10-31
+GCL,KAD17-108,445.98,0.01,BRX,HIGH,4,40,,,,,,Breccia contact 445.98m 1 cm wide 40TCA,0,Shiroki,2017-10-31
+GCL,KAD17-108,502.63,0.005,FLT,HIGH,4,30,,,,,,Fault gauge 5 mm at 502.63 m 30TCA,0,Shiroki,2017-11-01
+GCL,KAD17-109,46.19,0.8,FLT,LOW,5,80,,,,,,,0,Hoang,2017-10-29
+GCL,KAD17-109,76.35,0.45,VN,HIGH,4,65,,,,,,,0,Hoang,2017-10-30
+GCL,KAD17-109,154.62,0.33,VN,HIGH,5,,,,,,,"•	Qtz vein 154.62m length 33cm.  Smokey coloured, zoned.",0,Hoang,2017-10-30
+GCL,KAD17-109,194.56,0.47,FLT,HIGH,3,80,,,,,,,0,Hoang,2017-10-31
+GCL,KAD17-109,207.34,0.54,FLT,HIGH,5,80,,,,,,,0,Hoang,2017-10-31
+GCL,KAD17-109,215.78,0.22,SHZ,HIGH,4,70,,,,,,,0,Hoang,2017-11-01
+GCL,KAD17-109,219.39,0.48,FLT,HIGH,5,75,,,,,,,0,Hoang,2017-11-01
+GCL,KAD17-109,224.89,0.26,FLT,HIGH,4,60,,,,,,,0,Hoang,2017-11-01
+GCL,KAD17-110,11,12.6,FLT,HIGH,3,30,,,,,,Possible fault related to the interpretted Kerr fault. Broken and brecciated section.,0,Andrienko,2017-10-31
+GCL,KAD17-110,39.4,0.66,BRX,HIGH,3,,,,,,,,0,Andrienko,2017-11-01
+GCL,KAD17-110,54,2.57,FLT,HIGH,3,15,,,,,,,0,Andrienko,2017-11-01
+GCL,KAD17-110,106.31,0.31,FLT,HIGH,2,30,,,,,,Annelead fault.,0,Andrienko,2017-11-01
+GCL,KAD17-110,229.16,1.36,FLT,MOD,3,0,,,,,,Possible fault at 229.16-230.52m; fractured section with slickensides.,0,Andrienko,2017-11-02
+GCL,KAD17-110,262.63,0.52,FLT,MOD,3,25,,,,,,Section is fractured.,0,Andrienko,2017-11-03
+GCL,KAD17-110,281.84,0.59,FLT,MOD,3,40,,,,,,"Possible fault, fractured section.",0,Andrienko,2017-11-03
+GCL,KAD17-110,366.87,0.19,FLT,HIGH,3,,,,,,,"Annealed fault, TCA not determined.",0,Andrienko,2017-11-04
+GCL,KAD17-110,438.09,1.7,PLN,HIGH,3,65,,,,,,Silicified section of  UM-talc-chlorite unit; with qz veining.,0,Andrienko,2017-11-05
+GCL,KAD17-111,82.56,0.16,DYK,HIGH,4,,,,,,,,0,Hoang,2017-11-03
+GCL,KAD17-111,194.29,0.36,FLT,HIGH,4,50,,,,,,,0,Hoang,2017-11-05
+GCL,KAD17-111,199,0.74,FLT,HIGH,4,40,,,,,,,0,Hoang,2017-11-05
+GCL,KAD17-111,202.23,0.2,FLT,HIGH,4,50,,,,,,,0,Hoang,2017-11-05
+GCL,KAD17-111,219.19,0.2,FLT,HIGH,3,50,,,,,,,0,Hoang,2017-11-05
+GCL,KAD17-112,129,0.12,BED,HIGH,4,60,,,,,,Mafic Breccia with GraphiticMudstone Matrix,0,Shiroki,2017-11-04
+GCL,KAD17-112,129.65,0.13,BED,HIGH,4,50,,,,,,Graphitic Mudstone,0,Shiroki,2017-11-04
+GCL,KAD17-112,129.81,0.35,BED,HIGH,4,50,,,,,,Graphitic mudstone and QC veins,0,Shiroki,2017-11-04
+GCL,KAD17-112,140.57,0.72,PLN,MOD,4,30,,,,,,Mafic BX-MS layer with intense blebby pyrite,0,Shiroki,2017-11-04
+GCL,KAD17-112,141.24,0.01,BED,MOD,3,40,,,,,,Graphitic layer with Chl and veins,0,Shiroki,2017-11-04
+GCL,KAD17-112,142.6,0.04,BED,MOD,3,30,,,,,,,0,Shiroki,2017-11-04
+GCL,KAD17-112,156.86,0.54,DYK,MOD,4,50,,,,,,Granular grey likely a dyke,0,Shiroki,2017-11-04
+GCL,KAD17-112,187.24,0.5,BED,HIGH,3,50,,,,,,Sandstone bed,0,Shiroki,2017-11-04
+GCL,KAD17-112,188.67,0.07,BED,HIGH,3,45,,,,,,Sandstone bed,0,Shiroki,2017-11-04
+GCL,KAD17-112,189,0.43,BED,HIGH,3,40,,,,,,Sanstone bed,0,Shiroki,2017-11-04
+GCL,KAD17-112,189.6,0.14,BED,HIGH,3,40,,,,,,Sandstone bed,0,Shiroki,2017-11-04
+GCL,KAD17-112,203,1,BED,MOD,3,30,,,,,,"Sandstone bed Zr 125 ppm, Ti 7733 ppm, Cr 38 ppm",0,Shiroki,2017-11-04
+GCL,KAD17-113,144,0.15,DYK,HIGH,4,90,,,,,,,0,Henderson,2017-11-10
+GCL,KAD17-113,145.45,0.15,DYK,HIGH,4,70,,,,,,,0,Henderson,2017-11-10
+GCL,KAD17-113,181.9,0.1,FLT,LOW,2,,,,,,,,0,Henderson,2017-11-10
+GCL,KAD17-113,289.74,0.1,FLT,MOD,3,20,,,,,,,0,Henderson,2017-11-11
+GCL,KAD17-113,315,0.42,VN,HIGH,4,40,,,,,,,0,Henderson,2017-11-13
+GCL,KAD17-114,13.11,0.28,SHZ,HIGH,5,30,,,,,,,0,Hoang,2017-11-08
+GCL,KAD17-114,17,1.49,SHZ,HIGH,5,35,,,,,,,0,Hoang,2017-11-08
+GCL,KAD17-114,45.58,0.38,FLT,HIGH,4,,,,,,,"45.58m, 38cm Fault gouge.",0,Hoang,2017-11-08
+GCL,KAD17-114,90.45,0.24,FLT,HIGH,3,50,,,,,,,0,Hoang,2017-11-08
+GCL,KAD17-114,117.29,0.4,FRA,HIGH,3,,,,,,,,0,Hoang,2017-11-09
+GCL,KAD17-114,196.18,0.13,DYK,HIGH,3,50,,,,,,196.18m Dyklet of Intermediate granular 13cm TCA 50,0,Hoang,2017-11-10
+GCL,KAD17-114,205.22,11.78,SHZ,HIGH,5,20,,,,,,,0,Hoang,2017-11-10
+GCL,KAD17-114,206.42,0.57,FLT,HIGH,5,20,,,,,,,0,Hoang,2017-11-10
+GCL,KAD17-115,49.51,0.03,DYK,HIGH,2,,,,,,,Intermediate dyke.,0,Andrienko,2017-11-08
+GCL,KAD17-115,51.9,0.9,DYK,HIGH,3,,,,,,,Series of ~10 cm wide dykes.,0,Andrienko,2017-11-08
+GCL,KAD17-115,53.42,0.14,DYK,HIGH,3,,,,,,,Intermediate dyke.,0,Andrienko,2017-11-08
+GCL,KAD17-115,54.27,0.11,DYK,HIGH,3,,,,,,,Intermediate dyke.,0,Andrienko,2017-11-08
+GCL,KAD17-115,54.47,0.06,DYK,HIGH,2,,,,,,,Intermediate dyke.,0,Andrienko,2017-11-08
+GCL,KAD17-115,54.71,0.06,DYK,HIGH,2,,,,,,,Intermediate dyke.,0,Andrienko,2017-11-08
+GCL,KAD17-115,58.55,0.17,DYK,HIGH,3,,,,,,,Intermediate dyke.,0,Andrienko,2017-11-08
+GCL,KAD17-115,117.84,0.25,VN,HIGH,3,50,,,,,,,0,Andrienko,2017-11-09
+GCL,KAD17-115,272.57,0.2,BRX,MOD,2,50,,,,,,Possible reworked clastic texture; reworked QC veins.,0,Andrienko,2017-11-10
+GCL,KAD17-115,292.57,0.37,FLT,HIGH,3,20,,,,,,,0,Andrienko,2017-11-10
+GCL,KAD17-115,303.95,0.95,FLT,MOD,3,20,,,,,,Fractured section; fault gauge.,0,Andrienko,2017-11-10
+GCL,KAD17-115,310.03,0.76,FLT,MOD,3,,,,,,,Fractured section.,0,Andrienko,2017-11-10
+GCL,KAD17-115,378.4,0.6,VN,HIGH,4,50,,,,,,"White-coloured QC vein, predominantly qz.",0,Andrienko,2017-11-11
+GCL,KAD17-116,12.3,1.34,FRA,HIGH,4,20,,,,,,CNR- Core nore recovered 2 feet,0,Hoang,2017-11-11
+GCL,KAD17-116,19.2,0.08,FRA,HIGH,3,30,,,,,,,0,Hoang,2017-11-11
+GCL,KAD17-116,20.51,0.49,FRA,HIGH,4,30,,,,,,,0,Hoang,2017-11-11
+GCL,KAD17-116,21,2,FRA,HIGH,4,20,,,,,,Fractures within a fault,0,Hoang,2017-11-12
+GCL,KAD17-116,111.43,0.43,FLT,HIGH,3,50,,,,,,,0,Hoang,2017-11-12
+GCL,KAD17-116,111.8,1.04,FLT,HIGH,3,50,,,,,,,0,Hoang,2017-11-12
+GCL,KAD17-116,121.68,0.28,FLT,HIGH,3,40,,,,,,,0,Hoang,2017-11-12
+GCL,KAD17-116,127.35,0.08,FLT,HIGH,3,20,,,,,,,0,Hoang,2017-11-12
+GCL,KAD17-116,136.4,0.6,FRA,HIGH,3,,,,,,,,0,Hoang,2017-11-13
+GCL,KAD17-116,137.18,0.37,FRA,HIGH,3,,,,,,,,0,Hoang,2017-11-13
+GCL,KAD17-116,141.85,0.15,FRA,HIGH,3,,,,,,,,0,Hoang,2017-11-13
+GCL,KAD17-116,142.53,0.47,FRA,HIGH,3,,,,,,,,0,Hoang,2017-11-13
+GCL,KAD17-116,147.8,0.1,FLT,HIGH,3,30,,,,,,,0,Hoang,2017-11-13
+GCL,KAD17-116,149.72,0.28,FRA,HIGH,4,,,,,,,,0,Hoang,2017-11-13
+GCL,KAD17-116,150,0.44,FRA,HIGH,3,,,,,,,,0,Hoang,2017-11-13
+GCL,KAD17-116,152.5,0.5,FRA,HIGH,3,,,,,,,,0,Hoang,2017-11-13
+GCL,KAD17-116,154.03,0.68,FRA,HIGH,4,,,,,,,,0,Hoang,2017-11-13
+GCL,KAD17-117,61.93,0.47,DYK,MOD,4,50,,,,,,61.93-62.40: Intermediate Dyke with granular salt and pepper texture,0,Brown,2017-11-14
+GCL,KAD17-117,63.48,0.18,DYK,MOD,4,55,,,,,,"Intermediate dyke, tan color with granular salt and pepper texture",0,Brown,2017-11-14
+GCL,KAD17-117,68.21,0.09,DYK,MOD,4,55,,,,,,Tan intermediate dyke with salt and pepper texture with good albitized chilled margins,0,Brown,2017-11-14
+GCL,KAD17-117,69.02,0.35,DYK,HIGH,4,50,,,,,,Interval of several 0.05-0.07m tan coloured intermediate dykes with albitized chilled margins,0,Brown,2017-11-14
+GCL,KAD17-117,92.5,3.42,SHZ,MOD,4,60,,,,,,,0,Brown,2017-11-14
+GCL,KAD17-117,115.31,0.36,DYK,MOD,3,50,,,,,,,0,Henderson,2017-11-18
+GCL,KAD17-117,156.12,1.5,BRX,MOD,3,,,,,,,,0,Brown,2017-11-18
+GCL,KAD17-117,329.89,0.41,FLT,LOW,3,,,,,,,,0,Brown,2017-11-16
+GCL,KAD17-117,343.13,0.07,FLT,MOD,3,40,,,,,,,0,Brown,2017-11-16
+GCL,KAD17-117,386.88,0.09,DYK,MOD,3,,,,,,,,0,Brown,2017-11-17
+GCL,KAD17-117,388.2,0.2,DYK,MOD,3,,,,,,,,0,Brown,2017-11-17
+GCL,KAD17-117,404.14,0.08,BED,HIGH,4,,,,,,,,0,Brown,2017-11-17
+GCL,KAD17-117,404.6,0.29,BED,HIGH,4,,,,,,,Small mud bed,0,Brown,2017-11-17
+GCL,KAD17-118,38.51,0.05,DYK,HIGH,3,50,,,,,,,0,Hoang,2017-11-14
+GCL,KAD17-118,40.18,0.06,DYK,HIGH,3,50,,,,,,,0,Hoang,2017-11-14
+GCL,KAD17-118,129.69,0.2,FRA,HIGH,3,,,,,,,,0,Hoang,2017-11-15
+GCL,KAD17-118,310.12,0.69,VN,HIGH,4,,,,,,,,0,Unknown,2017-11-17
+GCL,KAD17-118,366.15,0.11,VN,HIGH,4,30,,,,,,,0,Unknown,2017-11-17

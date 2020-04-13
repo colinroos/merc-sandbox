@@ -3,7 +3,7 @@ import xml.etree.ElementTree as ET
 import matplotlib as plt
 import numpy as np
 import cv2
-from util import findFiles as util
+import file_utils as util
 
 randomState = 42
 annote_path = 'data/2017/images/KAD17-001_Bx1-5_11.5-25.30m_DxO.xml'

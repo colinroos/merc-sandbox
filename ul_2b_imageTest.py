@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 import pandas as pd
-from util import findFiles as util
+import file_utils as util
 
 randomState = 42
 image_path = 'data/2017/images/KAD17-001_Bx1-5_11.5-25.30m_DxO.jpg'
@@ -19,7 +19,8 @@ for idx, a in enumerate(annotes_paths):
     # read image
     img = cv2.imread(image_paths[idx])
     mbox_x = max(df.width)
-    mbox_y = max(df.height)
+    mbox_y = 234
+    # mbox_y = max(df.height)
 
     for index, d in df.iterrows():
         print(d.cx)
