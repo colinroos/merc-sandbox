@@ -18,8 +18,8 @@ def findfiles(target, extension='.csv'):
         for file in files:
             p = os.path.join(os.path.abspath(path), file)
             data.append(p)
-            print(p)
 
+    data.sort()
     return data
 
 
