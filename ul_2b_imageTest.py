@@ -2,11 +2,18 @@ import cv2
 import numpy as np
 import pandas as pd
 import file_utils as util
+import os
 
 image_path = 'data/2017/images/KAD17-001_Bx1-5_11.5-25.30m_DxO.jpg'
 annotes_path_rot = 'out/test_annotes_rot.csv'
 annotes_target = 'data/2017/annotations'
 image_target = 'data/2017/images'
+
+if not os.path.isdir('out/test_images/'):
+    os.mkdir('out/test_images/')
+
+if not os.path.isdir('out/test_images_pad/'):
+    os.mkdir('out/test_images_pad/')
 
 annotes_paths = util.findfiles(annotes_target, '.csv')
 image_paths = util.findfiles(image_target, '.jpg')
@@ -50,8 +57,6 @@ for idx, a in enumerate(annotes_paths):
         # Tile image segment
         x_cut = 0
         while x_cut < d.width:
-            # Process tiles that are full-width, need to pad others
-            # if x_cut + IMAGE_DIMS[1] <= d.width:
             tile = image[0:d.height, x_cut:min(x_cut + IMAGE_DIMS[1], d.width)]
 
             if tile.shape[1] < IMAGE_DIMS[1] * 0.5:
@@ -60,15 +65,22 @@ for idx, a in enumerate(annotes_paths):
             height_padding = max(IMAGE_DIMS[0] - d.height, 0)
             width_padding = max(IMAGE_DIMS[1] - tile.shape[1], 0)
             padding = ((0, height_padding), (0, width_padding), (0, 0))
-            tile = np.pad(tile, padding)
+            padded_tile = np.pad(tile, padding)
 
             depth = depth_offset + (x_cut * PIXEL_PER_M)
 
             # write image to file
-            filename = 'out/test_images/' + d.HoleID + '_{:.3f}.jpg'.format(depth)
-            cv2.imwrite(filename, tile)
-            cv2.putText(tile, '{:.3f}'.format(depth), (0, 20), fontFace=0, fontScale=0.5, color=(0, 200, 0))
-            cv2.imshow('', tile)
+            filename = 'out/test_images/' + d.HoleID + f'_{depth:.3f}.jpg'
+            cv2.imwrite(filename, padded_tile)
+            cv2.putText(padded_tile, f'{depth:.3f}', (0, 20), fontFace=0, fontScale=0.5, color=(0, 200, 0))
+            # cv2.imshow('', tile)
             # cv2.waitKey(0)
+
+            scaled_tile = cv2.resize(tile, (IMAGE_DIMS[0], tile.shape[1]))
+            padding = ((0, 0), (0, width_padding), (0, 0))
+            padded_scaled_tile = np.pad(scaled_tile, padding)
+
+            filename = 'out/test_images_pad/' + d.HoleID + f'_{depth:.3f}.jpg'
+            cv2.imwrite(filename, padded_scaled_tile)
 
             x_cut += IMAGE_DIMS[1]
