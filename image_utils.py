@@ -1,8 +1,15 @@
 import numpy as np
-import cv2
+import cv2.cv2 as cv
 from sympy.geometry import Point, Line, intersection
 from PyQt5 import QtGui
 from scipy.signal import find_peaks
+
+# Suppress future warnings on import
+from warnings import simplefilter
+simplefilter(action='ignore', category=FutureWarning)
+
+from elbow import KElbowVisualizer
+from sklearn.cluster import KMeans, MiniBatchKMeans
 
 
 def auto_canny(image, sigma=0.33):
@@ -11,7 +18,7 @@ def auto_canny(image, sigma=0.33):
     lower = int(max(0, (1.0 - sigma) * v))
     upper = int(min(255, (1.0 + sigma) * v))
 
-    return cv2.Canny(image, lower, upper)
+    return cv.Canny(image, lower, upper)
 
 
 def blur(image, kernel):
@@ -21,7 +28,7 @@ def blur(image, kernel):
     :param kernel: n x n kernel size
     :return: Blurred image, array-like object
     """
-    img = cv2.GaussianBlur(image.copy(), (kernel, kernel), 0)
+    img = cv.GaussianBlur(image.copy(), (kernel, kernel), 0)
     return img
 
 
@@ -33,7 +40,7 @@ def transform_points(points, matrix):
     :return: transformed points
     """
     nd_points = np.float32(np.array(points)).reshape(-1, 1, 2)
-    return cv2.perspectiveTransform(nd_points, matrix)
+    return cv.perspectiveTransform(nd_points, matrix)
 
 
 def crop_to_roi(image, roi):
@@ -59,7 +66,9 @@ def find_edge(image,
               start_pixel=0,  # start scanning pixel
               end_pixel=-1,  # end scanning pixel
               max_blob=5,  # minimum length of acceptable edge
-              noise_filter_length=0):
+              noise_filter_length=0,
+              std_edge_mode=False,
+              std_size=10):  # A is 0, B is 1
     """
     finds an edge
     :param std_size:
@@ -68,9 +77,7 @@ def find_edge(image,
     :param right_start:
     :param end_pixel:
     :param max_blob:
-    :param nest:
     :param start_pixel:
-    :param show_plot:
     :param image:
     :param roi:
     :param mode:
@@ -85,7 +92,7 @@ def find_edge(image,
 
         # Check if the image is color and remove color channels for transpose
         if len(img.shape) == 3:
-            img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+            img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 
         # Transpose the image if horizontal mode
         if mode == 1:
@@ -109,35 +116,99 @@ def find_edge(image,
         for detector in detectors:
             img_slice = img[:, detector]
 
-            temp_img = image.copy()
-            temp_img[:, detector] = (0, 255, 0)
-            cv2.imshow('', temp_img)
-            # cv2.waitKey(0)
+            # temp_img = cv.cvtColor(img, cv.COLOR_GRAY2BGR)
+            # temp_img[detector, :] = (0, 255, 0)
+            # cv.imshow('slice', temp_img)
+            # cv.waitKey(10)
 
             # If start from the right, flip the slice
             if right_start:
                 img_slice = img_slice[::-1]
 
+            standard_deviations = []
             # Loop through sliced image and find rising and falling edges
             cropped_img_slice = img_slice[start_pixel:end_pixel - noise_filter_length]
+            for idx, pixel in enumerate(cropped_img_slice):
 
-            slope = np.gradient(cropped_img_slice)
-            peaks, params = find_peaks(slope, distance=10)
-            peaks = [peak + start_pixel for peak in peaks]
-            rising_blobs.extend(peaks)
+                if std_edge_mode:
+                    if std_size < idx < (len(cropped_img_slice) - std_size):
+                        front_avg = np.mean(img_slice[idx + 1: idx + std_size])
+                        back_avg = np.mean(img_slice[idx - std_size: idx - 1])
+                        front_std = np.std(img_slice[idx + 1: idx + std_size])
+                        back_std = np.std(img_slice[idx - std_size: idx - 1])
 
-        else:
-            if right_start:
-                rising_edges = [len(img_slice) - edge for edge in rising_edges]
-                falling_edges = [len(img_slice) - edge for edge in falling_edges]
-                rising_blobs = [len(img_slice) - edge for edge in rising_blobs]
-                falling_blobs = [len(img_slice) - edge for edge in falling_blobs]
+                        # Rising Edge
+                        standard_deviations.append(front_avg - back_avg)
+
+                else:
+                    if idx >= len(cropped_img_slice) - 1:
+                        if len(rising_edges) == 0 and len(falling_edges) > 0:
+                            falling_blobs.append(falling_edges[-1])
+                        elif len(falling_edges) == 0 and len(rising_edges) > 0:
+                            rising_blobs.append(rising_edges[-1])
+                        break
+
+                    current_idx = idx + start_pixel
+                    # Get next pixel and to compare to current pixel
+                    next_pixel = img_slice[current_idx + 1]
+
+                    # Rising edge
+                    if pixel < threshold <= next_pixel:
+
+                        # Append rising edge
+                        if len(rising_edges) == 0 or len(falling_edges) == 0:
+                            rising_edges.append(current_idx + 1)
+                        elif (current_idx - rising_edges[-1]) > noise_filter_length and \
+                                (current_idx - falling_edges[-1]) > noise_filter_length:
+                            rising_edges.append(current_idx + 1)
+
+                        # Calculate length of edge and append to blobs if at least size of max_blob
+                        if len(falling_edges) > 0 and len(rising_edges) > 0:
+                            falling_length = abs(falling_edges[-1] - rising_edges[-1])
+
+                            if falling_length >= max_blob and falling_edges[-1] > 0:
+                                falling_blobs.append(falling_edges[-1])
+
+                    # Falling edge
+                    if pixel > threshold >= next_pixel:
+
+                        # Append rising edge
+                        if len(falling_edges) == 0 or len(rising_edges) == 0:
+                            falling_edges.append(current_idx + 1)
+                        elif (current_idx - falling_edges[-1]) > noise_filter_length and \
+                                (current_idx - rising_edges[-1]) > noise_filter_length:
+                            falling_edges.append(current_idx + 1)
+
+                        # Append falling edge
+                        falling_edges.append(idx + start_pixel)
+
+                        # Calculate length of edge and append to blobs if at least size of max_blob
+                        if len(falling_edges) > 0 and len(rising_edges) > 0:
+                            rising_length = abs(rising_edges[-1] - falling_edges[-1])
+
+                            if rising_length >= max_blob and rising_edges[-1] > 0:
+                                rising_blobs.append(rising_edges[-1])
+
+            if std_edge_mode:
+                local_maxima, params = find_peaks(standard_deviations, distance=10, height=10)
+                rising_blobs.extend(local_maxima)
+
+        if len(rising_blobs) == 0 and len(rising_edges) == 1:
+            rising_blobs.append(rising_edges[0])
+
+        if len(falling_blobs) == 0 and len(falling_edges) == 1:
+            falling_blobs.append(falling_edges[0])
+
+        if right_start:
+            rising_edges = [len(img_slice) - edge for edge in rising_edges]
+            falling_edges = [len(img_slice) - edge for edge in falling_edges]
+            rising_blobs = [len(img_slice) - edge for edge in rising_blobs]
+            falling_blobs = [len(img_slice) - edge for edge in falling_blobs]
 
         return rising_edges, falling_edges, rising_blobs, falling_blobs
     except Exception as e:
         print('error in find_edge')
         print(e)
-        return 0, 0, 0, 0
 
 
 def get_transform(transform):
@@ -154,3 +225,62 @@ def get_transform(transform):
     t_y = transform[1, 2]
 
     return t_x, t_y, theta
+
+
+def find_edge_pair(list_of_blobs, expected, axis=0, bias_left=True, distance_weight=0.5):
+    distances = []
+
+    for blob in list_of_blobs:
+        avg = blob_avg(blob, axis=axis)
+        support = len(blob)
+        distance = abs(expected - avg)
+
+        if bias_left and axis == 0:
+            # Left sided
+            if expected >= avg:
+                # Blob is to the right of the expected, more focus on distance
+                distances.append(support / 1.1 ** (distance * (distance_weight + 0.2)))
+            else:
+                # Blob is to the left of the expected, less focus on distance
+                distances.append(support / 1.1 ** (distance * distance_weight))
+        else:
+            # Right sided
+            if expected <= avg:
+                # Blob is to the left of the expected, more focus on distance
+                distances.append(support / 1.1 ** (distance * (distance_weight + 0.2)))
+            else:
+                # Blob is to the right of the expected, less focus on distance
+                distances.append(support / 1.1 ** (distance * distance_weight))
+
+    return list_of_blobs[np.argmax(distances)]
+
+
+def blob_avg(blob, axis=0):
+    return np.mean([edge[axis] for edge in blob])
+
+
+def cluster_edges(list_of_edges, axis=0, max_clusters=14, locate_elbow=True):
+    """
+    Clusters a list of edges by their x-coordinate and returns a list of blobs.
+    :param locate_elbow:
+    :param axis: axis of clustering, 0 for X, 1 for y
+    :param max_clusters:
+    :param list_of_edges: List of [x, y] points to be clustered
+    :returns: list of edge blobs, blob centroids
+    """
+    edges_x = np.array([edge[axis] for edge in list_of_edges]).reshape(-1, 1)
+
+    kelbow = KElbowVisualizer(MiniBatchKMeans(random_state=42),
+                              k=(1, min(len(list_of_edges), max_clusters)),
+                              locate_elbow=locate_elbow)
+
+    kelbow.fit(edges_x)
+    labels = kelbow.estimator.fit_predict(edges_x)
+    centroids = kelbow.estimator.cluster_centers_
+
+    blobs = []
+    for cluster in np.unique(labels):
+        indexes = np.where(labels == cluster)[0]
+        blobs.append(np.take(list_of_edges, indexes, axis=0))
+
+    return blobs, centroids
