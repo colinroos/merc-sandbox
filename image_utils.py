@@ -211,6 +211,24 @@ def find_edge(image,
         print(e)
 
 
+def rotate_image(image, angle, center=None):
+    """
+    Rotates an image about its center by an angle
+    :param image: image to be rotated
+    :param angle: integer angle to rotate by in degrees
+    :param center: rotation center as tuple, (x, y)
+    :return: rotated image
+    """
+    if center is None:
+        image_center = tuple(np.array(image.shape[1::-1]) / 2)
+    else:
+        image_center = center
+
+    rot_mat = cv.getRotationMatrix2D(image_center, angle, 1.0)
+    result = cv.warpAffine(image, rot_mat, image.shape[1::-1], flags=cv.INTER_LINEAR)
+    return result
+
+
 def get_transform(transform):
     """
     Extracts the translation and rotation information from a transformation matrix
@@ -263,7 +281,7 @@ def cluster_edges(list_of_edges, axis=0, max_clusters=14, locate_elbow=True):
     """
     Clusters a list of edges by their x-coordinate and returns a list of blobs.
     :param locate_elbow:
-    :param axis: axis of clustering, 0 for X, 1 for y
+    :param axis: axis of clustering, 0 for x, 1 for y
     :param max_clusters:
     :param list_of_edges: List of [x, y] points to be clustered
     :returns: list of edge blobs, blob centroids
@@ -282,5 +300,32 @@ def cluster_edges(list_of_edges, axis=0, max_clusters=14, locate_elbow=True):
     for cluster in np.unique(labels):
         indexes = np.where(labels == cluster)[0]
         blobs.append(np.take(list_of_edges, indexes, axis=0))
+
+    return blobs, centroids
+
+
+def cluster_lines(list_of_lines, axis=0, max_clusters=14, locate_elbow=True):
+    """
+    Clusters a list of edges by their x-coordinate and returns a list of blobs.
+    :param locate_elbow:
+    :param axis: axis of clustering, 0 for x, 1 for y
+    :param max_clusters:
+    :param list_of_lines: List of [x1, y1, x2, y2] points to be clustered
+    :returns: list of edge blobs, blob centroids
+    """
+    edges_x = np.array([np.mean(edge[0, [axis, axis+2]]) for edge in list_of_lines]).reshape(-1, 1)
+
+    kelbow = KElbowVisualizer(MiniBatchKMeans(random_state=42),
+                              k=(1, min(len(list_of_lines), max_clusters)),
+                              locate_elbow=locate_elbow)
+
+    kelbow.fit(edges_x)
+    labels = kelbow.estimator.fit_predict(edges_x)
+    centroids = kelbow.estimator.cluster_centers_
+
+    blobs = []
+    for cluster in np.unique(labels):
+        indexes = np.where(labels == cluster)[0]
+        blobs.append(np.take(list_of_lines, indexes, axis=0))
 
     return blobs, centroids

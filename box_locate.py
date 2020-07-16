@@ -2,10 +2,67 @@ import cv2.cv2 as cv
 from image_utils import *
 from file_utils import *
 import constants as c
+from sympy.geometry import Point, Line
 
 
 def line_length(line):
     return np.sqrt((line[0, 0] - line[0, 2]) ** 2 + (line[0, 1] - line[0, 3]) ** 2)
+
+
+def line_blob_avg(line_blob, axis=0):
+
+    # coords = []
+    # for x in line_blob:
+    #     coords.extend(x[axis])
+    #     coords.extend(x[axis + 2])
+    coords = [x[0, [axis, axis + 2]] for x in line_blob]
+    avg_line = np.mean(coords)
+
+    return avg_line
+
+
+def filter_lines_by_slope(lines, axis=0):
+    if axis == 0:
+        max_slope = 0.3
+    else:
+        max_slope = 10000
+
+    filtered = []
+    for line in lines:
+        p1 = Point(line[0, 0], line[0, 1])
+        p2 = Point(line[0, 2], line[0, 3])
+
+        l = Line(p1, p2)
+        if abs(l.slope) <= max_slope and axis == 0:
+            filtered.append(line)
+        elif abs(l.slope) >= max_slope and axis == 1:
+            filtered.append(line)
+
+    return np.array(filtered)
+
+
+def line_avg_slope(list_of_lines):
+    slopes = []
+    for line in list_of_lines:
+        p1 = Point(line[0, 0], line[0, 1])
+        p2 = Point(line[0, 2], line[0, 3])
+
+        l = Line(p1, p2)
+        slopes.append(l.slope.evalf())
+
+    return np.mean(slopes, dtype=np.float)
+
+
+def rank_line_blob(list_of_blobs, axis=0):
+    list_of_blobs_sorted = list_of_blobs.copy()
+    list_of_blobs_sorted.sort(key=lambda x: line_blob_avg(x, axis))
+
+    blob_scores = []
+    for idx, blob in enumerate(list_of_blobs_sorted):
+        score = (len(list_of_blobs_sorted) / (idx + 1)) * max((1 - np.mean(np.var(blob, axis=0))), 0)
+        blob_scores.append(score)
+
+    return list_of_blobs_sorted[np.argmax(blob_scores)]
 
 
 class BoxLocate:
@@ -13,7 +70,6 @@ class BoxLocate:
         self.image = cv.imread('data/2017/images/KAD17-001_Bx1-5_11.5-25.30m_DxO.jpg')
         self.grayscale = cv.cvtColor(self.image, cv.COLOR_BGR2GRAY)
         self.processed = self.image.copy()
-        self.processed2 = self.image.copy()
         self.out_img = self.image.copy()
 
         # Edges groups
@@ -26,97 +82,72 @@ class BoxLocate:
         self.run()
 
     def run(self):
-        # Process image
-        self.grayscale = cv.cvtColor(self.image, cv.COLOR_BGR2GRAY)
+        # Resize the image to a nominal size
+        self.image = cv.resize(self.image, c.NOMINAL_IMG_DIMS)
 
-        # self.processed = cv.adaptiveThreshold(self.grayscale, 0, cv.ADAPTIVE_THRESH_GAUSSIAN_C, cv.THRESH_BINARY, 3, 0.01)
-        self.processed = cv.GaussianBlur(self.grayscale, (7, 7), 0)
-        self.processed = cv.Canny(self.grayscale, 150, 190, apertureSize=3)
+        # Apply a local histogram normalization
+        self.processed = cv.cvtColor(self.image, cv.COLOR_BGR2YCrCb)
+        color_planes = cv.split(self.processed)
+        clahe = cv.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
+        color_planes[0] = clahe.apply(color_planes[0])
+        self.processed = cv.merge(color_planes)
+        self.processed = cv.cvtColor(self.processed, cv.COLOR_YCrCb2BGR)
+
+        # Blur the image to extrapolate some noise
+        self.processed = cv.GaussianBlur(self.processed, (11, 11), 0)
+
+        # Edge detect using Canny
+        self.processed = cv.Canny(self.processed, 60, 150, apertureSize=3)
+
+        # Blur the detected edges to extrapolate some antialiasing noise
         self.processed = cv.GaussianBlur(self.processed, (3, 3), 0)
-        # ret, self.processed2 = cv.threshold(self.grayscale, 180, 255, cv.THRESH_BINARY_INV)
-        # self.processed = cv.add(self.processed, self.processed2)
-        self.out_img = cv.cvtColor(self.processed, cv.COLOR_GRAY2BGR)
 
-        v_lines = cv.HoughLinesP(self.processed, 2, np.pi, 200, 150, 100)
-        h_lines = cv.HoughLinesP(self.processed, 2, np.pi/180, 200, 150, 100)
+        # Create an output image for annotations
+        self.out_img = self.image.copy()
 
-        if len(v_lines) != 0:
-            for line in v_lines[:, 0, :]:
-                cv.line(self.out_img, (line[0], line[1]), (line[2], line[3]), c.COLORS[1], 2)
+        # Extract horizontal and vertical lines
+        v_lines = cv.HoughLinesP(self.processed, 1, np.pi, threshold=300, minLineLength=200, maxLineGap=10)
+        h_lines = cv.HoughLinesP(self.processed, 1, np.pi/180, threshold=400, minLineLength=400, maxLineGap=10)
 
-        if len(h_lines) != 0:
-            for line in h_lines[:, 0, :]:
-                cv.line(self.out_img, (line[0], line[1]), (line[2], line[3]), c.COLORS[2], 2)
+        if v_lines is not None and h_lines is not None:
 
-        # self.find_top()
+            # Filter the lines by the expected slope value
+            v_lines = filter_lines_by_slope(v_lines, axis=1)
+            h_lines = filter_lines_by_slope(h_lines, axis=0)
 
-        # top_edges = []
-        # top_edges.extend(self.left_edges)
-        # top_edges.extend(self.right_edges)
+            # Cluster the lines into edges
+            v_edges, v_centroids = cluster_lines(v_lines, axis=0, max_clusters=5, locate_elbow=False)
+            h_edges, h_centroids = cluster_lines(h_lines, axis=1, max_clusters=30, locate_elbow=False)
 
-        # edges_x = [edge[0] for edge in top_edges]
-        # edges_y = [edge[1] for edge in top_edges]
-        # ret = np.polyfit(edges_x, edges_y, 1)
+            # Draw the edges on the output image
+            for edge_type in [v_edges, h_edges]:
+                # Loop through each blob to draw it a different color
+                for edge_blob, color in zip(edge_type, c.COLORS[:len(edge_type)]):
+                    for line in edge_blob[:, 0, :]:
+                        cv.line(self.out_img, (line[0], line[1]), (line[2], line[3]), color, 2)
 
-        # m, b = ret[0], ret[1]
+            # Get the average slope of the horizontal lines to correct image rotation
+            avg_slope = line_avg_slope(h_lines)
 
-        # self.top_edge = Line(Point(0, b), slope=m)
+            # Convert the slope to a rotation in degrees
+            theta = np.degrees(np.arctan(avg_slope))
 
-        # cv.line(self.out_img, (0, int(b)), (self.out_img.shape[1], int(self.out_img.shape[1] * m + b)), (0, 0, 255), 5)
+            # Rank the blob for the best horizontal and vertical edges
+            matched_v_blob = rank_line_blob(v_edges, axis=0)
+            matched_h_blob = rank_line_blob(h_edges, axis=1)
+
+            for matched_blob in [matched_v_blob, matched_h_blob]:
+                for line in matched_blob[:, 0, :]:
+                    cv.line(self.out_img, (line[0], line[1]), (line[2], line[3]), c.COLORS[2], 10)
+
+            # Rotate the image to straighten the boxes
+            self.out_img = rotate_image(self.out_img, theta)
 
         print('processed')
         cv.imshow('out', cv.resize(self.out_img, (0, 0), fx=0.25, fy=0.25))
-        cv.waitKey(0)
+        cv.waitKey(10)
 
         return self.out_img
-
-    def find_top(self):
-        left_detectors = np.arange(100, 600, 5)
-        right_detectors = np.arange(self.processed.shape[1] - 600, self.processed.shape[1] - 100, 5)
-
-        left_edges = []
-        right_edges = []
-        for left_detector, right_detector in zip(left_detectors, right_detectors):
-            _, _, l_edges, _ = find_edge(self.processed, mode=0, detectors=left_detector, max_blob=30)
-            _, _, r_edges, _ = find_edge(self.processed, mode=0, detectors=right_detector, max_blob=30)
-
-            if len(l_edges) == 0 or len(r_edges) == 0:
-                continue
-
-            for edge in l_edges[:5]:
-                left_edges.append([left_detector, edge])
-
-            for edge in r_edges[:5]:
-                right_edges.append([right_detector, edge])
-
-        matched_blobs = []
-        expected_edges = [550, 315, 315, 315]
-        for list_of_edges in [left_edges, right_edges]:
-            # for edge in list_of_edges:
-            #     cv.circle(self.out_img, (edge[0], edge[1]), 5, (0, 255, 0), -1)
-
-            blobs, centroids = cluster_edges(list_of_edges, axis=1, max_clusters=8, locate_elbow=True)
-
-            # for blob, color in zip(blobs, c.COLORS[:len(blobs)]):
-            #     for edge in blob:
-            #         cv.circle(self.out_img, (edge[0], edge[1]), 8, color, -1)
-
-            expected_edge = 0
-            for expected, color in zip(expected_edges, c.COLORS[:len(expected_edges)]):
-                expected_edge += expected
-                matched_blob = find_edge_pair(blobs, axis=1, expected=expected_edge)
-
-                expected_edge = blob_avg(matched_blob, axis=1)
-
-                for edge in matched_blob:
-                    cv.circle(self.out_img, (edge[0], edge[1]), 10, color, -1)
-
-                matched_blobs.append(matched_blob)
-
-        matched_blobs.sort(key=lambda x: blob_avg(x, axis=1))
-
-        self.left_edges = matched_blobs[0]
-        self.right_edges = matched_blobs[1]
 
 
 if __name__ == '__main__':
