@@ -6,8 +6,8 @@ import cv2
 import file_utils as util
 
 randomState = 42
-annote_path = 'data/2017/images/KAD17-001_Bx1-5_11.5-25.30m_DxO.xml'
-search_path = 'data/2017/images/'
+annote_path = '../data/2017/images/KAD17-001_Bx1-5_11.5-25.30m_DxO.xml'
+search_path = '../data/2017/images/'
 
 xmlpaths = util.findfiles(search_path, '.xml')
 

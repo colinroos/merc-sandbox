@@ -3,59 +3,54 @@ import pandas as pd
 import numpy as np
 import cv2.cv2 as cv
 import tensorflow as tf
+from sklearn.model_selection import KFold
+from util.image_pipeline import load_images_to_memory
 
 physical_devices = tf.config.list_physical_devices('GPU')
 tf.config.experimental.set_memory_growth(physical_devices[0], True)
 
 # Load the training data
-X_train = pd.read_pickle('./data-cache/lstm_data/X_train.pkl')
-y_train = pd.read_pickle('./data-cache/lstm_data/y_train.pkl')
-
-# Extract the number of images from the length of image lists
-n_images = len(X_train.iloc[0])
-
-# Loop through each row and load the list of images for that row
-X_images = [[] for i in range(n_images)]
-for row in X_train:
-
-    # Load all the images in the list
-    for i, path in enumerate(row):
-        img = cv.imread(path, cv.IMREAD_COLOR)
-        if img.shape != (145, 145, 3):
-            img = cv.resize(img, (145, 145))
-
-        # img = np.expand_dims(img, axis=0)
-        X_images[i].append(img)
-
-        if img.shape != (145, 145, 3):
-            pass
-
-    # Store the list of images as an array
-    # X_images.append(np.array(temp_imgs))
-
-temp_images = []
-for image in X_images:
-    temp_images.append(np.stack(image, axis=0).astype(np.float32))
-
-X_images = temp_images
-# Convert lael
-y_train = np.array(y_train, dtype=np.float32)
+X_train_all = pd.read_pickle('./data-cache/lstm_data/X_train.pkl')
+y_train_all = pd.read_pickle('./data-cache/lstm_data/y_train.pkl')
 
 # Build the model search space
-input_node1 = ak.ImageInput()
-input_node2 = ak.ImageInput()
-input_node3 = ak.ImageInput()
-output_node1 = ak.ImageBlock(augment=False)(input_node1)
-output_node2 = ak.ImageBlock(augment=False)(input_node2)
-output_node3 = ak.ImageBlock(augment=False)(input_node3)
-output_node = ak.Merge()([output_node1, output_node2, output_node3])
+input_node = ak.ImageInput()
+output_node = ak.ImageBlock()(input_node)
 output_node = ak.DenseBlock()(output_node)
 output_node = ak.RegressionHead()(output_node)
 
-classifier = ak.AutoModel(inputs=[input_node1, input_node2, input_node3], outputs=output_node, max_trials=2, overwrite=True)
+# Train each fold of validation, using the best model from the previous fold
+fold = 0
+kf = KFold(5, random_state=42)
 
-classifier.fit(X_images, y_train, epochs=5, batch_size=4)
+for _, train_index in kf.split(X_train_all):
+    print(f'Fitting fold {fold}: ')
 
-model = classifier.export_model()
+    # Extract training indices from the fold generator
+    X_train = X_train_all.iloc[train_index]
+    y_train = y_train_all.iloc[train_index]
 
-model.save('./model-cache/model.h5')
+    X_images = load_images_to_memory(X_train)
+
+    # Convert label format
+    y_train = np.array(y_train, dtype=np.float32)
+
+    if fold == 0:
+        classifier = ak.AutoModel(inputs=input_node,
+                                  outputs=output_node,
+                                  max_trials=10,
+                                  overwrite=False,
+                                  project_name='auto_model')
+
+        classifier.fit(X_images, y_train, epochs=5, batch_size=4)
+
+        models = classifier.tuner.get_best_models(3)
+    else:
+        for idx, model in enumerate(models):
+            model.fit(X_images, y_train, epochs=5, batch_size=4)
+
+            model.save(f'./model-cache/fold_{fold}_model_{idx}.h5')
+
+    fold += 1
+
+

@@ -9,14 +9,23 @@ with open('office365_credentials.json', 'r') as infile:
     client_secret = data['client_secret']
     tenant_id = data['tenant_id']
 
-acc = Account((client_id, client_secret))
+acc = Account((client_id, client_secret), auth_flow_type='credentials', tenant_id=tenant_id)
 
-if acc.authenticate(scopes=['basic', 'Files.ReadWrite.All']):
+if acc.authenticate():
     print('Authenticated!')
     storage = acc.storage()
     drives = storage.get_drives()
     my_drive = storage.get_default_drive()
     root_folder = my_drive.get_root_folder()
+
+    for item in my_drive.get_root_folder().get_items():
+        print(item)
+
+    for drive in drives:
+        print(drive)
+        for item in drive.get_items():
+            print(item)
+
     annotations_folder = my_drive.get_item_by_path('/MERC Data/Annotated Images/')
 
     if not os.path.isdir('./data-cache/'):

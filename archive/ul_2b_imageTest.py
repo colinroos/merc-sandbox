@@ -4,16 +4,16 @@ import pandas as pd
 import file_utils as util
 import os
 
-image_path = 'data/2017/images/KAD17-001_Bx1-5_11.5-25.30m_DxO.jpg'
-annotes_path_rot = 'out/test_annotes_rot.csv'
+image_path = '../data/2017/images/KAD17-001_Bx1-5_11.5-25.30m_DxO.jpg'
+annotes_path_rot = '../out/test_annotes_rot.csv'
 annotes_target = 'data/2017/annotations'
 image_target = 'data/2017/images'
 
 if not os.path.isdir('out/test_images/'):
-    os.mkdir('out/test_images/')
+    os.mkdir('../out/test_images/')
 
 if not os.path.isdir('out/test_images_pad/'):
-    os.mkdir('out/test_images_pad/')
+    os.mkdir('../out/test_images_pad/')
 
 annotes_paths = util.findfiles(annotes_target, '.csv')
 image_paths = util.findfiles(image_target, '.jpg')
