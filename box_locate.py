@@ -1,7 +1,6 @@
-import cv2.cv2 as cv
 from util.image_processing import *
 from util.files import *
-import constants as c
+from util import constants as c
 from sympy.geometry import Point, Line
 
 

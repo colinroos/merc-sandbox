@@ -1,5 +1,8 @@
 import numpy as np
-import cv2.cv2 as cv
+import cv2
+from sympy.geometry import Point, Line, intersection
+from util import constants as c
+from PyQt5 import QtGui
 from scipy.signal import find_peaks
 
 # Suppress future warnings on import
@@ -7,16 +10,31 @@ from warnings import simplefilter
 simplefilter(action='ignore', category=FutureWarning)
 
 from util.elbow import KElbowVisualizer
-from sklearn.cluster import MiniBatchKMeans
+from sklearn.cluster import KMeans, MiniBatchKMeans
 
 
-def auto_canny(image, sigma=0.33):
-    v = np.median(image)
+def tile_images(images, mode=0):
+    """
+    Converts a list of images to a single image ready for display
+    :param images: list-like object of images
+    :param mode: horizontal or vertical tiling (default of 0 for horizontal, 1 for vertical)
+    :return: concatenated image object, side-by-side
+    """
+    for idx, image in enumerate(images):
+        if len(image.shape) == 2:
+            d = cv2.cvtColor(image, cv2.COLOR_GRAY2BGR)
+        else:
+            d = image
 
-    lower = int(max(0, (1.0 - sigma) * v))
-    upper = int(min(255, (1.0 + sigma) * v))
+        if idx > 0:
+            if mode == 1:
+                frame = cv2.vconcat([frame, d])
+            else:
+                frame = cv2.hconcat([frame, d])
+        else:
+            frame = d
 
-    return cv.Canny(image, lower, upper)
+    return frame
 
 
 def blur(image, kernel):
@@ -26,8 +44,85 @@ def blur(image, kernel):
     :param kernel: n x n kernel size
     :return: Blurred image, array-like object
     """
-    img = cv.GaussianBlur(image.copy(), (kernel, kernel), 0)
+    img = cv2.GaussianBlur(image.copy(), (kernel, kernel), 0)
     return img
+
+
+def pre_process_center(image):
+    """
+    Applies a customized pre-processing filter to a specified image for center finding.
+    :param image: Image to be processed, array-like object
+    :return: Process image, array-like object
+    """
+    if c.USE_CLAHE_CENTER:
+        clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
+        img = clahe.apply(image.copy())
+    else:
+        img = image.copy()
+
+    img = blur(img, 11)
+
+    img = cv2.Canny(img, threshold1=0, threshold2=30, apertureSize=3)
+
+    return img
+
+
+def pre_process_slit(image, slit_threshold):
+    # Convert the image to a binary image using a threshold
+    _, img = cv2.threshold(image, slit_threshold, 255, 0)
+
+    # Invert the image
+    img = cv2.bitwise_not(img)
+
+    # Perform a dilation to expand the opening 1 pixel
+    img = cv2.morphologyEx(img, cv2.MORPH_DILATE, (3, 3))
+
+    return img
+
+
+def adjustable_blur(image):
+    """
+    Applies an adjustable Gaussian Blur to an image. Kernel size is read from the constants.py file.
+    :param image: Image to be processed, array-like object
+    :return: Processed imaged, array-like object
+    """
+    gaussian_kernel = c.GAUSSIAN_KERNEL[c.GAUSSIAN_PARAM.value]
+    img = blur(image, gaussian_kernel)
+    return img
+
+
+def local_hist_norm(image):
+    """
+    Applies a local histogram normalization using the CLAHE function as required. Specification for requirement
+    is read from the constants.py file.
+    :param image: Image to be processed, array-like object
+    :return: Processed image, array-like object
+    """
+    if c.USE_CLAHE:
+        clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
+        img = clahe.apply(image.copy())
+    else:
+        img = image.copy()
+
+    return img
+
+
+def rotate_image(image, angle, center=None):
+    """
+    Rotates an image about its center by an angle
+    :param image: image to be rotated
+    :param angle: integer angle to rotate by in degrees
+    :param center: rotation center as tuple, (x, y)
+    :return: rotated image
+    """
+    if center is None:
+        image_center = tuple(np.array(image.shape[1::-1]) / 2)
+    else:
+        image_center = center
+
+    rot_mat = cv2.getRotationMatrix2D(image_center, angle, 1.0)
+    result = cv2.warpAffine(image, rot_mat, image.shape[1::-1], flags=cv2.INTER_LINEAR)
+    return result
 
 
 def transform_points(points, matrix):
@@ -38,21 +133,102 @@ def transform_points(points, matrix):
     :return: transformed points
     """
     nd_points = np.float32(np.array(points)).reshape(-1, 1, 2)
-    return cv.perspectiveTransform(nd_points, matrix)
+    return cv2.perspectiveTransform(nd_points, matrix)
 
 
-def crop_to_roi(image, roi):
+def draw_crosshairs(image,
+                    transform=None,
+                    width=100,
+                    height=100,
+                    x_offset=0,
+                    y_offset=0):
     """
-    Crops an image to the specified ROI
+    Draw crosshairs on image at a given location
     :param image:
-    :param roi: (x1, y1) , (x2, y2)
+    :param transform:
+    :param width:
+    :param height:
+    :param x_offset:
+    :param y_offset:
     :return:
     """
-    if len(image.shape) == 3:
-        img = image[:1000, :1000, :]
-    else:
-        img = image[roi[0][0]:roi[1][0], roi[0][1]:roi[1][1]]
-    return img
+    if transform is None:
+        transform = np.identity(3, dtype=np.float32)
+
+    p1 = np.array([height / 2 + x_offset, 0])
+    p2 = np.array([height / 2 + x_offset, width])
+    p3 = np.array([0, width / 2 + y_offset])
+    p4 = np.array([height, width / 2 + y_offset])
+    pts = np.float32([p1, p2, p3, p4]).reshape(-1, 1, 2)
+    dst = cv2.perspectiveTransform(pts, transform)
+
+    line1 = Line(Point(dst[0, 0]), Point(dst[1, 0]))
+    line2 = Line(Point(dst[2, 0]), Point(dst[3, 0]))
+    origin = intersection(line1, line2)[0]
+
+    image = cv2.line(image, (line1.p1.x, line1.p1.y), (line1.p2.x, line1.p2.y), (0, 255, 0), 1)
+    image = cv2.line(image, (line2.p1.x, line2.p1.y), (line2.p2.x, line2.p2.y), (0, 255, 0), 1)
+
+    return image, origin
+
+
+def match_template(template,
+                   image,
+                   draw_crosshairs_flag=True,
+                   draw_matches=False):
+    """
+    Matches a template to an image, returning the transformation matrix and the plotted image with crosshairs
+    :param template: template image to be matched
+    :param image: image to determine transformation of
+    :param draw_crosshairs_flag: Flag to draw crosshairs
+    :param draw_matches: Flag to display matches
+    :return: Image with matched crosshairs, 3x3 Transformation Matrix
+    """
+    # Declare OBR feature detector
+    orb = cv2.ORB_create(nfeatures=500)
+    x_offset = 5
+    y_offset = 10
+    w, h = template.shape[:2]
+
+    # Compute key points and descriptions
+    kp_template, desc_template = orb.detectAndCompute(template, None)
+    kp_frame, desc_frame = orb.detectAndCompute(image, None)
+
+    try:
+        if len(kp_frame) > 10:
+            template = draw_crosshairs(template, width=w, height=h, x_offset=5, y_offset=10)
+
+            # Find brute force matches
+            bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
+            matches = bf.match(desc_template, desc_frame)
+
+            if len(matches) != 0:
+                # Extract points
+                sorted_matches = sorted(matches, key=lambda x: x.distance)
+                src_pts = np.float32([kp_template[m.queryIdx].pt for m in sorted_matches]).reshape(-1, 1, 2)
+                dst_pts = np.float32([kp_frame[m.trainIdx].pt for m in sorted_matches]).reshape(-1, 1, 2)
+
+                # Find transformation matrix
+                transform, mask = cv2.estimateAffine2D(src_pts, dst_pts)
+                transform = np.vstack([transform, [0, 0, 1]])
+
+                # Convert image to color
+                image = cv2.cvtColor(image, cv2.COLOR_GRAY2BGR)
+
+                if draw_crosshairs_flag:
+                    image, origin = draw_crosshairs(image, transform, w, h, x_offset=x_offset, y_offset=y_offset)
+                else:
+                    _, origin = draw_crosshairs(image, transform, w, h, x_offset=x_offset, y_offset=y_offset)
+
+                if draw_matches:
+                    image = cv2.drawMatches(template, kp_template, image, kp_frame, sorted_matches[:20], None, flags=2)
+
+                return image, transform, origin, True
+        else:
+            return image, None, None, False
+    except RuntimeError as err:
+        print('No matches found', err)
+        raise
 
 
 def find_edge(image,
@@ -90,7 +266,7 @@ def find_edge(image,
 
         # Check if the image is color and remove color channels for transpose
         if len(img.shape) == 3:
-            img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+            img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
         # Transpose the image if horizontal mode
         if mode == 1:
@@ -113,11 +289,6 @@ def find_edge(image,
 
         for detector in detectors:
             img_slice = img[:, detector]
-
-            # temp_img = cv.cvtColor(img, cv.COLOR_GRAY2BGR)
-            # temp_img[detector, :] = (0, 255, 0)
-            # cv.imshow('slice', temp_img)
-            # cv.waitKey(10)
 
             # If start from the right, flip the slice
             if right_start:
@@ -209,22 +380,61 @@ def find_edge(image,
         print(e)
 
 
-def rotate_image(image, angle, center=None):
+def crop_to_roi(image, roi):
     """
-    Rotates an image about its center by an angle
-    :param image: image to be rotated
-    :param angle: integer angle to rotate by in degrees
-    :param center: rotation center as tuple, (x, y)
-    :return: rotated image
+    Crops an image to the specified ROI
+    :param image:
+    :param roi: (x1, y1) , (x2, y2)
+    :return:
     """
-    if center is None:
-        image_center = tuple(np.array(image.shape[1::-1]) / 2)
+    if len(image.shape) == 3:
+        img = image[:1000, :1000, :]
     else:
-        image_center = center
+        img = image[roi[0][0]:roi[1][0], roi[0][1]:roi[1][1]]
+    return img
 
-    rot_mat = cv.getRotationMatrix2D(image_center, angle, 1.0)
-    result = cv.warpAffine(image, rot_mat, image.shape[1::-1], flags=cv.INTER_LINEAR)
-    return result
+
+def merge_to_roi(image, crop_image, roi):
+    """
+    Joins a cropped image with an image given the original ROI
+    :param image:
+    :param crop_image:
+    :param roi: (x1, y1) , (x2, y2)
+    :return:
+    """
+    img = image.copy()
+    img[roi[0][0]:roi[1][0], roi[0][1]:roi[1][1]] = crop_image
+    return img
+
+
+def hough_intersect(image, lines):
+    """
+    Computes the intersection of two Hough lines.
+    :param image: image to draw origin on
+    :param lines: lines object, (x1, y1, x2, y2)
+    :return: annotated image, origin as (x, y)
+    """
+    if len(image.shape) != 3:
+        image = cv2.cvtColor(image, cv2.COLOR_GRAY2BGR)
+
+    try:
+        if len(lines) != 0:
+            # get only first and 3rd lines
+            pts = []
+            for x1, y1, x2, y2 in lines:
+                pts.append(Line(Point(x1, y1), Point(x2, y2)))
+                cv2.line(image, (x1, y1), (x2, y2), (0, 255, 0), 1)
+
+            org = intersection(pts[0], pts[1])[0]
+
+            cv2.circle(image, (org.x, org.y), 2, (0, 255, 0), -1)
+        else:
+            raise RuntimeError
+    except RuntimeError as err:
+        print('No edges or intersection found.', err)
+        raise
+
+    return image, org
 
 
 def get_transform(transform):
@@ -241,6 +451,17 @@ def get_transform(transform):
     t_y = transform[1, 2]
 
     return t_x, t_y, theta
+
+
+def draw_color_tile(widget, color):
+    width = widget.frameGeometry().width()
+    height = widget.frameGeometry().height()
+    bytes_per_line = 3 * width
+    img = np.zeros((height, width, 3), np.uint8)
+    img[:] = color
+    qimg = QtGui.QImage(img.data, width, height, bytes_per_line,
+                        QtGui.QImage.Format_RGB888).rgbSwapped()
+    return QtGui.QPixmap.fromImage(qimg)
 
 
 def find_edge_pair(list_of_blobs, expected, axis=0, bias_left=True, distance_weight=0.5):
@@ -279,7 +500,7 @@ def cluster_edges(list_of_edges, axis=0, max_clusters=14, locate_elbow=True):
     """
     Clusters a list of edges by their x-coordinate and returns a list of blobs.
     :param locate_elbow:
-    :param axis: axis of clustering, 0 for x, 1 for y
+    :param axis: axis of clustering, 0 for X, 1 for y
     :param max_clusters:
     :param list_of_edges: List of [x, y] points to be clustered
     :returns: list of edge blobs, blob centroids
@@ -298,32 +519,5 @@ def cluster_edges(list_of_edges, axis=0, max_clusters=14, locate_elbow=True):
     for cluster in np.unique(labels):
         indexes = np.where(labels == cluster)[0]
         blobs.append(np.take(list_of_edges, indexes, axis=0))
-
-    return blobs, centroids
-
-
-def cluster_lines(list_of_lines, axis=0, max_clusters=14, locate_elbow=True):
-    """
-    Clusters a list of edges by their x-coordinate and returns a list of blobs.
-    :param locate_elbow:
-    :param axis: axis of clustering, 0 for x, 1 for y
-    :param max_clusters:
-    :param list_of_lines: List of [x1, y1, x2, y2] points to be clustered
-    :returns: list of edge blobs, blob centroids
-    """
-    edges_x = np.array([np.mean(edge[0, [axis, axis+2]]) for edge in list_of_lines]).reshape(-1, 1)
-
-    kelbow = KElbowVisualizer(MiniBatchKMeans(random_state=42),
-                              k=(1, min(len(list_of_lines), max_clusters)),
-                              locate_elbow=locate_elbow)
-
-    kelbow.fit(edges_x)
-    labels = kelbow.estimator.fit_predict(edges_x)
-    centroids = kelbow.estimator.cluster_centers_
-
-    blobs = []
-    for cluster in np.unique(labels):
-        indexes = np.where(labels == cluster)[0]
-        blobs.append(np.take(list_of_lines, indexes, axis=0))
 
     return blobs, centroids
