@@ -7,6 +7,7 @@ from scipy.signal import find_peaks
 
 # Suppress future warnings on import
 from warnings import simplefilter
+
 simplefilter(action='ignore', category=FutureWarning)
 
 from util.elbow import KElbowVisualizer
@@ -45,38 +46,6 @@ def blur(image, kernel):
     :return: Blurred image, array-like object
     """
     img = cv2.GaussianBlur(image.copy(), (kernel, kernel), 0)
-    return img
-
-
-def pre_process_center(image):
-    """
-    Applies a customized pre-processing filter to a specified image for center finding.
-    :param image: Image to be processed, array-like object
-    :return: Process image, array-like object
-    """
-    if c.USE_CLAHE_CENTER:
-        clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
-        img = clahe.apply(image.copy())
-    else:
-        img = image.copy()
-
-    img = blur(img, 11)
-
-    img = cv2.Canny(img, threshold1=0, threshold2=30, apertureSize=3)
-
-    return img
-
-
-def pre_process_slit(image, slit_threshold):
-    # Convert the image to a binary image using a threshold
-    _, img = cv2.threshold(image, slit_threshold, 255, 0)
-
-    # Invert the image
-    img = cv2.bitwise_not(img)
-
-    # Perform a dilation to expand the opening 1 pixel
-    img = cv2.morphologyEx(img, cv2.MORPH_DILATE, (3, 3))
-
     return img
 
 
@@ -136,101 +105,6 @@ def transform_points(points, matrix):
     return cv2.perspectiveTransform(nd_points, matrix)
 
 
-def draw_crosshairs(image,
-                    transform=None,
-                    width=100,
-                    height=100,
-                    x_offset=0,
-                    y_offset=0):
-    """
-    Draw crosshairs on image at a given location
-    :param image:
-    :param transform:
-    :param width:
-    :param height:
-    :param x_offset:
-    :param y_offset:
-    :return:
-    """
-    if transform is None:
-        transform = np.identity(3, dtype=np.float32)
-
-    p1 = np.array([height / 2 + x_offset, 0])
-    p2 = np.array([height / 2 + x_offset, width])
-    p3 = np.array([0, width / 2 + y_offset])
-    p4 = np.array([height, width / 2 + y_offset])
-    pts = np.float32([p1, p2, p3, p4]).reshape(-1, 1, 2)
-    dst = cv2.perspectiveTransform(pts, transform)
-
-    line1 = Line(Point(dst[0, 0]), Point(dst[1, 0]))
-    line2 = Line(Point(dst[2, 0]), Point(dst[3, 0]))
-    origin = intersection(line1, line2)[0]
-
-    image = cv2.line(image, (line1.p1.x, line1.p1.y), (line1.p2.x, line1.p2.y), (0, 255, 0), 1)
-    image = cv2.line(image, (line2.p1.x, line2.p1.y), (line2.p2.x, line2.p2.y), (0, 255, 0), 1)
-
-    return image, origin
-
-
-def match_template(template,
-                   image,
-                   draw_crosshairs_flag=True,
-                   draw_matches=False):
-    """
-    Matches a template to an image, returning the transformation matrix and the plotted image with crosshairs
-    :param template: template image to be matched
-    :param image: image to determine transformation of
-    :param draw_crosshairs_flag: Flag to draw crosshairs
-    :param draw_matches: Flag to display matches
-    :return: Image with matched crosshairs, 3x3 Transformation Matrix
-    """
-    # Declare OBR feature detector
-    orb = cv2.ORB_create(nfeatures=500)
-    x_offset = 5
-    y_offset = 10
-    w, h = template.shape[:2]
-
-    # Compute key points and descriptions
-    kp_template, desc_template = orb.detectAndCompute(template, None)
-    kp_frame, desc_frame = orb.detectAndCompute(image, None)
-
-    try:
-        if len(kp_frame) > 10:
-            template = draw_crosshairs(template, width=w, height=h, x_offset=5, y_offset=10)
-
-            # Find brute force matches
-            bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
-            matches = bf.match(desc_template, desc_frame)
-
-            if len(matches) != 0:
-                # Extract points
-                sorted_matches = sorted(matches, key=lambda x: x.distance)
-                src_pts = np.float32([kp_template[m.queryIdx].pt for m in sorted_matches]).reshape(-1, 1, 2)
-                dst_pts = np.float32([kp_frame[m.trainIdx].pt for m in sorted_matches]).reshape(-1, 1, 2)
-
-                # Find transformation matrix
-                transform, mask = cv2.estimateAffine2D(src_pts, dst_pts)
-                transform = np.vstack([transform, [0, 0, 1]])
-
-                # Convert image to color
-                image = cv2.cvtColor(image, cv2.COLOR_GRAY2BGR)
-
-                if draw_crosshairs_flag:
-                    image, origin = draw_crosshairs(image, transform, w, h, x_offset=x_offset, y_offset=y_offset)
-                else:
-                    _, origin = draw_crosshairs(image, transform, w, h, x_offset=x_offset, y_offset=y_offset)
-
-                if draw_matches:
-                    image = cv2.drawMatches(template, kp_template, image, kp_frame, sorted_matches[:20], None, flags=2)
-
-                return image, transform, origin, True
-        else:
-            return image, None, None, False
-    except RuntimeError as err:
-        print('No matches found', err)
-        raise
-
-
 def find_edge(image,
               roi=None,  # region of interest, 2 points
               mode=0,  # 0 horizontal, 1 vertical
@@ -240,9 +114,7 @@ def find_edge(image,
               start_pixel=0,  # start scanning pixel
               end_pixel=-1,  # end scanning pixel
               max_blob=5,  # minimum length of acceptable edge
-              noise_filter_length=0,
-              std_edge_mode=False,
-              std_size=10):  # A is 0, B is 1
+              noise_filter_length=0, ):
     """
     finds an edge
     :param std_size:
@@ -294,73 +166,57 @@ def find_edge(image,
             if right_start:
                 img_slice = img_slice[::-1]
 
-            standard_deviations = []
             # Loop through sliced image and find rising and falling edges
             cropped_img_slice = img_slice[start_pixel:end_pixel - noise_filter_length]
             for idx, pixel in enumerate(cropped_img_slice):
 
-                if std_edge_mode:
-                    if std_size < idx < (len(cropped_img_slice) - std_size):
-                        front_avg = np.mean(img_slice[idx + 1: idx + std_size])
-                        back_avg = np.mean(img_slice[idx - std_size: idx - 1])
-                        front_std = np.std(img_slice[idx + 1: idx + std_size])
-                        back_std = np.std(img_slice[idx - std_size: idx - 1])
+                if idx >= len(cropped_img_slice) - 1:
+                    if len(rising_edges) == 0 and len(falling_edges) > 0:
+                        falling_blobs.append(falling_edges[-1])
+                    elif len(falling_edges) == 0 and len(rising_edges) > 0:
+                        rising_blobs.append(rising_edges[-1])
+                    break
 
-                        # Rising Edge
-                        standard_deviations.append(front_avg - back_avg)
+                current_idx = idx + start_pixel
+                # Get next pixel and to compare to current pixel
+                next_pixel = img_slice[current_idx + 1]
 
-                else:
-                    if idx >= len(cropped_img_slice) - 1:
-                        if len(rising_edges) == 0 and len(falling_edges) > 0:
+                # Rising edge
+                if pixel < threshold <= next_pixel:
+
+                    # Append rising edge
+                    if len(rising_edges) == 0 or len(falling_edges) == 0:
+                        rising_edges.append(current_idx + 1)
+                    elif (current_idx - rising_edges[-1]) > noise_filter_length and \
+                            (current_idx - falling_edges[-1]) > noise_filter_length:
+                        rising_edges.append(current_idx + 1)
+
+                    # Calculate length of edge and append to blobs if at least size of max_blob
+                    if len(falling_edges) > 0 and len(rising_edges) > 0:
+                        falling_length = abs(falling_edges[-1] - rising_edges[-1])
+
+                        if falling_length >= max_blob and falling_edges[-1] > 0:
                             falling_blobs.append(falling_edges[-1])
-                        elif len(falling_edges) == 0 and len(rising_edges) > 0:
+
+                # Falling edge
+                if pixel > threshold >= next_pixel:
+
+                    # Append rising edge
+                    if len(falling_edges) == 0 or len(rising_edges) == 0:
+                        falling_edges.append(current_idx + 1)
+                    elif (current_idx - falling_edges[-1]) > noise_filter_length and \
+                            (current_idx - rising_edges[-1]) > noise_filter_length:
+                        falling_edges.append(current_idx + 1)
+
+                    # Append falling edge
+                    falling_edges.append(idx + start_pixel)
+
+                    # Calculate length of edge and append to blobs if at least size of max_blob
+                    if len(falling_edges) > 0 and len(rising_edges) > 0:
+                        rising_length = abs(rising_edges[-1] - falling_edges[-1])
+
+                        if rising_length >= max_blob and rising_edges[-1] > 0:
                             rising_blobs.append(rising_edges[-1])
-                        break
-
-                    current_idx = idx + start_pixel
-                    # Get next pixel and to compare to current pixel
-                    next_pixel = img_slice[current_idx + 1]
-
-                    # Rising edge
-                    if pixel < threshold <= next_pixel:
-
-                        # Append rising edge
-                        if len(rising_edges) == 0 or len(falling_edges) == 0:
-                            rising_edges.append(current_idx + 1)
-                        elif (current_idx - rising_edges[-1]) > noise_filter_length and \
-                                (current_idx - falling_edges[-1]) > noise_filter_length:
-                            rising_edges.append(current_idx + 1)
-
-                        # Calculate length of edge and append to blobs if at least size of max_blob
-                        if len(falling_edges) > 0 and len(rising_edges) > 0:
-                            falling_length = abs(falling_edges[-1] - rising_edges[-1])
-
-                            if falling_length >= max_blob and falling_edges[-1] > 0:
-                                falling_blobs.append(falling_edges[-1])
-
-                    # Falling edge
-                    if pixel > threshold >= next_pixel:
-
-                        # Append rising edge
-                        if len(falling_edges) == 0 or len(rising_edges) == 0:
-                            falling_edges.append(current_idx + 1)
-                        elif (current_idx - falling_edges[-1]) > noise_filter_length and \
-                                (current_idx - rising_edges[-1]) > noise_filter_length:
-                            falling_edges.append(current_idx + 1)
-
-                        # Append falling edge
-                        falling_edges.append(idx + start_pixel)
-
-                        # Calculate length of edge and append to blobs if at least size of max_blob
-                        if len(falling_edges) > 0 and len(rising_edges) > 0:
-                            rising_length = abs(rising_edges[-1] - falling_edges[-1])
-
-                            if rising_length >= max_blob and rising_edges[-1] > 0:
-                                rising_blobs.append(rising_edges[-1])
-
-            if std_edge_mode:
-                local_maxima, params = find_peaks(standard_deviations, distance=10, height=10)
-                rising_blobs.extend(local_maxima)
 
         if len(rising_blobs) == 0 and len(rising_edges) == 1:
             rising_blobs.append(rising_edges[0])
@@ -453,17 +309,6 @@ def get_transform(transform):
     return t_x, t_y, theta
 
 
-def draw_color_tile(widget, color):
-    width = widget.frameGeometry().width()
-    height = widget.frameGeometry().height()
-    bytes_per_line = 3 * width
-    img = np.zeros((height, width, 3), np.uint8)
-    img[:] = color
-    qimg = QtGui.QImage(img.data, width, height, bytes_per_line,
-                        QtGui.QImage.Format_RGB888).rgbSwapped()
-    return QtGui.QPixmap.fromImage(qimg)
-
-
 def find_edge_pair(list_of_blobs, expected, axis=0, bias_left=True, distance_weight=0.5):
     distances = []
 
@@ -505,19 +350,112 @@ def cluster_edges(list_of_edges, axis=0, max_clusters=14, locate_elbow=True):
     :param list_of_edges: List of [x, y] points to be clustered
     :returns: list of edge blobs, blob centroids
     """
-    edges_x = np.array([edge[axis] for edge in list_of_edges]).reshape(-1, 1)
+    # Single axis mode, deprecated
+    # edges_x = np.array([edge[axis] for edge in list_of_edges]).reshape(-1, 1)
 
+    # No edges found, return None
+    if len(list_of_edges) is 0:
+        return None, None
+
+    # Combined axis mode
+    scaled_edges = np.array(list_of_edges, dtype=np.float)
+    scaled_edges[:, int(not axis)] = scaled_edges[:, int(not axis)] * c.EDGE_CLUSTER_SCALING
+
+    # Declare the Elbow locator
     kelbow = KElbowVisualizer(MiniBatchKMeans(random_state=42),
                               k=(1, min(len(list_of_edges), max_clusters)),
                               locate_elbow=locate_elbow)
 
-    kelbow.fit(edges_x)
-    labels = kelbow.estimator.fit_predict(edges_x)
+    # Fit the data and get the labels
+    labels = kelbow.estimator.fit_predict(scaled_edges)
     centroids = kelbow.estimator.cluster_centers_
 
+    # Build the blobs from the list of edges
     blobs = []
     for cluster in np.unique(labels):
         indexes = np.where(labels == cluster)[0]
         blobs.append(np.take(list_of_edges, indexes, axis=0))
 
     return blobs, centroids
+
+
+def locate_edge(image, detectors, axis=0, reverse=False):
+    """
+    Rakes the image and locates an edge. Edges are filtered using KMeans clustering and edge blobs are returned.
+    :param image: Image to be raked
+    :param detectors: Indexes to rake the image at. Must be perpendicular to the axis.
+    :param axis: Direction of the rake. 0 for X (top to bottom), 1 for Y (left to right)
+    :param reverse: Left- or right-hand start
+    :return: List of edge blobs as [X, Y] points
+    """
+    edges = []
+
+    try:
+        # Process all the detectors (image slices)
+        for detector in detectors:
+            _, _, r_blob, _ = find_edge(image,
+                                        mode=axis,
+                                        detectors=detector,
+                                        start_pixel=0,
+                                        end_pixel=600,
+                                        right_start=reverse,
+                                        max_blob=20,
+                                        noise_filter_length=10)
+
+            # If the length of the edges found is 0, skip this detector
+            if len(r_blob) == 0:
+                continue
+
+            # Store the edges in a master list for sorting and clustering
+            for edge in r_blob[:3]:
+                if not axis:
+                    # Horizontal edge
+                    edges.append([detector, edge])
+                else:
+                    # Vertical edge
+                    edges.append([edge, detector])
+
+        # Cluster the edges in to blobs
+        blobs, centroids = cluster_edges(edges, axis=int(not axis))
+
+        # Sort the edge clusters by length (support)
+        blobs.sort(key=len, reverse=True)
+
+        if not axis:
+            # Return only the first n blobs
+            return blobs[:c.V_BLOBS_TO_KEEP]
+        else:
+            # Return only the first n blobs
+            return blobs[:c.H_BLOBS_TO_KEEP]
+
+    except TypeError as e:
+        print(e)
+
+
+def fit_edge(image, blob, axis=0):
+    # Concat all point in the blob for fitting
+    temp_blob = np.concatenate(blob)
+
+    # Extract x and y points and fit a line to them
+    x = np.array([edge[int(not axis)] for edge in temp_blob], dtype=np.float)
+    y = np.array([edge[axis] for edge in temp_blob], dtype=np.float)
+    coefficients = np.polyfit(x, y, 1)
+    m, b = coefficients[0], coefficients[1]
+
+    # Build a Line object
+    line = Line(Point(0, b), slope=m)
+
+    if axis:
+        cv2.line(image,
+                 (0, int(b)),
+                 (image.shape[axis], int(image.shape[axis] * m + b)),
+                 c.COLORS[0],
+                 10)
+    else:
+        cv2.line(image,
+                 (int(b), 0),
+                 (int(image.shape[axis] * m + b), image.shape[axis]),
+                 c.COLORS[0],
+                 10)
+
+    return line, image

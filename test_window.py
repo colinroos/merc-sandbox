@@ -3,7 +3,7 @@ from PyQt5 import QtWidgets, uic
 from PyQt5.QtGui import QImage, QPixmap
 import cv2.cv2 as cv
 from util import constants as c
-from box_corners import BoxCorners
+from auto_annotate import AutoAnnotate
 from util.files import *
 
 
@@ -14,7 +14,7 @@ class MainUI(QtWidgets.QMainWindow):
         uic.loadUi('user_interface/test_window.ui', self)
 
         files = find_files_glob('data/2017/images/', '*.jpg')
-        self.bc = BoxCorners(files[0])
+        self.bc = AutoAnnotate(files)
 
         # Define image label
         self.img = self.findChild(QtWidgets.QLabel, 'label')
@@ -31,26 +31,54 @@ class MainUI(QtWidgets.QMainWindow):
 
         # Define the get image pushbutton and connect its callback function
         self.btn_image = self.findChild(QtWidgets.QPushButton, 'pushButton')
-        self.btn_image.clicked.connect(self.render_image)
+        self.btn_image.clicked.connect(self.update_image)
+
+        self.btn_next = self.findChild(QtWidgets.QPushButton, 'pushButton_2')
+        self.btn_next.clicked.connect(self.btn_next_ch)
+        self.btn_prev = self.findChild(QtWidgets.QPushButton, 'pushButton_3')
+        self.btn_prev.clicked.connect(self.btn_prev_ch)
 
         # Define staring values
         self.spinbox_1.setValue(self.bc.block_size)
         self.spinbox_2.setValue(self.bc.kernel_size)
-        self.spinbox_3.setValue(self.bc.free_parameter)
+        self.spinbox_3.setValue(c.EDGE_CLUSTER_SCALING)
         self.spinbox_4.setValue(self.bc.threshold)
+
+        # First run inspection
+        self.update_image()
+
+    def btn_next_ch(self):
+        self.bc.image_index += 1
+
+        # Handle rollover
+        if self.bc.image_index > len(self.bc.images):
+            self.bc.image_index = 0
+
+        self.update_image()
+
+    def btn_prev_ch(self):
+        self.bc.image_index -= 1
+
+        # Handle rollunder
+        if self.bc.image_index < 0:
+            self.bc.image_index = len(self.bc.images) - 1
+
+        self.update_image()
 
     def resizeEvent(self, e):
         super().resizeEvent(e)
         self.render_image()
 
-    def render_image(self):
+    def update_image(self):
         self.bc.block_size = self.spinbox_1.value()
         self.bc.kernel_size = self.spinbox_2.value()
-        self.bc.free_parameter = self.spinbox_3.value()
+        c.EDGE_CLUSTER_SCALING = self.spinbox_3.value()
         self.bc.threshold = self.spinbox_4.value()
 
         self.bc.run()
+        self.render_image()
 
+    def render_image(self):
         height, width, channels = self.bc.out_image.shape
         bytes_per_line = 3 * width
 
