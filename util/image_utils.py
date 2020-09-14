@@ -4,6 +4,7 @@ from sympy.geometry import Point, Line, intersection
 from util import constants as c
 from PyQt5 import QtGui
 from scipy.signal import find_peaks
+import matplotlib.pyplot as plt
 
 # Suppress future warnings on import
 from warnings import simplefilter
@@ -159,8 +160,19 @@ def find_edge(image,
         rising_blobs = []
         falling_blobs = []
 
+        temp_img = cv2.cvtColor(img.copy(), cv2.COLOR_GRAY2BGR)
+
         for detector in detectors:
             img_slice = img[:, detector]
+
+            # temp_img[:, detector-2:detector+2] = (0, 0, 255)
+            # cv2.imwrite('./out/edge_step_0.jpg', cv2.resize(temp_img, (0, 0), fx=0.3, fy=0.3))
+
+            # plt.plot(range(len(img_slice)), img_slice)
+            # plt.xlabel('Index')
+            # plt.ylabel('Brightness')
+            # plt.show()
+            # plt.savefig('./out/edge_step_1.jpg')
 
             # If start from the right, flip the slice
             if right_start:
@@ -354,7 +366,7 @@ def cluster_edges(list_of_edges, axis=0, max_clusters=14, locate_elbow=True):
     # edges_x = np.array([edge[axis] for edge in list_of_edges]).reshape(-1, 1)
 
     # No edges found, return None
-    if len(list_of_edges) is 0:
+    if len(list_of_edges) == 0:
         return None, None
 
     # Combined axis mode
@@ -415,6 +427,13 @@ def locate_edge(image, detectors, axis=0, reverse=False):
                     # Vertical edge
                     edges.append([edge, detector])
 
+        # if axis == 1 and not reverse:
+        #     temp_img = cv2.cvtColor(image.copy(), cv2.COLOR_GRAY2BGR)
+        #     for edge in edges:
+        #         cv2.circle(temp_img, (edge[0], edge[1]), 8, c.COLORS[0], -1)
+
+            # cv2.imwrite('./out/step_2.jpg', cv2.resize(temp_img, (0, 0), fx=0.3, fy=0.3))
+
         # Cluster the edges in to blobs
         blobs, centroids = cluster_edges(edges, axis=int(not axis))
 
@@ -433,17 +452,30 @@ def locate_edge(image, detectors, axis=0, reverse=False):
 
 
 def fit_edge(image, blob, axis=0):
-    # Concat all point in the blob for fitting
-    temp_blob = np.concatenate(blob)
+    good_edge = False
+    idx = len(blob)
 
-    # Extract x and y points and fit a line to them
-    x = np.array([edge[int(not axis)] for edge in temp_blob], dtype=np.float)
-    y = np.array([edge[axis] for edge in temp_blob], dtype=np.float)
-    coefficients = np.polyfit(x, y, 1)
-    m, b = coefficients[0], coefficients[1]
+    while not good_edge:
+        # Concat all point in the blob for fitting
+        temp_blob = np.concatenate(blob[:idx])
 
-    # Build a Line object
-    line = Line(Point(0, b), slope=m)
+        # Extract x and y points and fit a line to them
+        x = np.array([edge[int(not axis)] for edge in temp_blob], dtype=np.float)
+        y = np.array([edge[axis] for edge in temp_blob], dtype=np.float)
+        coefficients = np.polyfit(x, y, 1)
+        m, b = coefficients[0], coefficients[1]
+
+        # Build a Line object
+        line = Line(Point(0, b), slope=m)
+
+        if abs(m) > 0.001:
+            idx -= 1
+            if idx < 2:
+                idx = 2
+                break
+        else:
+            good_edge = True
+            break
 
     if axis:
         cv2.line(image,
@@ -459,3 +491,26 @@ def fit_edge(image, blob, axis=0):
                  10)
 
     return line, image
+
+
+def four_point_transform(image, pts):
+    (tl, tr, br, bl) = pts
+
+    width_A = np.sqrt(((br[0] - bl[0]) ** 2) + ((br[1] - bl[1]) ** 2))
+    width_B = np.sqrt(((tr[0] - tl[0]) ** 2) + ((tr[1] - tl[1]) ** 2))
+    max_width = np.max(int(width_A), int(width_B))
+
+    height_A = np.sqrt(((tr[0] - br[0]) ** 2) + ((tr[1] - br[1]) ** 2))
+    height_B = np.sqrt(((tl[0] - bl[0]) ** 2) + ((tl[1] - bl[1]) ** 2))
+    max_height = np.max(int(height_A), int(height_B))
+
+    dst = np.array([[0, 0],
+                    [max_width - 1, 0],
+                    [max_width - 1, max_height - 1],
+                    [0, max_height - 1]],
+                   dtype=np.float)
+
+    M = cv2.getPerspectiveTransform(pts, dst)
+    warped = cv2.warpPerspective(image, M, (max_width, max_height))
+
+    return warped

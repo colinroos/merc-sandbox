@@ -35,6 +35,12 @@ class AutoAnnotate:
         self.top_edge = Line(Point(0, 0), slope=0)
         self.bottom_edge = Line(Point(0, 0), slope=0)
 
+        # Corner Objects
+        self.top_left_corner = Point(0, 0)
+        self.top_right_corner = Point(0, 0)
+        self.bottom_left_corner = Point(0, 0)
+        self.bottom_right_corner = Point(0, 0)
+
     def find_corners(self):
         """
         Locates all Harris corners in the image.
@@ -55,12 +61,21 @@ class AutoAnnotate:
         # Left Edge
         self.left_edge, self.out_image = fit_edge(self.out_image, self.left_blob, axis=0)
 
+        cv2.imwrite('./out/step_4.jpg', cv2.resize(self.out_image, (0, 0), fx=0.3, fy=0.3))
+
         # Right Edge
         self.right_edge, self.out_image = fit_edge(self.out_image, self.right_blob, axis=0)
 
         # Bottom Edge
         self.bottom_edge, self.out_image = fit_edge(self.out_image, self.bottom_blob, axis=1)
 
+        # Fit Corner Intersections
+        self.top_left_corner = self.left_edge.intersection(self.top_edge)[0]
+        self.top_right_corner = self.right_edge.intersection(self.top_edge)[0]
+        self.bottom_left_corner = self.left_edge.intersection(self.bottom_edge)[0]
+        self.bottom_right_corner = self.right_edge.intersection(self.bottom_edge)[0]
+
+        # cv2.imwrite('./out/step_5.jpg', cv2.resize(self.out_image, (0, 0), fx=0.3, fy=0.3))
 
     def find_top(self):
         detectors = np.concatenate([np.arange(0, 300, 10),
@@ -89,6 +104,8 @@ class AutoAnnotate:
         for blob, color in zip(blobs, c.COLORS[:len(blobs)]):
             for edge in blob:
                 cv.circle(self.out_image, (edge[0], edge[1]), 8, color, -1)
+
+        # cv2.imwrite('./out/step_3.jpg', cv2.resize(self.out_image, (0, 0), fx=0.3, fy=0.3))
 
         # Assign blob cluster to global object
         self.left_blob = blobs.copy()
@@ -131,6 +148,8 @@ class AutoAnnotate:
         :return:
         """
         self.processed_image = cv.cvtColor(self.image, cv.COLOR_BGR2GRAY)
+        # cv.imwrite('./out/step_0.jpg', cv.resize(self.image, (0, 0), fx=0.3, fy=0.3))
+        # cv.imwrite('./out/step_1.jpg', cv.resize(self.processed_image, (0, 0), fx=0.3, fy=0.3))
         self.out_image = self.image.copy()
         # self.processed_image = cv.GaussianBlur(self.processed_image, 3, 0.33)
 
@@ -151,7 +170,7 @@ class AutoAnnotate:
         self.find_left()
         self.find_right()
         self.find_bottom()
-        self.fit_edges()
+        # self.fit_edges()
 
 
 if __name__ == '__main__':
