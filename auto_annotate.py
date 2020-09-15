@@ -170,7 +170,9 @@ class AutoAnnotate:
         self.find_left()
         self.find_right()
         self.find_bottom()
-        # self.fit_edges()
+        self.fit_edges()
+
+        cv.imwrite(f'./out/{self.images[self.image_index][17:-4]}_an.jpg', self.out_image)
 
 
 if __name__ == '__main__':
