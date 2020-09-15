@@ -1,7 +1,6 @@
-import cv2.cv2 as cv
-from image_utils import *
-from file_utils import *
-import constants as c
+from util.image_processing import *
+from util.files import *
+from util import constants as c
 from sympy.geometry import Point, Line
 
 
@@ -53,13 +52,13 @@ def line_avg_slope(list_of_lines):
     return np.mean(slopes, dtype=np.float)
 
 
-def rank_line_blob(list_of_blobs, axis=0):
+def rank_line_blob(list_of_blobs, axis=0, reverse=False):
     list_of_blobs_sorted = list_of_blobs.copy()
-    list_of_blobs_sorted.sort(key=lambda x: line_blob_avg(x, axis))
+    list_of_blobs_sorted.sort(key=lambda x: line_blob_avg(x, axis), reverse=reverse)
 
     blob_scores = []
     for idx, blob in enumerate(list_of_blobs_sorted):
-        score = (len(list_of_blobs_sorted) / (idx + 1)) * max((1 - np.mean(np.var(blob, axis=0))), 0)
+        score = (len(list_of_blobs_sorted) / (idx + 1)) * 1/np.mean(np.var(blob, axis=0))
         blob_scores.append(score)
 
     return list_of_blobs_sorted[np.argmax(blob_scores)]
@@ -84,6 +83,8 @@ class BoxLocate:
     def run(self):
         # Resize the image to a nominal size
         self.image = cv.resize(self.image, c.NOMINAL_IMG_DIMS)
+        # cv.imshow('', cv.resize(self.image, (0, 0), fx=0.25, fy=0.25))
+        # cv.waitKey(0)
 
         # Apply a local histogram normalization
         self.processed = cv.cvtColor(self.image, cv.COLOR_BGR2YCrCb)
@@ -92,15 +93,23 @@ class BoxLocate:
         color_planes[0] = clahe.apply(color_planes[0])
         self.processed = cv.merge(color_planes)
         self.processed = cv.cvtColor(self.processed, cv.COLOR_YCrCb2BGR)
+        # cv.imshow('', cv.resize(self.processed, (0, 0), fx=0.25, fy=0.25))
+        # cv.waitKey(0)
 
         # Blur the image to extrapolate some noise
         self.processed = cv.GaussianBlur(self.processed, (11, 11), 0)
+        # cv.imshow('', cv.resize(self.processed, (0, 0), fx=0.25, fy=0.25))
+        # cv.waitKey(0)
 
         # Edge detect using Canny
         self.processed = cv.Canny(self.processed, 60, 150, apertureSize=3)
+        # cv.imshow('', cv.resize(self.processed, (0, 0), fx=0.25, fy=0.25))
+        # cv.waitKey(0)
 
         # Blur the detected edges to extrapolate some antialiasing noise
         self.processed = cv.GaussianBlur(self.processed, (3, 3), 0)
+        # cv.imshow('', cv.resize(self.processed, (0, 0), fx=0.25, fy=0.25))
+        # cv.waitKey(0)
 
         # Create an output image for annotations
         self.out_img = self.image.copy()
@@ -120,11 +129,8 @@ class BoxLocate:
             h_edges, h_centroids = cluster_lines(h_lines, axis=1, max_clusters=30, locate_elbow=False)
 
             # Draw the edges on the output image
-            for edge_type in [v_edges, h_edges]:
-                # Loop through each blob to draw it a different color
-                for edge_blob, color in zip(edge_type, c.COLORS[:len(edge_type)]):
-                    for line in edge_blob[:, 0, :]:
-                        cv.line(self.out_img, (line[0], line[1]), (line[2], line[3]), color, 2)
+
+            # Loop through each blob to draw it a different color
 
             # Get the average slope of the horizontal lines to correct image rotation
             avg_slope = line_avg_slope(h_lines)
@@ -133,10 +139,12 @@ class BoxLocate:
             theta = np.degrees(np.arctan(avg_slope))
 
             # Rank the blob for the best horizontal and vertical edges
-            matched_v_blob = rank_line_blob(v_edges, axis=0)
-            matched_h_blob = rank_line_blob(h_edges, axis=1)
+            matched_v_blob_1 = rank_line_blob(v_edges, axis=0)
+            matched_v_blob_2 = rank_line_blob(v_edges, axis=0, reverse=True)
+            matched_h_blob_1 = rank_line_blob(h_edges, axis=1)
+            matched_h_blob_2 = rank_line_blob(h_edges, axis=1, reverse=True)
 
-            for matched_blob in [matched_v_blob, matched_h_blob]:
+            for matched_blob in [matched_v_blob_1, matched_h_blob_1, matched_v_blob_2, matched_h_blob_2]:
                 for line in matched_blob[:, 0, :]:
                     cv.line(self.out_img, (line[0], line[1]), (line[2], line[3]), c.COLORS[2], 10)
 
@@ -145,7 +153,7 @@ class BoxLocate:
 
         print('processed')
         cv.imshow('out', cv.resize(self.out_img, (0, 0), fx=0.25, fy=0.25))
-        cv.waitKey(10)
+        cv.waitKey(0)
 
         return self.out_img
 
@@ -156,4 +164,4 @@ if __name__ == '__main__':
     for file in files:
         ed.run()
         ed.image = cv.imread(file)
-        pass
+        break

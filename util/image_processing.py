@@ -6,8 +6,8 @@ from scipy.signal import find_peaks
 from warnings import simplefilter
 simplefilter(action='ignore', category=FutureWarning)
 
-from elbow import KElbowVisualizer
-from sklearn.cluster import KMeans, MiniBatchKMeans
+from util.elbow import KElbowVisualizer
+from sklearn.cluster import MiniBatchKMeans
 
 
 def auto_canny(image, sigma=0.33):

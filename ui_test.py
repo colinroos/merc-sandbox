@@ -1,11 +1,8 @@
 import sys
-from PyQt5 import QtWidgets, QtCore, uic, QtGui
+from PyQt5 import QtWidgets, uic
 import cv2
-import constants as c
-from time import sleep
+from util import constants as c
 from box_locate import BoxLocate
-from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
-from matplotlib.figure import Figure
 
 
 class MainUI(QtWidgets.QMainWindow):
