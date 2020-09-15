@@ -1,6 +1,7 @@
 import autokeras as ak
 import pandas as pd
 import tensorflow as tf
+from sklearn.metrics import mean_squared_error
 from util.image_pipeline import create_imageset, load_images_to_memory
 
 physical_devices = tf.config.list_physical_devices('GPU')
@@ -19,6 +20,9 @@ for model in range(3):
     df_out = pd.DataFrame()
     df_out['y'] = df['y']
     df_out['y_pred'] = y_pred
+
+    mse = mean_squared_error(df['y'], y_pred)
+    print(f'MSE: {mse}')
 
     df_out.to_csv(f'./output-cache/RQD_prediction_{model}.csv')
 
